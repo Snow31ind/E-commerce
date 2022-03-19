@@ -17,4 +17,8 @@ function slugify(name) {
     .replace(/-+$/, ''); // Trim - from end of text}
 }
 
-export { slugify };
+function randomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+export { slugify, randomInteger };

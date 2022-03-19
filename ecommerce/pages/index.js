@@ -8,11 +8,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import Head from 'next/head';
-import Image from 'next/image';
 import Layout from '../layouts/Layout';
-import styles from '../styles/Home.module.css';
-import { data } from '../utils/data';
 import NextLink from 'next/link';
 import { slugify } from '../utils/helpers';
 import db from '../utils/db';

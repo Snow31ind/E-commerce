@@ -1,6 +1,14 @@
 import bcrypt from 'bcryptjs';
+import { randomInteger, slugify } from './helpers';
 
 const data = require('./data.json');
+
+const products = data.products.map((product) => ({
+  ...product,
+  slug: slugify(product.name),
+  numReviews: randomInteger(5, 20),
+  countInStock: randomInteger(10, 100),
+}));
 
 const users = [
   {
@@ -26,4 +34,4 @@ const users = [
   },
 ];
 
-export { data, users };
+export { users, products };
