@@ -1,17 +1,21 @@
 import {
   AppBar,
+  Avatar,
   Button,
   Container,
   createTheme,
   IconButton,
   Link,
+  Menu,
+  MenuItem,
+  Stack,
   styled,
   ThemeProvider,
   Toolbar,
   Typography,
 } from '@mui/material';
 import Head from 'next/head';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import NextLink from 'next/link';
 import { useStyles } from '../utils/styles';
 import {
@@ -23,6 +27,9 @@ import {
   SearchOffRounded,
   ShoppingCart,
 } from '@mui/icons-material';
+import { Store } from '../utils/Store';
+import { useRouter } from 'next/router';
+import { useSnackbar } from 'notistack';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -34,6 +41,10 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export default function Layout({ title, description, children, ...props }) {
   const classes = useStyles();
+  const { state, dispatch } = useContext(Store);
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { user } = state;
+  const router = useRouter();
 
   const theme = createTheme({
     palette: {
@@ -43,6 +54,25 @@ export default function Layout({ title, description, children, ...props }) {
     },
     typography: {},
   });
+
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const loginMenuClickHandler = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
+
+  const loginMenuCloseHandler = () => {
+    setAnchorEl(null);
+  };
+
+  const logoutClickHandler = () => {
+    setAnchorEl(null);
+
+    dispatch({ type: 'USER_LOGOUT' });
+    const msg = 'Logging out succesfully';
+    enqueueSnackbar(msg, { variant: 'success' });
+    router.push('/');
+  };
 
   return (
     <div>
@@ -81,11 +111,33 @@ export default function Layout({ title, description, children, ...props }) {
               <IconButton>
                 <LocalShipping />
               </IconButton>
-              <NextLink href="/login" passHref>
-                <IconButton>
-                  <Person />
-                </IconButton>
-              </NextLink>
+              {user ? (
+                <>
+                  <IconButton
+                    aria-controls="avatar-menu"
+                    aria-haspopup="true"
+                    onClick={loginMenuClickHandler}
+                  >
+                    <Avatar>U</Avatar>
+                  </IconButton>
+
+                  <Menu
+                    id="avatar-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={loginMenuCloseHandler}
+                  >
+                    <MenuItem onClick={logoutClickHandler}>Logout</MenuItem>
+                  </Menu>
+                </>
+              ) : (
+                <NextLink href="/login" passHref>
+                  <IconButton>
+                    <Person />
+                  </IconButton>
+                </NextLink>
+              )}
             </div>
           </Toolbar>
         </AppBar>

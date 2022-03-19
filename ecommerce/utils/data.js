@@ -1,4 +1,4 @@
-import bcryptjs from 'bcryptjs';
+import bcrypt from 'bcryptjs';
 
 const data = require('./data.json');
 
@@ -11,7 +11,7 @@ const users = [
       '163 Trinh Dinh Trong street, Phu Trung ward, Tan Phu district, Ho Chi Minh city',
     phoneNumber: '0789130657',
     email: 'admin@gmail.com',
-    password: bcryptjs.hashSync('159753'),
+    password: bcrypt.hashSync('159753'),
     isAdmin: true,
   },
   {
@@ -21,7 +21,7 @@ const users = [
     address: '46 Dong Da, Ha Noi',
     phoneNumber: '0791647283',
     email: 'user1@gmail.com',
-    password: bcryptjs.hashSync('123456'),
+    password: bcrypt.hashSync('123456'),
     isAdmin: false,
   },
 ];

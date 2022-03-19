@@ -27,12 +27,12 @@ export default function Home(props) {
       <Typography>Products</Typography>
 
       {/* Filter section */}
-      <Grid container md={3}>
+      <Grid container>
         <Typography>Filter section</Typography>
       </Grid>
 
       {/* Display section */}
-      <Grid container spacing={1} md={9}>
+      <Grid container spacing={1}>
         {products.map((product) => (
           <Grid item xs={6} md={4} xl={3} key={product.name}>
             <Card sx={{ minHeight: 400 }}>
