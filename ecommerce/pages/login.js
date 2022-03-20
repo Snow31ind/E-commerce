@@ -27,7 +27,7 @@ export default function Login() {
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const router = useRouter();
-  const { redicrect } = router.query;
+  const { redirect } = router.query;
 
   const { state, dispatch } = useContext(Store);
   const { user } = state;

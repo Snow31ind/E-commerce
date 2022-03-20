@@ -12,11 +12,11 @@ function MyApp({ Component, pageProps }) {
         horizontal: 'center',
       }}
     >
-      <StoreProvider>
-        <LocalizationProvider dateAdapter={DateAdapter}>
+      <LocalizationProvider dateAdapter={DateAdapter}>
+        <StoreProvider>
           <Component {...pageProps} />
-        </LocalizationProvider>
-      </StoreProvider>
+        </StoreProvider>
+      </LocalizationProvider>
     </SnackbarProvider>
   );
 }

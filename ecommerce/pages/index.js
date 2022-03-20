@@ -10,28 +10,43 @@ import {
 } from '@mui/material';
 import Layout from '../layouts/Layout';
 import NextLink from 'next/link';
-import { slugify } from '../utils/helpers';
+import { capitalize, slugify } from '../utils/helpers';
 import db from '../utils/db';
 import Product from '../models/Product';
+import { useContext, useState } from 'react';
+import { Store } from '../utils/Store';
+import { useSnackbar } from 'notistack';
+import ProductItem from '../components/ProductItem';
 
 export default function Home(props) {
-  // const { products } = data;
   const { products } = props;
+  const { dispatch } = useContext(Store);
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
+  const addToCartHandler = (product) => {
+    dispatch({ type: 'ADD_TO_CART', payload: product._id });
+
+    const msg = `${capitalize(product.category)} ${product.name} added to cart`;
+    enqueueSnackbar(msg, { variant: 'success' });
+    closeSnackbar();
+  };
 
   return (
     <Layout display="flex">
-      <Typography>Products</Typography>
-
       {/* Filter section */}
-      <Grid container>
+      {/* <Grid container>
         <Typography>Filter section</Typography>
-      </Grid>
+      </Grid> */}
 
       {/* Display section */}
       <Grid container spacing={1}>
         {products.map((product) => (
           <Grid item xs={6} md={4} xl={3} key={product.name}>
-            <Card sx={{ minHeight: 400 }}>
+            <ProductItem
+              product={product}
+              addToCartHandler={addToCartHandler}
+            />
+            {/* <Card sx={{ minHeight: 400 }}>
               <NextLink href={`/products/${slugify(product.name)}`} passHref>
                 <CardActionArea>
                   <CardMedia
@@ -49,9 +64,15 @@ export default function Home(props) {
               </CardContent>
 
               <CardActions>
-                <Button variant="contained">Add to cart</Button>
+                <Button
+                  variant="contained"
+                  onClick={() => addToCartHandler(product)}
+                  fullWidth
+                >
+                  Add to cart
+                </Button>
               </CardActions>
-            </Card>
+            </Card> */}
           </Grid>
         ))}
       </Grid>

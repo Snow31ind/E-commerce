@@ -11,7 +11,7 @@ handler.post(async (req, res) => {
   console.log(email, password);
   await db.connect();
 
-  const user = await User.findOne({ email: email });
+  const user = await User.findOne({ email: email }).lean();
 
   await db.disconnect();
 

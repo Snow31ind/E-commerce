@@ -40,12 +40,17 @@ async function disconnect() {
 }
 
 function convertMongoDocToObject(doc) {
-  return {
-    ...doc,
-    _id: doc._id.toString(),
-    createdAt: doc.createdAt.toString(),
-    updatedAt: doc.updatedAt.toString(),
-  };
+  doc._id = doc._id.toString();
+  doc.createdAt = doc.createdAt.toString();
+  doc.updatedAt = doc.updatedAt.toString();
+
+  return doc;
+  // return {
+  //   ...doc,
+  //   _id: doc._id.toString(),
+  //   createdAt: doc.createdAt.toString(),
+  //   updatedAt: doc.updatedAt.toString(),
+  // };
 }
 
 const db = {

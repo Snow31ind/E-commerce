@@ -18,7 +18,7 @@ const isAuth = async (req, res, next) => {
   const { authorization } = req.headers;
 
   if (authorization) {
-    const token = authorization.slide(7, authorization.length);
+    const token = authorization.slice(7, authorization.length);
 
     jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
       if (err) {
@@ -33,4 +33,4 @@ const isAuth = async (req, res, next) => {
   }
 };
 
-export { signToken };
+export { signToken, isAuth };

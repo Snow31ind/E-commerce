@@ -1,8 +1,14 @@
 import React from 'react';
+import db from './db';
 
 const getError = (err) =>
-  err.response && err.response.data && err.response.message
+  err.response && err.response.data && err.response.data.message
     ? err.response.data.message
     : err.message;
 
-export { getError };
+const onError = async (err, req, res, next) => {
+  await db.disconnect();
+  res.status(500).send({ message: err.toString() });
+};
+
+export { getError, onError };
