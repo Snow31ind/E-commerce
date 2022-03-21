@@ -1,5 +1,5 @@
-import React from 'react';
-import jwt from 'jsonwebtoken';
+import React from "react";
+import jwt from "jsonwebtoken";
 
 const signToken = (user) => {
   return jwt.sign(
@@ -10,7 +10,7 @@ const signToken = (user) => {
       isAdmin: user.isAdmin,
     },
     process.env.JWT_SECRET,
-    { expiresIn: '3d' }
+    { expiresIn: "3d" }
   );
 };
 
@@ -22,15 +22,23 @@ const isAuth = async (req, res, next) => {
 
     jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
       if (err) {
-        res.status(401).send({ message: 'User token is invalid' });
+        res.status(401).send({ message: "User token is invalid" });
       } else {
         req.user = decoded;
         next();
       }
     });
   } else {
-    res.status(403).send({ message: 'User token is not supplied' });
+    res.status(403).send({ message: "User token is not supplied" });
   }
 };
 
-export { signToken, isAuth };
+const isAdmin = async (req, res, next) => {
+  if (req.user.isAdmin) {
+    next();
+  } else {
+    res.status(401).send({ message: "User is not admin" });
+  }
+};
+
+export { signToken, isAuth, isAdmin };

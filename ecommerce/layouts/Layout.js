@@ -16,11 +16,11 @@ import {
   Toolbar,
   Typography,
   useScrollTrigger,
-} from '@mui/material';
-import Head from 'next/head';
-import React, { useContext, useState } from 'react';
-import NextLink from 'next/link';
-import { useStyles } from '../utils/styles';
+} from "@mui/material";
+import Head from "next/head";
+import React, { useContext, useState } from "react";
+import NextLink from "next/link";
+import { useStyles } from "../utils/styles";
 import {
   Close,
   ExitToAppOutlined,
@@ -29,10 +29,10 @@ import {
   Person,
   Search,
   ShoppingCart,
-} from '@mui/icons-material';
-import { Store } from '../utils/Store';
-import { useRouter } from 'next/router';
-import { useSnackbar } from 'notistack';
+} from "@mui/icons-material";
+import { Store } from "../utils/Store";
+import { useRouter } from "next/router";
+import { useSnackbar } from "notistack";
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -48,68 +48,68 @@ function HideOnScroll(props) {
   );
 }
 
-const SearchBox = styled('div')(({ theme, open }) => ({
-  position: 'relative',
-  display: 'inline-flex',
+const SearchBox = styled("div")(({ theme, open }) => ({
+  position: "relative",
+  display: "inline-flex",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
+  "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(1),
-    width: 'auto',
+    width: "auto",
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 }));
 
 const ExitIconWrapper = styled(IconButton)(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: '100%',
+  height: "100%",
   // position: 'relative',
   // pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  alignSelf: 'center',
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  alignSelf: "center",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'tomato',
+  color: "tomato",
   // display: 'none',
-  '& .MuiInputBase-input': {
+  "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     // marginRight: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '50%',
-    [theme.breakpoints.up('sm')]: {
-      width: '15ch',
-      '&:focus': {
-        width: '45ch',
+    transition: theme.transitions.create("width"),
+    width: "50%",
+    [theme.breakpoints.up("sm")]: {
+      width: "15ch",
+      "&:focus": {
+        width: "45ch",
       },
     },
   },
 }));
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
+const DrawerHeader = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
+  justifyContent: "flex-end",
 }));
 
 export default function Layout({ title, description, children, ...props }) {
@@ -124,7 +124,7 @@ export default function Layout({ title, description, children, ...props }) {
   const theme = createTheme({
     palette: {
       secondary: {
-        main: '#208080',
+        main: "#208080",
       },
     },
     typography: {},
@@ -132,7 +132,7 @@ export default function Layout({ title, description, children, ...props }) {
 
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const loginMenuClickHandler = (e) => {
     setAnchorEl(e.currentTarget);
@@ -151,10 +151,10 @@ export default function Layout({ title, description, children, ...props }) {
 
     setAnchorEl(null);
 
-    dispatch({ type: 'USER_LOGOUT' });
-    const msg = 'Logging out succesfully';
-    enqueueSnackbar(msg, { variant: 'success' });
-    router.push('/login');
+    dispatch({ type: "USER_LOGOUT" });
+    const msg = "Logging out succesfully";
+    enqueueSnackbar(msg, { variant: "success" });
+    router.push("/login");
   };
 
   const submitHandler = (e) => {
@@ -169,7 +169,7 @@ export default function Layout({ title, description, children, ...props }) {
   return (
     <div>
       <Head>
-        <title>{title ? `${title}` : 'TechNerds'}</title>
+        <title>{title ? `${title}` : "TechNerds"}</title>
         {description && <meta name="description" content={description}></meta>}
       </Head>
 
@@ -208,7 +208,7 @@ export default function Layout({ title, description, children, ...props }) {
                   </SearchIconWrapper>
                   <StyledInputBase placeholder="Search..." />
                 </SearchBox>
-                <IconButton onClick={() => router.push('/cart')}>
+                <IconButton onClick={() => router.push("/cart")}>
                   {state.cart.cartItemIds.length > 0 ? (
                     <Badge
                       badgeContent={[...new Set(state.cart.cartItemIds)].length}
@@ -243,17 +243,26 @@ export default function Layout({ title, description, children, ...props }) {
                       onClose={loginMenuCloseHandler}
                     >
                       <MenuItem
-                        onClick={(e) => loginMenuCloseHandler(e, '/profile')}
+                        onClick={(e) => loginMenuCloseHandler(e, "/profile")}
                       >
                         Profile
                       </MenuItem>
                       <MenuItem
                         onClick={(e) =>
-                          loginMenuCloseHandler(e, '/order-history')
+                          loginMenuCloseHandler(e, "/order-history")
                         }
                       >
                         Order history
                       </MenuItem>
+                      {user.isAdmin && (
+                        <MenuItem
+                          onClick={(e) =>
+                            loginMenuCloseHandler(e, "/admin/dashboard")
+                          }
+                        >
+                          Admin Dashboard
+                        </MenuItem>
+                      )}
                       <MenuItem onClick={logoutClickHandler}>Logout</MenuItem>
                     </Menu>
                   </>
