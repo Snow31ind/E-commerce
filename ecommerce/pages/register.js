@@ -11,6 +11,9 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Typography,
+  CircularProgress,
+  Box,
 } from '@mui/material';
 import { useSnackbar } from 'notistack';
 import React, { useContext, useState } from 'react';
@@ -23,7 +26,7 @@ import { Store } from '../utils/Store';
 import NextLink from 'next/link';
 import { DesktopDatePicker } from '@mui/lab';
 import { useStyles } from '../utils/styles';
-
+import NextImage from 'next/image';
 export default function Regiser() {
   const {
     handleSubmit,
@@ -40,6 +43,7 @@ export default function Regiser() {
 
   const [birth, setBirth] = useState(new Date());
   const [gender, setGender] = useState('None');
+  const [loading, setLoading] = useState(false);
 
   const submitHandler = async ({
     name,
@@ -57,6 +61,7 @@ export default function Regiser() {
       return;
     }
 
+    setLoading(true);
     try {
       const { data } = await axios.post('/api/users/register', {
         name,
@@ -72,8 +77,12 @@ export default function Regiser() {
       enqueueSnackbar(msg, { variant: 'success' });
 
       dispatch({ type: 'USER_LOGIN', payload: data });
+      setLoading(false);
+
       router.push('/login');
     } catch (err) {
+      setLoading(false);
+
       const errMsg = err.response.data
         ? err.response.data.message
         : err.message;
@@ -82,9 +91,25 @@ export default function Regiser() {
   };
 
   return (
-    <Layout title="TechNerds Login">
-      <Card>
-        <CardHeader component="div" title="Register" />
+    <Layout
+      title="TechNerds Login"
+      alignItems="center"
+      display="flex"
+      flexDirection="column"
+      pt={10}
+    >
+      <Card sx={{ width: 800 }}>
+        <CardContent className={classes.loginHeader}>
+          <NextImage
+            src={'/logo.png'}
+            width={140}
+            height={120}
+            // variant="rounded"
+            // sx={{ height: 150, width: 150 }}
+          />
+          <Typography className={classes.loginText}>Register</Typography>
+        </CardContent>
+
         <CardContent>
           <form onSubmit={handleSubmit(submitHandler)}>
             <List>
@@ -99,10 +124,11 @@ export default function Regiser() {
                   }}
                   render={({ field }) => (
                     <TextField
+                      autoFocus
                       variant="outlined"
                       id="name"
                       fullWidth
-                      label="Name"
+                      label="Name *"
                       inputProps={{ type: 'text' }}
                       error={Boolean(errors.name)}
                       helperText={
@@ -160,7 +186,7 @@ export default function Regiser() {
                       variant="outlined"
                       id="phoneNumber"
                       fullWidth
-                      label="Phone number"
+                      label="Phone number *"
                       inputProps={{ type: 'number' }}
                       error={Boolean(errors.phoneNumber)}
                       helperText={
@@ -190,7 +216,7 @@ export default function Regiser() {
                       variant="outlined"
                       id="address"
                       fullWidth
-                      label="Address"
+                      label="Address *"
                       inputProps={{ type: 'text' }}
                       error={Boolean(errors.address)}
                       helperText={
@@ -220,12 +246,12 @@ export default function Regiser() {
                       variant="outlined"
                       id="email"
                       fullWidth
-                      label="Email"
+                      label="Email *"
                       inputProps={{ type: 'email' }}
                       error={Boolean(errors.email)}
                       helperText={
-                        errors.mail
-                          ? errors.mail.type === 'pattern'
+                        errors.email
+                          ? errors.email.type === 'pattern'
                             ? 'Email is invalid'
                             : 'Email is required'
                           : ''
@@ -250,9 +276,9 @@ export default function Regiser() {
                       variant="outlined"
                       id="password"
                       fullWidth
-                      label="Password"
+                      label="Password *"
                       inputProps={{ type: 'password' }}
-                      error={Boolean(errors.passwod)}
+                      error={Boolean(errors.password)}
                       helperText={
                         errors.password
                           ? errors.password.type === 'minLength'
@@ -280,9 +306,9 @@ export default function Regiser() {
                       variant="outlined"
                       id="confirmPassword"
                       fullWidth
-                      label="Confirm Password"
+                      label="Confirm Password *"
                       inputProps={{ type: 'password' }}
-                      error={Boolean(errors.passwod)}
+                      error={Boolean(errors.confirmPassword)}
                       helperText={
                         errors.confirmPassword
                           ? errors.confirmPassword.type === 'minLength'
@@ -297,8 +323,14 @@ export default function Regiser() {
               </ListItem>
 
               <ListItem>
-                <Button type="submit" variant="contained" fullWidth>
-                  Register
+                <Button
+                  type="submit"
+                  variant={loading ? 'text' : 'contained'}
+                  fullWidth
+                  color="primary"
+                  disabled={loading}
+                >
+                  {loading ? <CircularProgress /> : `Register`}
                 </Button>
               </ListItem>
 

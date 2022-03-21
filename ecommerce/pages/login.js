@@ -7,9 +7,17 @@ import {
   ListItem,
   TextField,
   Link,
+  Typography,
+  Avatar,
+  Checkbox,
+  FormGroup,
+  FormControlLabel,
+  Stack,
+  Box,
+  ListItemText,
 } from '@mui/material';
 import { useSnackbar } from 'notistack';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import Layout from '../layouts/Layout';
 import axios from 'axios';
@@ -17,7 +25,8 @@ import { useRouter } from 'next/router';
 import { getError } from '../utils/errors';
 import { Store } from '../utils/Store';
 import NextLink from 'next/link';
-
+import { useStyles } from '../utils/styles';
+import NextImage from 'next/image';
 export default function Login() {
   const {
     handleSubmit,
@@ -31,6 +40,7 @@ export default function Login() {
 
   const { state, dispatch } = useContext(Store);
   const { user } = state;
+  const classes = useStyles();
 
   useEffect(() => {
     if (user) {
@@ -58,9 +68,26 @@ export default function Login() {
   };
 
   return (
-    <Layout title="TechNerds Login">
-      <Card>
-        <CardHeader component="div" title="Login" />
+    <Layout
+      title="Login"
+      // justifyContent="center"
+      alignItems="center"
+      display="flex"
+      flexDirection="column"
+      pt={10}
+    >
+      <Card sx={{ width: 500 }}>
+        <CardContent className={classes.loginHeader}>
+          <NextImage
+            src={'/logo.png'}
+            width={140}
+            height={120}
+            // variant="rounded"
+            // sx={{ height: 150, width: 150 }}
+          />
+          <Typography className={classes.loginText}>Sign In</Typography>
+        </CardContent>
+
         <CardContent>
           <form onSubmit={handleSubmit(submitHandler)}>
             <List>
@@ -75,15 +102,16 @@ export default function Login() {
                   }}
                   render={({ field }) => (
                     <TextField
+                      autoFocus
                       variant="outlined"
                       id="email"
                       fullWidth
-                      label="Email"
+                      label="Email *"
                       inputProps={{ type: 'email' }}
                       error={Boolean(errors.email)}
                       helperText={
-                        errors.mail
-                          ? errors.mail.type === 'pattern'
+                        errors.email
+                          ? errors.email.type === 'pattern'
                             ? 'Email is invalid'
                             : 'Email is required'
                           : ''
@@ -108,7 +136,7 @@ export default function Login() {
                       variant="outlined"
                       id="password"
                       fullWidth
-                      label="Password"
+                      label="Password *"
                       inputProps={{ type: 'password' }}
                       error={Boolean(errors.password)}
                       helperText={
@@ -125,16 +153,28 @@ export default function Login() {
               </ListItem>
 
               <ListItem>
+                <FormGroup>
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label="Remember me"
+                  />
+                </FormGroup>
+              </ListItem>
+
+              <ListItem>
                 <Button type="submit" variant="contained" fullWidth>
                   Login
                 </Button>
               </ListItem>
 
               <ListItem>
-                {"Don't have an account?"}
-                <NextLink href="/register" passHref>
-                  <Link>Register</Link>
-                </NextLink>
+                <ListItemText>
+                  {"Don't have an account?"}
+
+                  <NextLink href="/register" passHref>
+                    <Link>Sign Up</Link>
+                  </NextLink>
+                </ListItemText>
               </ListItem>
             </List>
           </form>

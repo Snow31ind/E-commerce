@@ -17,7 +17,6 @@ import { useContext, useState } from 'react';
 import { Store } from '../utils/Store';
 import { useSnackbar } from 'notistack';
 import ProductItem from '../components/ProductItem';
-import Carousel from 'react-material-ui-carousel';
 
 const brands = [];
 
