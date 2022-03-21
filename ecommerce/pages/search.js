@@ -22,7 +22,7 @@ import { CancelOutlined } from '@mui/icons-material';
 import ProductItem from '../components/ProductItem';
 import NextLink from 'next/link';
 
-const PAGE_SIZE = 3;
+const PAGE_SIZE = 6;
 
 const prices = [
   {

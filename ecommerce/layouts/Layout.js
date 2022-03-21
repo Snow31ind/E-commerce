@@ -3,36 +3,53 @@ import {
   AppBar,
   Avatar,
   Badge,
+  Button,
+  Collapse,
   Container,
   createTheme,
   IconButton,
   InputBase,
   Link,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
   Menu,
   MenuItem,
   Slide,
   styled,
+  SwipeableDrawer,
   ThemeProvider,
   Toolbar,
   Typography,
   useScrollTrigger,
 } from '@mui/material';
 import Head from 'next/head';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import NextLink from 'next/link';
 import { useStyles } from '../utils/styles';
 import {
   Close,
   ExitToAppOutlined,
+  ExpandLess,
+  ExpandMore,
   Favorite,
+  Laptop,
   LocalShipping,
   Person,
   Search,
   ShoppingCart,
+  ViewList,
 } from '@mui/icons-material';
 import { Store } from '../utils/Store';
 import { useRouter } from 'next/router';
 import { useSnackbar } from 'notistack';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Box } from '@mui/system';
+import axios from 'axios';
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -64,7 +81,7 @@ const SearchBox = styled('div')(({ theme, open }) => ({
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled(IconButton)(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: '100%',
   position: 'absolute',
@@ -113,6 +130,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function Layout({ title, description, children, ...props }) {
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const [brands, setBrands] = useState([]);
   const [searching, setSearching] = useState(false);
   const classes = useStyles();
   const { state, dispatch } = useContext(Store);
@@ -166,6 +185,26 @@ export default function Layout({ title, description, children, ...props }) {
     setQuery(e.target.value);
   };
 
+  const toggleDrawerHandler = (state) => {
+    setOpenDrawer(state);
+  };
+
+  useEffect(() => {
+    const fetchDistinctBrands = async () => {
+      const { data } = await axios.get('/api/products/brands');
+
+      setBrands(data);
+    };
+
+    fetchDistinctBrands();
+  }, []);
+
+  const [openLaptop, setOpenLaptop] = useState(true);
+
+  const openLaptopHandler = () => {
+    setOpenLaptop(!openLaptop);
+  };
+
   return (
     <div>
       <Head>
@@ -177,6 +216,10 @@ export default function Layout({ title, description, children, ...props }) {
         <HideOnScroll>
           <AppBar className={classes.navbar}>
             <Toolbar sx={{ pl: 50, pr: 50 }}>
+              <IconButton onClick={() => toggleDrawerHandler(true)}>
+                <MenuIcon />
+              </IconButton>
+
               <NextLink href="/" passHref>
                 <Link>
                   <Typography color="black">TechNerds</Typography>
@@ -203,11 +246,18 @@ export default function Layout({ title, description, children, ...props }) {
               <div className={classes.grow}></div>
               <div>
                 <SearchBox open={searching}>
-                  <SearchIconWrapper>
-                    <Search />
-                  </SearchIconWrapper>
-                  <StyledInputBase placeholder="Search..." />
+                  <form onSubmit={submitHandler}>
+                    <SearchIconWrapper>
+                      <Search type="submit" aria-label="search" />
+                    </SearchIconWrapper>
+                    <StyledInputBase
+                      name="query"
+                      onChange={queryChangeHandler}
+                      placeholder="Search"
+                    />
+                  </form>
                 </SearchBox>
+
                 <IconButton onClick={() => router.push('/cart')}>
                   {state.cart.cartItemIds.length > 0 ? (
                     <Badge
@@ -269,6 +319,54 @@ export default function Layout({ title, description, children, ...props }) {
           </AppBar>
         </HideOnScroll>
       </ThemeProvider>
+
+      {/* Drawer */}
+      <SwipeableDrawer
+        anchor="left"
+        open={openDrawer}
+        onClose={() => toggleDrawerHandler(false)}
+        // onOpen={() => toggleDrawerHandler(true)}
+      >
+        <Box
+          sx={{ width: 300 }}
+          role="presentation"
+          // onClick={() => toggleDrawerHandler(false)}
+          onKeyDown={() => toggleDrawerHandler(false)}
+        >
+          {brands.length > 0 && (
+            <List
+              aria-labelledby="nested-list-subheader"
+              subheader={<ListSubheader>Categories</ListSubheader>}
+            >
+              <ListItemButton onClick={openLaptopHandler}>
+                <ListItemIcon>
+                  <Laptop />
+                </ListItemIcon>
+                <ListItemText primary="Laptop" />
+                {openLaptop ? <ExpandLess /> : <ExpandMore />}
+              </ListItemButton>
+              <Collapse in={openLaptop} timeout="auto">
+                <List disablePadding component="div">
+                  {brands.map((brand) => (
+                    <NextLink
+                      href={`/search?query=${brand}`}
+                      passHref
+                      key={brand}
+                    >
+                      <ListItemButton>
+                        <ListItemAvatar>
+                          <Avatar src={`/brands/${brand}.png`} />
+                        </ListItemAvatar>
+                        <ListItemText primary={brand}></ListItemText>
+                      </ListItemButton>
+                    </NextLink>
+                  ))}
+                </List>
+              </Collapse>
+            </List>
+          )}
+        </Box>
+      </SwipeableDrawer>
 
       <DrawerHeader />
       <Container sx={{ ...props }}>{children}</Container>

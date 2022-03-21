@@ -96,13 +96,7 @@ export default function ProductItem({ product, addToCartHandler }) {
         </CardActionArea>
       </NextLink>
 
-      <CardContent
-        sx={
-          {
-            // backgroundColor: 'tomato',
-          }
-        }
-      >
+      <CardContent>
         <Typography className={classes.productName}>{product.name}</Typography>
         <Typography className={classes.productPrice}>
           {formatPriceToVND(product.price)}

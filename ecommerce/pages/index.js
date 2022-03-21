@@ -17,6 +17,9 @@ import { useContext, useState } from 'react';
 import { Store } from '../utils/Store';
 import { useSnackbar } from 'notistack';
 import ProductItem from '../components/ProductItem';
+import Carousel from 'react-material-ui-carousel';
+
+const brands = [];
 
 export default function Home(props) {
   const { products } = props;
@@ -32,47 +35,23 @@ export default function Home(props) {
   };
 
   return (
-    <Layout display="flex">
+    <Layout>
       {/* Filter section */}
       {/* <Grid container>
         <Typography>Filter section</Typography>
       </Grid> */}
 
       {/* Display section */}
-      <Grid container spacing={1}>
+
+      <Grid container></Grid>
+
+      <Grid container spacing={3}>
         {products.map((product) => (
           <Grid item xs={6} md={4} xl={3} key={product.name}>
             <ProductItem
               product={product}
               addToCartHandler={addToCartHandler}
             />
-            {/* <Card sx={{ minHeight: 400 }}>
-              <NextLink href={`/products/${slugify(product.name)}`} passHref>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    image={product.images[0]}
-                    alt={product.name}
-                  />
-                </CardActionArea>
-              </NextLink>
-
-              <CardContent>
-                <Typography>{product.name}</Typography>
-                <Typography>{product.oldPrice}</Typography>
-                <Typography>{product.price}</Typography>
-              </CardContent>
-
-              <CardActions>
-                <Button
-                  variant="contained"
-                  onClick={() => addToCartHandler(product)}
-                  fullWidth
-                >
-                  Add to cart
-                </Button>
-              </CardActions>
-            </Card> */}
           </Grid>
         ))}
       </Grid>
