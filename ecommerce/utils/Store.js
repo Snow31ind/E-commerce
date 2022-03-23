@@ -37,7 +37,20 @@ function reducer(state, action) {
     case 'ADD_TO_CART': {
       const newItemId = action.payload;
 
-      const cartItemIds = state.cart.cartItemIds.concat(newItemId);
+      const index = state.cart.cartItemIds.indexOf(newItemId);
+
+      const cartItemIds =
+        index > -1
+          ? state.cart.cartItemIds
+              .slice(0, index)
+              .concat(newItemId)
+              .concat(
+                state.cart.cartItemIds.slice(
+                  index,
+                  state.cart.cartItemIds.length
+                )
+              )
+          : state.cart.cartItemIds.concat(newItemId);
 
       Cookies.set('cartItemIds', JSON.stringify(cartItemIds));
 

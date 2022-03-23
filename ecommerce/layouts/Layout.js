@@ -246,7 +246,8 @@ export default function Layout({ title, description, children, ...props }) {
                 <IconButton onClick={() => router.push('/cart')}>
                   {state.cart.cartItemIds.length > 0 ? (
                     <Badge
-                      badgeContent={[...new Set(state.cart.cartItemIds)].length}
+                      // badgeContent={[...new Set(state.cart.cartItemIds)].length}
+                      badgeContent={state.cart.cartItemIds.length}
                       color="secondary"
                     >
                       <ShoppingCart />

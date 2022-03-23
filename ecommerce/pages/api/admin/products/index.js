@@ -19,6 +19,7 @@ handler.post(async (req, res) => {
     name: 'sample name',
     slug: 'sample-slug-' + Math.random(),
     price: 1940000,
+    images: ['/default_laptop.png'],
     category: 'sample category',
     brand: 'sample brand',
     countInStock: 0,

@@ -60,32 +60,28 @@ export default function ProductScreen(props) {
   const image = product.images[0];
   const { name, price, oldPrice, countInStock, numReviews } = product;
 
-  const processor = product.processorAndMemoryFeatures.processorBrand
+  const processor = product.processorAndMemory.processorName
     .concat(' ')
-    .concat(product.processorAndMemoryFeatures.processorName)
-    .concat(' ')
-    .concat(product.processorAndMemoryFeatures.processorVariant);
-  const ram = product.processorAndMemoryFeatures.ram;
+    .concat(product.processorAndMemory.processorVariant);
+  const ram = 'RAM '.concat(product.processorAndMemory.ram);
   const ssd =
-    product.processorAndMemoryFeatures.ssd === 'Yes'
-      ? 'SSD '.concat(product.processorAndMemoryFeatures.ssdCapacity)
+    product.processorAndMemory.ssd === 'Yes'
+      ? 'SSD '.concat(product.processorAndMemory.ssdCapacity)
       : null;
-  const graphicProcessor = product.processorAndMemoryFeatures.graphicProcessor;
+  const graphicProcessor = product.processorAndMemory.graphicProcessor;
   const weight = product.dimensions.weight.toString().concat(' kg');
-  const screen = product.displayAndAudioFeatures.screenSize
+  const screen = product.displayAndAudio.screenSize
     .substring(
-      product.displayAndAudioFeatures.screenSize.indexOf('(') + 1,
-      product.displayAndAudioFeatures.screenSize.lastIndexOf(')')
+      product.displayAndAudio.screenSize.indexOf('(') + 1,
+      product.displayAndAudio.screenSize.lastIndexOf(')')
     )
     .toLowerCase()
     .replace(' ', '')
     .replace('inch', '"');
-  const power = product.additionalFeatures.additionalFeatures
-    ? product.additionalFeatures.additionalFeatures
-    : product.general.powerSupply;
-  const ports = product.portAndSlotFeatures.hdmiPort
+
+  const ports = product.portAndSlot.hdmiPort
     .concat(' ')
-    .concat(product.portAndSlotFeatures.usbPort);
+    .concat(product.portAndSlot.usbPort);
 
   const containerRef = useRef(null);
 
@@ -259,7 +255,6 @@ export default function ProductScreen(props) {
                           }}
                         >
                           <Typography>Battery</Typography>
-                          <Typography>{power}</Typography>
                         </Box>
                       </Box>
                     </ListItem>
@@ -300,7 +295,7 @@ export default function ProductScreen(props) {
         </Grid>
 
         <Grid item container md={6} xs={12}>
-          <Grid item xs={12} position="fixed">
+          <Grid item xs={12} position="sticky">
             <Card>
               <CardContent>
                 <Typography className={classes.slug_productName}>

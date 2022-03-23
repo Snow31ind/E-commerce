@@ -37,13 +37,10 @@ export default function Home(props) {
     <Layout>
       {/* Filter section */}
       {/* <Grid container>
-        <Typography>Filter section</Typography>
-      </Grid> */}
-
+                    <Typography>Filter section</Typography>
+                  </Grid> */}
       {/* Display section */}
-
-      <Grid container></Grid>
-
+      <Grid container> </Grid>
       <Grid container spacing={3}>
         {products.map((product) => (
           <Grid item xs={6} md={4} xl={3} key={product.name}>

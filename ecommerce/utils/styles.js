@@ -157,6 +157,7 @@ const useStyles = makeStyles((theme) => ({
   card: {
     height: '100%',
     display: 'flex',
+    borderRadius: 15,
     // backgroundColor: 'yellowgreen',
     // paddingBottom: 0,
     // flex: 1,
@@ -205,6 +206,22 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  flex: {
+    display: 'flex',
+  },
+  cartItemName: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  cartItemDetail: {
+    fontSize: 14,
+    color: 'gray',
+  },
+  cartItemImage: {
+    display: 'flex',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
 }));
