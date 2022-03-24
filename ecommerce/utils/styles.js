@@ -1,63 +1,63 @@
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
     // backgroundColor: ',
-    '& a': {
-      color: '#ffffff',
+    "& a": {
+      color: "#ffffff",
       marginLeft: 10,
     },
   },
   brand: {
-    fontWeight: 'bold',
-    fontSize: '1.5rem',
+    fontWeight: "bold",
+    fontSize: "1.5rem",
   },
   grow: {
     flexGrow: 1,
   },
   main: {
-    minHeight: '80vh',
+    minHeight: "80vh",
   },
   footer: {
     marginTop: 10,
-    textAlign: 'center',
+    textAlign: "center",
   },
   section: {
     marginTop: 10,
     marginBottom: 10,
   },
   form: {
-    width: '100%',
+    width: "100%",
     maxWidth: 800,
-    margin: '0 auto',
+    margin: "0 auto",
   },
   navbarButton: {
-    color: '#ffffff',
-    textTransform: 'initial',
+    color: "#ffffff",
+    textTransform: "initial",
   },
   transparentBackgroud: {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
   },
   error: {
-    color: '#f04040',
+    color: "#f04040",
   },
   fullWidth: {
-    width: '100%',
+    width: "100%",
   },
   reviewForm: {
     maxWidth: 800,
-    width: '100%',
+    width: "100%",
   },
   reviewItem: {
-    marginRight: '1rem',
-    borderRight: '1px #808080 solid',
-    paddingRight: '1rem',
+    marginRight: "1rem",
+    borderRight: "1px #808080 solid",
+    paddingRight: "1rem",
   },
   toolbar: {
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
   },
   menuButton: { padding: 0 },
-  mt1: { marginTop: '1rem' },
+  mt1: { marginTop: "1rem" },
   // search
   // searchSection: {
   //   display: 'none',
@@ -66,65 +66,65 @@ const useStyles = makeStyles((theme) => ({
   //   },
   // },
   searchForm: {
-    border: '1px solid #ffffff',
-    backgroundColor: '#ffffff',
+    border: "1px solid #ffffff",
+    backgroundColor: "#ffffff",
     borderRadius: 5,
   },
   searchInput: {
     paddingLeft: 5,
-    color: '#000000',
-    '& ::placeholder': {
-      color: '#606060',
+    color: "#000000",
+    "& ::placeholder": {
+      color: "#606060",
     },
   },
   iconButton: {
-    backgroundColor: '#f8c040',
+    backgroundColor: "#f8c040",
     padding: 5,
-    borderRadius: '0 5px 5px 0',
-    '& span': {
-      color: '#000000',
+    borderRadius: "0 5px 5px 0",
+    "& span": {
+      color: "#000000",
     },
   },
   sort: {
     marginRight: 5,
   },
 
-  fullContainer: { height: '100vh' },
+  fullContainer: { height: "100vh" },
   mapInputBox: {
-    position: 'absolute',
-    display: 'flex',
+    position: "absolute",
+    display: "flex",
     left: 0,
     right: 0,
-    margin: '10px auto',
+    margin: "10px auto",
     width: 300,
     height: 40,
-    '& input': {
+    "& input": {
       width: 250,
     },
   },
   productName: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   productOldPrice: {
     fontSize: 11,
-    textDecoration: 'line-through',
-    display: 'inline',
+    textDecoration: "line-through",
+    display: "inline",
   },
   productPrice: {
     fontSize: 15,
   },
   productDiscount: {
     fontSize: 13,
-    display: 'inline',
+    display: "inline",
   },
   slug_productName: {
     fontSize: 30,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   slug_productOldPrice: {
     fontSize: 13,
-    textDecoration: 'line-through',
+    textDecoration: "line-through",
   },
   slug_productPrice: {
     fontSize: 24,
@@ -135,8 +135,8 @@ const useStyles = makeStyles((theme) => ({
   tag: {
     fontSize: 11,
     borderWidth: 1,
-    borderColor: 'gray',
-    borderStyle: 'solid',
+    borderColor: "gray",
+    borderStyle: "solid",
     borderRadius: 5,
     padding: 2,
     marginRight: 5,
@@ -146,83 +146,87 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 11,
   },
   flexBox: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   tagBox: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    display: "flex",
+    flexWrap: "wrap",
   },
   card: {
-    height: '100%',
-    display: 'flex',
+    height: "100%",
+    display: "flex",
     borderRadius: 15,
     // backgroundColor: 'yellowgreen',
     // paddingBottom: 0,
     // flex: 1,
   },
   cardContent: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     // backgroundColor: 'tomato',
     // flex: 1,
   },
   cardHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   cardImage: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     // flexDirection: 'column',
     // flex: 1,
   },
   cardBody: {
     // backgroundColor: 'darkgray',
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     flex: 1,
     marginTop: 10,
   },
   cardBottom: {
-    marginTop: 'auto',
+    marginTop: "auto",
   },
   cardBottomContent: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   logoText: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   loginText: {
     fontSize: 28,
   },
   loginHeader: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
   flex: {
-    display: 'flex',
+    display: "flex",
   },
   cartItemName: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   cartItemDetail: {
     fontSize: 14,
-    color: 'gray',
+    color: "gray",
   },
   cartItemImage: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+  cardAdmin: {
+    justifyContent: "center",
+    display: "flex",
   },
 }));
 

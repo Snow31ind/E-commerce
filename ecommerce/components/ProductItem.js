@@ -7,13 +7,13 @@ import {
   IconButton,
   Stack,
   Typography,
-} from '@mui/material';
-import React from 'react';
-import NextLink from 'next/link';
-import { getDiscountPercent, formatPriceToVND } from '../utils/helpers';
-import { Favorite, Redeem, Star } from '@mui/icons-material';
-import { useStyles } from '../utils/styles';
-import NextImage from 'next/image';
+} from "@mui/material";
+import React from "react";
+import NextLink from "next/link";
+import { getDiscountPercent, formatPriceToVND } from "../utils/helpers";
+import { Favorite, Redeem, Star } from "@mui/icons-material";
+import { useStyles } from "../utils/styles";
+import NextImage from "next/image";
 
 export default function ProductItem({ product, addToCartHandler }) {
   // const idx = product.images.findIndex((image) => checkImageExistence(image));
@@ -21,28 +21,28 @@ export default function ProductItem({ product, addToCartHandler }) {
   const classes = useStyles();
 
   const processor = product.processorAndMemory.processorName
-    .concat(' ')
+    .concat(" ")
     .concat(product.processorAndMemory.processorVariant);
 
-  const ram = 'RAM '.concat(product.processorAndMemory.ram).concat(' GB');
+  const ram = "RAM ".concat(product.processorAndMemory.ram).concat(" GB");
 
   const ssd =
-    product.processorAndMemory.ssd === 'Available'
-      ? 'SSD '.concat(product.processorAndMemory.ssdCapacity).concat(' GB')
+    product.processorAndMemory.ssd === "Available"
+      ? "SSD ".concat(product.processorAndMemory.ssdCapacity).concat(" GB")
       : null;
 
   const graphicProcessor = product.processorAndMemory.graphicProcessor;
 
-  const weight = product.dimensions.weight.toString().concat(' kg');
+  const weight = product.dimensions.weight.toString().concat(" kg");
 
   const screen = product.displayAndAudio.screenSize
     .substring(
-      product.displayAndAudio.screenSize.indexOf('(') + 1,
-      product.displayAndAudio.screenSize.lastIndexOf(')')
+      product.displayAndAudio.screenSize.indexOf("(") + 1,
+      product.displayAndAudio.screenSize.lastIndexOf(")")
     )
     .toLowerCase()
-    .replace(' ', '')
-    .replace('inch', '"');
+    .replace(" ", "")
+    .replace("inch", '"');
 
   return (
     <Card className={classes.card}>
@@ -71,20 +71,20 @@ export default function ProductItem({ product, addToCartHandler }) {
         <Box className={classes.cardBody}>
           <Box className={classes.cardInfo}>
             <Typography className={classes.productName}>
-              {' '}
-              {product.name}{' '}
-            </Typography>{' '}
+              {" "}
+              {product.name}{" "}
+            </Typography>{" "}
             <Typography className={classes.productPrice}>
-              {' '}
+              {" "}
               {formatPriceToVND(product.price)}
             </Typography>
             <Typography className={classes.productOldPrice}>
-              {' '}
-              {formatPriceToVND(product.oldPrice)} {`   `}{' '}
+              {" "}
+              {formatPriceToVND(product.oldPrice)} {`   `}{" "}
             </Typography>
             <Typography className={classes.productDiscount}>
-              {' '}
-              {`${getDiscountPercent(product.oldPrice, product.price)}%`}{' '}
+              {" "}
+              {`${getDiscountPercent(product.oldPrice, product.price)}%`}{" "}
             </Typography>
           </Box>
           {/* <Rating value={product.rating} readOnly /> */}
@@ -102,13 +102,13 @@ export default function ProductItem({ product, addToCartHandler }) {
               <Stack direction="row" alignItems="center">
                 <Redeem fontSize="small" />
                 <Typography className={classes.coupon}>
-                  Coupons {'&'}
+                  Coupons {"&"}
                   presents
                 </Typography>
               </Stack>
               <Stack direction="row" alignItems="center">
                 <Typography className={classes.coupon}>
-                  {' '}
+                  {" "}
                   {product.rating}
                 </Typography>
                 <Star />

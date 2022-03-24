@@ -17,13 +17,36 @@ handler.put(async (req, res) => {
   await db.connect();
   const product = await Product.findById(req.query.id);
   if (product) {
-    product.name = req.body.name;
-    product.slug = req.body.slug;
-    product.price = req.body.price;
-    product.category = req.body.category;
-    product.brand = req.body.brand;
-    product.countInStock = req.body.countInStock;
-    await product.save();
+    const updateProcessorAndMemory = await Product.findByIdAndUpdate(
+      req.query.id,
+      {
+        category: req.body.category,
+        name: req.body.name,
+        slug: req.body.slug,
+        images: req.body.images,
+        brand: req.body.brand,
+        oldPrice: req.body.oldPrice,
+        price: req.body.price,
+        countInStock: req.body.countInStock,
+        processorAndMemory: {
+          processorName: req.body.processorName,
+          processorVariant: req.body.processorVariant,
+          ram: req.body.ram,
+          ssd: req.body.ssd,
+          ssdCapacity: req.body.ssdCapacity,
+          graphicProcessor: req.body.graphicProcessor,
+        },
+        dimensions: {
+          weight: req.body.weight,
+        },
+        displayAndAudio: {
+          screenSize: req.body.screenSize,
+        },
+      },
+      { new: true }
+    );
+
+    await updateProcessorAndMemory.save();
     await db.disconnect();
     res.send({ message: "Product Updated Successfully!" });
   } else {

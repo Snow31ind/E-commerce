@@ -142,10 +142,10 @@ function AdminProducts() {
   };
 
   return (
-    <Layout title="Products">
+    <Layout title="Products Dashboard">
       <Grid container spacing={1}>
         <Grid item md={2} xs={12}>
-          <Paper>
+          <Paper className={classes.section}>
             <MenuList>
               <MenuItem>
                 <ListItemIcon>
@@ -245,7 +245,7 @@ function AdminProducts() {
                                 <Button size="small" variant="contained">
                                   Edit
                                 </Button>
-                              </NextLink>{" "}
+                              </NextLink>
                               <Button
                                 onClick={() => deleteHandler(product._id)}
                                 size="small"

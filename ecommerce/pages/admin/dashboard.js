@@ -15,38 +15,38 @@ import {
   CardContent,
   CardActions,
   ListItemButton,
-} from '@mui/material';
+} from "@mui/material";
 import {
   GroupOutlined,
   HomeOutlined,
   ProductionQuantityLimitsOutlined,
   SummarizeOutlined,
-} from '@mui/icons-material';
-import axios from 'axios';
-import React, { useContext, useReducer, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
-import NextLink from 'next/link';
-import Layout from '../../layouts/Layout';
-import { getError } from '../../utils/errors';
-import { Store } from '../../utils/Store';
-import { useStyles } from '../../utils/styles';
-import { Bar } from 'react-chartjs-2';
+} from "@mui/icons-material";
+import axios from "axios";
+import React, { useContext, useReducer, useEffect } from "react";
+import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
+import NextLink from "next/link";
+import Layout from "../../layouts/Layout";
+import { getError } from "../../utils/errors";
+import { Store } from "../../utils/Store";
+import { useStyles } from "../../utils/styles";
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
-} from 'chart.js';
+} from "chart.js";
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'FETCH_REQUEST':
-      return { ...state, loading: true, error: '' };
-    case 'FETCH_SUCCESS':
-      return { ...state, loading: false, error: '', summary: action.payload };
-    case 'FETCH_FAIL':
+    case "FETCH_REQUEST":
+      return { ...state, loading: true, error: "" };
+    case "FETCH_SUCCESS":
+      return { ...state, loading: false, error: "", summary: action.payload };
+    case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
     default:
       state;
@@ -61,22 +61,22 @@ function AdminDashboard() {
   const [{ summary, loading, error }, dispatch] = useReducer(reducer, {
     summary: { salesData: [] },
     loading: true,
-    error: '',
+    error: "",
   });
 
   useEffect(() => {
     if (!user) {
-      router.push('/login');
+      router.push("/login");
     }
     const fetchData = async () => {
       try {
-        dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get('/api/admin/summary', {
+        dispatch({ type: "FETCH_REQUEST" });
+        const { data } = await axios.get("/api/admin/summary", {
           headers: { authorization: `Bearer ${user.token}` },
         });
-        dispatch({ type: 'FETCH_SUCCESS', payload: data });
+        dispatch({ type: "FETCH_SUCCESS", payload: data });
       } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
+        dispatch({ type: "FETCH_FAIL", payload: getError(err) });
       }
     };
     fetchData();
@@ -86,7 +86,7 @@ function AdminDashboard() {
     <Layout title="Admin Dashboard">
       <Grid container spacing={1}>
         <Grid item md={3} xs={12}>
-          <Paper>
+          <Paper className={classes.section}>
             <MenuList>
               <MenuItem>
                 <ListItemIcon>
@@ -142,28 +142,43 @@ function AdminDashboard() {
                           <Typography variant="h2">
                             ${summary.ordersPrice}
                           </Typography>
-                          <Typography>Sales</Typography>
+                          <Typography className={classes.cardAdmin}>
+                            Sales
+                          </Typography>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className={classes.cardAdmin}>
                           <NextLink href="/admin/orders" passHref>
-                            <Button size="small" color="primary">
+                            <Button
+                              size="small"
+                              variant="outlined"
+                              color="primary"
+                            >
                               View sales
                             </Button>
                           </NextLink>
                         </CardActions>
                       </Card>
                     </Grid>
-                    <Grid item md={3}>
+                    <Grid item md={3} justify="center">
                       <Card raised>
                         <CardContent>
-                          <Typography variant="h2">
+                          <Typography
+                            variant="h2"
+                            className={classes.cardAdmin}
+                          >
                             {summary.ordersCount}
                           </Typography>
-                          <Typography>Orders</Typography>
+                          <Typography className={classes.cardAdmin}>
+                            Orders
+                          </Typography>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className={classes.cardAdmin}>
                           <NextLink href="/admin/orders" passHref>
-                            <Button size="small" color="primary">
+                            <Button
+                              size="small"
+                              variant="outlined"
+                              color="primary"
+                            >
                               View orders
                             </Button>
                           </NextLink>
@@ -173,14 +188,23 @@ function AdminDashboard() {
                     <Grid item md={3}>
                       <Card raised>
                         <CardContent>
-                          <Typography variant="h2">
+                          <Typography
+                            variant="h2"
+                            className={classes.cardAdmin}
+                          >
                             {summary.productsCount}
                           </Typography>
-                          <Typography>Products</Typography>
+                          <Typography className={classes.cardAdmin}>
+                            Products
+                          </Typography>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className={classes.cardAdmin}>
                           <NextLink href="/admin/products" passHref>
-                            <Button size="small" color="primary">
+                            <Button
+                              size="small"
+                              variant="outlined"
+                              color="primary"
+                            >
                               View products
                             </Button>
                           </NextLink>
@@ -190,14 +214,23 @@ function AdminDashboard() {
                     <Grid item md={3}>
                       <Card raised>
                         <CardContent>
-                          <Typography variant="h2">
+                          <Typography
+                            className={classes.cardAdmin}
+                            variant="h2"
+                          >
                             {summary.usersCount}
                           </Typography>
-                          <Typography>Users</Typography>
+                          <Typography className={classes.cardAdmin}>
+                            Users
+                          </Typography>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className={classes.cardAdmin}>
                           <NextLink href="/admin/users" passHref>
-                            <Button size="small" color="primary">
+                            <Button
+                              size="small"
+                              variant="outlined"
+                              color="primary"
+                            >
                               View users
                             </Button>
                           </NextLink>
@@ -216,14 +249,14 @@ function AdminDashboard() {
                     labels: summary.salesData.map((x) => x._id),
                     datasets: [
                       {
-                        label: 'Sales',
-                        backgroundColor: 'rgba(162, 222, 208, 1)',
+                        label: "Sales",
+                        backgroundColor: "rgba(162, 222, 208, 1)",
                         data: summary.salesData.map((x) => x.totalSales),
                       },
                     ],
                   }}
                   options={{
-                    legend: { display: true, position: 'right' },
+                    legend: { display: true, position: "right" },
                   }}
                 ></Bar>
               </ListItem>
@@ -235,5 +268,4 @@ function AdminDashboard() {
   );
 }
 
-// export default AdminDashboard;
 export default dynamic(() => Promise.resolve(AdminDashboard), { ssr: false });
