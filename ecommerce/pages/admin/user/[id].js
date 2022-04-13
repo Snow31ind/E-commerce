@@ -128,7 +128,7 @@ function UserEdit({ params }) {
     <Layout title={`Edit User ${userId}`}>
       <Grid container spacing={1}>
         <Grid item md={3} xs={12}>
-          <Paper>
+          <Paper className={classes.section}>
             <MenuList>
               <MenuItem>
                 <ListItemIcon>

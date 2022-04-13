@@ -62,13 +62,25 @@ function reducer(state, action) {
   }
 }
 
+const isSSD = [
+  {
+    value: "Available",
+    label: "AVAILABLE",
+  },
+  {
+    value: "Not available",
+    label: "NOT AVAILABLE",
+  },
+];
+
 function ProductEdit({ params }) {
   const productId = params.id;
   const { state } = useContext(Store);
-  const [{ loading, error, loadingUpdate }, dispatch] = useReducer(reducer, {
-    loading: true,
-    error: "",
-  });
+  const [{ loading, error, loadingUpdate, loadingUpload }, dispatch] =
+    useReducer(reducer, {
+      loading: true,
+      error: "",
+    });
   const {
     handleSubmit,
     control,
@@ -91,12 +103,28 @@ function ProductEdit({ params }) {
             headers: { authorization: `Bearer ${user.token}` },
           });
           dispatch({ type: "FETCH_SUCCESS" });
+          setValue("category", data.category);
           setValue("name", data.name);
           setValue("slug", data.slug);
-          setValue("price", data.price);
-          setValue("category", data.category);
+          setValue("images", data.images);
           setValue("brand", data.brand);
+          setValue("oldPrice", data.oldPrice);
+          setValue("price", data.price);
           setValue("countInStock", data.countInStock);
+          setValue("processorName", data.processorAndMemory.processorName);
+          setValue(
+            "processorVariant",
+            data.processorAndMemory.processorVariant
+          );
+          setValue("ram", data.processorAndMemory.ram);
+          setValue("ssd", data.processorAndMemory.ssd);
+          setValue("ssdCapacity", data.processorAndMemory.ssdCapacity);
+          setValue(
+            "graphicProcessor",
+            data.processorAndMemory.graphicProcessor
+          );
+          setValue("weight", data.dimensions.weight);
+          setValue("screenSize", data.displayAndAudio.screenSize);
         } catch (err) {
           dispatch({ type: "FETCH_FAIL", payload: getError(err) });
         }
@@ -105,13 +133,44 @@ function ProductEdit({ params }) {
     }
   }, []);
 
+  const uploadHandler = async (e, imageField = "images") => {
+    const file = e.target.files[0];
+    const bodyFormData = new FormData();
+    bodyFormData.append("file", file);
+    try {
+      dispatch({ type: "UPLOAD_REQUEST" });
+      const { data } = await axios.post("/api/admin/upload", bodyFormData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          authorization: `Bearer ${user.token}`,
+        },
+      });
+      dispatch({ type: "UPLOAD_SUCCESS" });
+      setValue(imageField, data.secure_url);
+      enqueueSnackbar("File uploaded successfully", { variant: "success" });
+    } catch (err) {
+      dispatch({ type: "UPLOAD_FAIL", payload: getError(err) });
+      enqueueSnackbar(getError(err), { variant: "error" });
+    }
+  };
+
   const submitHandler = async ({
+    category,
     name,
     slug,
-    price,
-    category,
+    images,
     brand,
+    oldPrice,
+    price,
     countInStock,
+    processorName,
+    processorVariant,
+    ram,
+    ssd,
+    ssdCapacity,
+    graphicProcessor,
+    weight,
+    screenSize,
   }) => {
     closeSnackbar();
     try {
@@ -119,12 +178,22 @@ function ProductEdit({ params }) {
       await axios.put(
         `/api/admin/products/${productId}`,
         {
+          category,
           name,
           slug,
-          price,
-          category,
+          images,
           brand,
+          oldPrice,
+          price,
           countInStock,
+          processorName,
+          processorVariant,
+          ram,
+          ssd,
+          ssdCapacity,
+          graphicProcessor,
+          weight,
+          screenSize,
         },
         { headers: { authorization: `Bearer ${user.token}` } }
       );
@@ -201,6 +270,29 @@ function ProductEdit({ params }) {
                   <List>
                     <ListItem>
                       <Controller
+                        name="category"
+                        control={control}
+                        defaultValue=""
+                        rules={{
+                          required: true,
+                        }}
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="category"
+                            label="Category"
+                            error={Boolean(errors.category)}
+                            helperText={
+                              errors.category ? "Category is required" : ""
+                            }
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Controller
                         name="name"
                         control={control}
                         defaultValue=""
@@ -243,6 +335,76 @@ function ProductEdit({ params }) {
                     </ListItem>
                     <ListItem>
                       <Controller
+                        name="images"
+                        control={control}
+                        defaultValue=""
+                        rules={{
+                          required: true,
+                        }}
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="images"
+                            label="Image"
+                            error={Boolean(errors.image)}
+                            helperText={errors.image ? "Image is required" : ""}
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Button variant="contained" component="label">
+                        Upload File
+                        <input type="file" onChange={uploadHandler} hidden />
+                      </Button>
+                      {loadingUpload && <CircularProgress />}
+                    </ListItem>
+                    <ListItem>
+                      <Controller
+                        name="brand"
+                        control={control}
+                        defaultValue=""
+                        rules={{ required: true }}
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="brand"
+                            label="Brand"
+                            error={Boolean(errors.brand)}
+                            helperText={errors.brand ? "Brand is required" : ""}
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Controller
+                        name="oldPrice"
+                        control={control}
+                        defaultValue=""
+                        rules={{
+                          required: true,
+                        }}
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="oldPrice"
+                            label="Old Price"
+                            error={Boolean(errors.oldPrice)}
+                            helperText={
+                              errors.oldPrice ? "Old Price is required" : ""
+                            }
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Controller
                         name="price"
                         control={control}
                         defaultValue=""
@@ -257,50 +419,6 @@ function ProductEdit({ params }) {
                             label="Price"
                             error={Boolean(errors.price)}
                             helperText={errors.price ? "Price is required" : ""}
-                            {...field}
-                          ></TextField>
-                        )}
-                      ></Controller>
-                    </ListItem>
-                    <ListItem>
-                      <Controller
-                        name="category"
-                        control={control}
-                        defaultValue=""
-                        rules={{
-                          required: true,
-                        }}
-                        render={({ field }) => (
-                          <TextField
-                            variant="outlined"
-                            fullWidth
-                            id="category"
-                            label="Category"
-                            error={Boolean(errors.category)}
-                            helperText={
-                              errors.category ? "Category is required" : ""
-                            }
-                            {...field}
-                          ></TextField>
-                        )}
-                      ></Controller>
-                    </ListItem>
-                    <ListItem>
-                      <Controller
-                        name="brand"
-                        control={control}
-                        defaultValue=""
-                        rules={{
-                          required: true,
-                        }}
-                        render={({ field }) => (
-                          <TextField
-                            variant="outlined"
-                            fullWidth
-                            id="brand"
-                            label="Brand"
-                            error={Boolean(errors.brand)}
-                            helperText={errors.brand ? "Brand is required" : ""}
                             {...field}
                           ></TextField>
                         )}
@@ -331,7 +449,160 @@ function ProductEdit({ params }) {
                         )}
                       ></Controller>
                     </ListItem>
-
+                    <ListItem>
+                      <Controller
+                        name="processorName"
+                        control={control}
+                        defaultValue=""
+                        rules={{
+                          required: true,
+                        }}
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="processorName"
+                            label="Processor Name"
+                            error={Boolean(errors.processorName)}
+                            helperText={
+                              errors.processorName
+                                ? "Processor Name is required"
+                                : ""
+                            }
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Controller
+                        name="processorVariant"
+                        control={control}
+                        defaultValue=""
+                        rules={{
+                          required: true,
+                        }}
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="processorVariant"
+                            label="Processor Variant"
+                            error={Boolean(errors.processorVariant)}
+                            helperText={
+                              errors.processorVariant
+                                ? "Processor Variant is required"
+                                : ""
+                            }
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Controller
+                        name="ram"
+                        control={control}
+                        defaultValue=""
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="ram"
+                            label="RAM"
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Controller
+                        name="ssd"
+                        control={control}
+                        defaultValue=""
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            select
+                            value={isSSD}
+                            id="ssd"
+                            label="Is SSD Available?"
+                            {...field}
+                          >
+                            {isSSD.map((option) => (
+                              <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                              </MenuItem>
+                            ))}
+                          </TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Controller
+                        name="ssdCapacity"
+                        control={control}
+                        defaultValue=""
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="ssdCapacity"
+                            label="SSD Capacity"
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Controller
+                        name="graphicProcessor"
+                        control={control}
+                        defaultValue=""
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="graphicProcessor"
+                            label="Graphic Processor"
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Controller
+                        name="weight"
+                        control={control}
+                        defaultValue=""
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="weight"
+                            label="Weight"
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
+                    <ListItem>
+                      <Controller
+                        name="screenSize"
+                        control={control}
+                        defaultValue=""
+                        render={({ field }) => (
+                          <TextField
+                            variant="outlined"
+                            fullWidth
+                            id="screenSize"
+                            label="Screen Size"
+                            {...field}
+                          ></TextField>
+                        )}
+                      ></Controller>
+                    </ListItem>
                     <ListItem>
                       <Button
                         variant="contained"

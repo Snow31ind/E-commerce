@@ -215,7 +215,49 @@ function AdminOrders() {
     <Layout title="Orders">
       <Grid container spacing={1}>
         <Grid item md={3} xs={12}>
+<<<<<<< HEAD
           <Dashboard selectedSection={'orders'} />
+=======
+          <Paper className={classes.section}>
+            <MenuList>
+              <MenuItem>
+                <ListItemIcon>
+                  <HomeOutlined />
+                </ListItemIcon>
+                <NextLink href="/admin/dashboard" passHref>
+                  <ListItemText>Admin Dashboard</ListItemText>
+                </NextLink>
+              </MenuItem>
+              <Divider />
+              <MenuItem>
+                <ListItemIcon>
+                  <SummarizeOutlined fontSize="small" />
+                </ListItemIcon>
+                <NextLink href="/admin/orders" passHref>
+                  <ListItemText>Orders</ListItemText>
+                </NextLink>
+              </MenuItem>
+              <Divider />
+              <MenuItem>
+                <ListItemIcon>
+                  <ProductionQuantityLimitsOutlined fontSize="small" />
+                </ListItemIcon>
+                <NextLink href="/admin/products" passHref>
+                  <ListItemText>Products</ListItemText>
+                </NextLink>
+              </MenuItem>
+              <Divider />
+              <MenuItem>
+                <ListItemIcon>
+                  <GroupOutlined fontSize="small" />
+                </ListItemIcon>
+                <NextLink href="/admin/users" passHref>
+                  <ListItemText>Users</ListItemText>
+                </NextLink>
+              </MenuItem>
+            </MenuList>
+          </Paper>
+>>>>>>> 4c5a7fcdf7a871ff0346b5b689e83d7a13483f8a
         </Grid>
         <Grid item md={9} xs={12}>
           <Card className={classes.section}>
