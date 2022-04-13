@@ -39,45 +39,38 @@ function formatPriceToVND(price) {
     }
   }
 
-  return res.split('').reverse().join('').concat(' VND');
+  return res.split('').reverse().join('');
 }
 
 function getDiscountPercent(oldPrice, price) {
   return (((oldPrice - price) / oldPrice) * 100).toFixed(0);
 }
 
-function checkImageExistence(imageUrl) {
-  const img = new Image();
-  img.src = imageUrl;
-
-  if (img.complete) return true;
-  // else {
-  //   img.onload = () => {
-  //     return true;
-  //   };
-
-  //   img.onerror = () => {
-  //     return false;
-  //   };
-  return false;
+function randomRating() {
+  return (Math.floor(Math.random() * (50 - 10 + 1)) + 10) / 10;
 }
-// var request = new XMLHttpRequest();
-// request.open('GET', imageUrl, true);
-// request.send();
-// request.onload = () => {
-//   var status = request.status;
-//   if (status === 200) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
+
+function arrayOfRange(min, max, step, includeEnd = false) {
+  const count = parseInt((max - min) / step);
+  var arr = [];
+
+  for (var i = 0; i < count; ++i) {
+    arr.push(min + i * step);
+  }
+
+  if (includeEnd) {
+    arr.push(max);
+  }
+
+  return arr;
+}
 
 export {
   slugify,
   randomInteger,
   capitalize,
-  checkImageExistence,
   formatPriceToVND,
   getDiscountPercent,
+  randomRating,
+  arrayOfRange,
 };

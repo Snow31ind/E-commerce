@@ -26,6 +26,7 @@ import { getError } from '../utils/errors';
 import { useStyles } from '../utils/styles';
 import NextLink from 'next/link';
 import NextImage from 'next/image';
+import { formatPriceToVND } from '../utils/helpers';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -88,11 +89,11 @@ export default function OrderHistory() {
         <Grid item md={3} xs={12}>
           <Card className={classes.section}>
             <List>
-              <NextLink href="/profile" passHref>
+              {/* <NextLink href="/profile" passHref>
                 <ListItem button component="a">
                   <ListItemText primary="User profile"></ListItemText>
                 </ListItem>
-              </NextLink>
+              </NextLink> */}
 
               <NextLink href="/profile" passHref>
                 <ListItem selected button component="a">
@@ -107,12 +108,6 @@ export default function OrderHistory() {
           <Card className={classes.section}></Card>
           <List>
             <ListItem>
-              <Typography component="h1" variant="h1">
-                Order History
-              </Typography>
-            </ListItem>
-
-            <ListItem>
               {loading ? (
                 <CircularProgress />
               ) : error ? (
@@ -122,20 +117,24 @@ export default function OrderHistory() {
                   <Table>
                     <TableHead>
                       <TableRow>
-                        <TableCell>ID</TableCell>
-                        <TableCell>DATE</TableCell>
-                        <TableCell>TOTAL</TableCell>
-                        <TableCell>PAID</TableCell>
-                        <TableCell>DELIVERED</TableCell>
-                        <TableCell>ACTION</TableCell>
+                        <TableCell>No.</TableCell>
+                        <TableCell align="right">Date</TableCell>
+                        <TableCell align="right">Total</TableCell>
+                        <TableCell>Paid</TableCell>
+                        <TableCell>Delivered</TableCell>
+                        <TableCell>Actions</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
                       {orders.map((order) => (
                         <TableRow key={order._id}>
                           <TableCell>{order._id.substring(18, 24)}</TableCell>
-                          <TableCell>{order.createdAt}</TableCell>
-                          <TableCell>{`$ ${order.totalPrice}`}</TableCell>
+                          <TableCell align="right">
+                            {new Date(order.createdAt).toLocaleDateString()}
+                          </TableCell>
+                          <TableCell align="right">{`${formatPriceToVND(
+                            order.totalPrice
+                          )} VND`}</TableCell>
                           <TableCell>
                             {order.isPaid
                               ? `Paid at ${order.isPaid}`
@@ -144,7 +143,7 @@ export default function OrderHistory() {
                           <TableCell>
                             {order.isDelivered
                               ? `Delivered at ${order.isPaid}`
-                              : 'Not delivered'}
+                              : 'Yet delivered'}
                           </TableCell>
                           <TableCell>
                             <NextLink href={`/order/${order._id}`} passHref>

@@ -2,11 +2,13 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
-    // backgroundColor: ',
     '& a': {
-      color: '#ffffff',
-      marginLeft: 10,
+      color: 'black',
     },
+  },
+  appBar: {
+    padding: '5px 100px',
+    // height: 60,
   },
   brand: {
     fontWeight: 'bold',
@@ -16,11 +18,17 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   main: {
-    minHeight: '80vh',
+    paddingTop: 20,
+    paddingLeft: 300,
+    paddingRight: 300,
+    backgroundColor: '#f5f5f5',
   },
   footer: {
-    marginTop: 10,
-    textAlign: 'center',
+    backgroundColor: '#00bcd4',
+    display: 'flex',
+  },
+  footerBox: {
+    flex: 1,
   },
   section: {
     marginTop: 10,
@@ -102,46 +110,26 @@ const useStyles = makeStyles((theme) => ({
       width: 250,
     },
   },
-  productName: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  productOldPrice: {
-    fontSize: 11,
-    textDecoration: 'line-through',
-    display: 'inline',
-  },
-  productPrice: {
-    fontSize: 15,
-  },
-  productDiscount: {
-    fontSize: 13,
-    display: 'inline',
-  },
   slug_productName: {
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: 'bold',
   },
   slug_productOldPrice: {
     fontSize: 13,
     textDecoration: 'line-through',
+    color: 'gray',
   },
   slug_productPrice: {
     fontSize: 24,
+    color: 'tomato',
+    fontWeight: 'bold',
   },
   slug_productDiscount: {
     fontSize: 17,
+    color: 'green',
+    fontWeight: '600',
   },
-  tag: {
-    fontSize: 11,
-    borderWidth: 1,
-    borderColor: 'gray',
-    borderStyle: 'solid',
-    borderRadius: 5,
-    padding: 2,
-    marginRight: 5,
-    marginBottom: 5,
-  },
+
   coupon: {
     fontSize: 11,
   },
@@ -150,23 +138,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  tagBox: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
+
   card: {
     height: '100%',
     display: 'flex',
     borderRadius: 15,
-    // backgroundColor: 'yellowgreen',
-    // paddingBottom: 0,
-    // flex: 1,
   },
   cardContent: {
     display: 'flex',
     flexDirection: 'column',
-    // backgroundColor: 'tomato',
-    // flex: 1,
+    flex: 1,
   },
   cardHeader: {
     display: 'flex',
@@ -211,6 +192,61 @@ const useStyles = makeStyles((theme) => ({
   flex: {
     display: 'flex',
   },
+
+  sectionNumber: {
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  sectionText: {
+    fontSize: 8,
+    color: 'gray',
+  },
+
+  bold: {
+    fontWeight: 'bold',
+  },
+  root: {
+    position: 'sticky',
+  },
+  property: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    flex: 1,
+    paddingTop: 15,
+    paddingBottom: 15,
+  },
+  propertyText: {
+    marginLeft: 5,
+  },
+  propertyLabel: {
+    fontWeight: 'bold',
+    fontSize: 13,
+  },
+  slugCard: {
+    borderRadius: 20,
+  },
+
+  emptyCart: {
+    padding: 20,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+
+  cartItemPrice: {
+    fontWeight: 'bold',
+    color: 'tomato',
+  },
+  cartItemOldPrice: {
+    fontWeight: 'bold',
+    textDecoration: 'line-through',
+  },
+  cartItemDiscount: {
+    fontWeight: 'bold',
+    color: 'green',
+  },
   cartItemName: {
     fontSize: 20,
     fontWeight: 'bold',
@@ -223,6 +259,24 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+
+  gray: {
+    backgroundColor: 'gray',
+  },
+
+  modal: {
+    position: 'absolute',
+    top: 150,
+    left: 'calc(50% - 400px)',
+    padding: 5,
+    width: 800,
+  },
+  loginCard: {
+    display: 'flex',
+  },
+  loginContent: {
+    flex: 1,
   },
 }));
 

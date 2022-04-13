@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { randomInteger, slugify } from './helpers';
+import { randomInteger, randomRating, slugify } from './helpers';
 
 const data = require('./data1.json');
 
@@ -8,6 +8,7 @@ const products = data.products.map((product) => ({
   slug: slugify(product.name),
   numReviews: randomInteger(5, 100),
   countInStock: randomInteger(10, 100),
+  rating: randomRating(),
 }));
 
 const users = [

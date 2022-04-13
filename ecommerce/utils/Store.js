@@ -6,6 +6,7 @@ const Store = React.createContext();
 const initialState = {
   darkMode: false,
   user: Cookies.get('user') ? JSON.parse(Cookies.get('user')) : null,
+  favs: Cookies.get('favs') ? JSON.parse(Cookies.get('favs')) : [],
   cart: {
     cartItemIds: Cookies.get('cartItemIds')
       ? JSON.parse(Cookies.get('cartItemIds'))
@@ -33,6 +34,22 @@ function reducer(state, action) {
       Cookies.set('user', user);
 
       return { ...state, user };
+    }
+    case 'ADD_TO_FAV': {
+      const fav = action.payload;
+      const favs = [...state.favs, fav];
+
+      Cookies.set('favs', JSON.stringify(favs));
+
+      return { ...state, favs };
+    }
+    case 'REMOVE_FROM_FAV': {
+      const fav = action.payload;
+      const favs = state.favs.filter((e) => e !== fav);
+
+      Cookies.set('favs', JSON.stringify(favs));
+
+      return { ...state, favs };
     }
     case 'ADD_TO_CART': {
       const newItemId = action.payload;

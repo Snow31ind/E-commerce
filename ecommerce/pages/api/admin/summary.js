@@ -1,10 +1,10 @@
-import nc from "next-connect";
-import { isAdmin, isAuth } from "../../../utils/auth";
-import db from "../../../utils/db";
-import { onError } from "../../../utils/errors";
-import Product from "../../../models/Product";
-import User from "../../../models/User";
-import Order from "../../../models/Order";
+import nc from 'next-connect';
+import { isAdmin, isAuth } from '../../../utils/auth';
+import db from '../../../utils/db';
+import { onError } from '../../../utils/errors';
+import Product from '../../../models/Product';
+import User from '../../../models/User';
+import Order from '../../../models/Order';
 
 const handler = nc({
   onError,
@@ -20,7 +20,7 @@ handler.get(async (req, res) => {
     {
       $group: {
         _id: null,
-        sales: { $sum: "$totalPrice" },
+        sales: { $sum: '$totalPrice' },
       },
     },
   ]);
@@ -29,11 +29,11 @@ handler.get(async (req, res) => {
   const salesData = await Order.aggregate([
     {
       $group: {
-        _id: { $dateToString: { format: "%Y-%m", date: "$createdAt" } },
-        totalSales: { $sum: "$totalPrice" },
+        _id: { $dateToString: { format: '%Y-%m-%d', date: '$createdAt' } },
+        totalSales: { $sum: '$totalPrice' },
       },
     },
-  ]);
+  ]).sort({ _id: 1 });
   await db.disconnect();
   res.send({ ordersCount, productsCount, usersCount, ordersPrice, salesData });
 });

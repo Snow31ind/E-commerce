@@ -4,13 +4,14 @@ import Product from '../../models/Product';
 import Layout from '../../layouts/Layout';
 import {
   Box,
+  Breadcrumbs,
   Button,
   Card,
   CardActions,
   CardContent,
-  CardMedia,
   Divider,
   Grid,
+  Link,
   List,
   ListItem,
   Slide,
@@ -20,7 +21,6 @@ import {
 } from '@mui/material';
 import { Store } from '../../utils/Store';
 import { useSnackbar } from 'notistack';
-import { useRouter } from 'next/router';
 import {
   capitalize,
   formatPriceToVND,
@@ -28,21 +28,8 @@ import {
 } from '../../utils/helpers';
 import NextImage from 'next/image';
 import { useStyles } from '../../utils/styles';
-
-function HideOnScroll(props) {
-  const { children, window } = props;
-
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-  });
-
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
-
+import NextLink from 'next/link';
+import { Devices, Home, Laptop, NavigateNext } from '@mui/icons-material';
 export default function ProductScreen(props) {
   const classes = useStyles();
   const { state, dispatch } = useContext(Store);
@@ -63,11 +50,19 @@ export default function ProductScreen(props) {
   const processor = product.processorAndMemory.processorName
     .concat(' ')
     .concat(product.processorAndMemory.processorVariant);
-  const ram = 'RAM '.concat(product.processorAndMemory.ram);
+  const ram = 'RAM '.concat(product.processorAndMemory.ram).concat(' GB');
+  // const ssd =
+  //   product.processorAndMemory.ssd === 'Yes'
+  //     ? 'SSD '.concat(product.processorAndMemory.ssdCapacity)
+  //     : null;
   const ssd =
-    product.processorAndMemory.ssd === 'Yes'
-      ? 'SSD '.concat(product.processorAndMemory.ssdCapacity)
-      : null;
+    product.processorAndMemory.ssd === 'Available'
+      ? product.processorAndMemory.ssdCapacity.toString().concat(' GB')
+      : product.processorAndMemory.ssd;
+  const battery =
+    product.general.batteryBackup > 0
+      ? product.general.batteryBackup.toString().concat(' hours')
+      : 'Unknown';
   const graphicProcessor = product.processorAndMemory.graphicProcessor;
   const weight = product.dimensions.weight.toString().concat(' kg');
   const screen = product.displayAndAudio.screenSize
@@ -89,12 +84,103 @@ export default function ProductScreen(props) {
     return <div>Product not found</div>;
   }
 
+  const properties = [
+    [
+      {
+        icon: '/items/chip.png',
+        label: 'Central Processing Unit (CPU)',
+        value: processor,
+      },
+      {
+        icon: '/items/ram.png',
+        label: 'Random Access Memory (RAM)',
+        value: ram,
+      },
+    ],
+    [
+      {
+        icon: '/items/monitor.png',
+        label: 'Monitor Size',
+        value: screen,
+      },
+      {
+        icon: '/items/gpu.png',
+        label: 'Graphic Processing Unit (GPU)',
+        value: graphicProcessor,
+      },
+    ],
+    [
+      {
+        icon: '/items/storage.png',
+        label: 'SSD Storage Capacity',
+        value: ssd,
+      },
+      {
+        icon: '/items/battery.png',
+        label: 'Battery',
+        value: battery,
+      },
+    ],
+    [
+      {
+        icon: '/items/port.png',
+        label: 'Ports',
+        value: ports,
+      },
+    ],
+  ];
+
   return (
     <Layout title={product.name} description={`${product.name}`}>
       <Grid container spacing={5} ref={containerRef}>
+        {/* Breadcrums */}
+        <Grid item xs={12}>
+          <Box>
+            <Breadcrumbs separator={<NavigateNext />}>
+              <NextLink href="/" passHref>
+                <Link
+                  underline="hover"
+                  color="inherit"
+                  sx={{ display: 'flex', alignItems: 'center' }}
+                >
+                  <Home sx={{ mr: 0.5 }} />
+                  Homepage
+                </Link>
+              </NextLink>
+              <NextLink href="/" passHref>
+                <Link
+                  underline="hover"
+                  color="inherit"
+                  sx={{ display: 'flex', alignItems: 'center' }}
+                >
+                  <Devices sx={{ mr: 0.5 }} />
+                  Laptop
+                </Link>
+              </NextLink>
+              <NextLink href={`/products/${product.slug}`} passHref>
+                <Link
+                  underline="hover"
+                  color="inherit"
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: 'black',
+                  }}
+                >
+                  <Laptop sx={{ mr: 0.5 }} color="inherit" />
+                  <Typography color="text.primary" fontWeight="bold">
+                    {product.name}
+                  </Typography>
+                </Link>
+              </NextLink>
+            </Breadcrumbs>
+          </Box>
+        </Grid>
+
+        {/* Product Information Display */}
         <Grid item container md={6} xs={12} spacing={5}>
           <Grid item xs={12}>
-            <Card>
+            <Card className={classes.slugCard}>
               <CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                   <NextImage
@@ -103,8 +189,6 @@ export default function ProductScreen(props) {
                     alt={product.name}
                     width="300%"
                     height="300%"
-                    // sizes
-                    // sizes={'80wv'}
                   />
                 </Box>
               </CardContent>
@@ -112,191 +196,37 @@ export default function ProductScreen(props) {
           </Grid>
 
           <Grid item xs={12}>
-            <Card>
+            <Card className={classes.slugCard}>
               <CardContent>
-                <Stack direction="row">
-                  <List>
-                    <ListItem>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                        <NextImage
-                          src="/items/chip.png"
-                          width={20}
-                          height={20}
-                        />
-                        <Box
-                          sx={{
-                            alignItems: 'flex-start',
-                            ml: 1,
-                            display: 'flex',
-                            flexDirection: 'column',
-                          }}
-                        >
-                          <Typography>Central Processing Unit (CPU)</Typography>
-                          <Typography>{processor}</Typography>
+                {properties.map((property, index) => (
+                  <>
+                    <Stack key={index} direction="row">
+                      {property.map((e) => (
+                        <Box key={e.label} className={classes.property}>
+                          <NextImage src={e.icon} width={20} height={20} />
+                          <Box className={classes.propertyText}>
+                            <Typography className={classes.propertyLabel}>
+                              {e.label}
+                            </Typography>
+                            <Typography>{e.value}</Typography>
+                          </Box>
                         </Box>
-                      </Box>
-                    </ListItem>
-                  </List>
-                  <List>
-                    <ListItem>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                        <NextImage
-                          src="/items/ram.png"
-                          width={20}
-                          height={20}
-                          // sizes
-                        />
-                        <Box
-                          sx={{
-                            alignItems: 'flex-start',
-                            ml: 1,
-                            display: 'flex',
-                            flexDirection: 'column',
-                          }}
-                        >
-                          <Typography>RAM</Typography>
-                          <Typography>{ram}</Typography>
-                        </Box>
-                      </Box>
-                    </ListItem>
-                  </List>
-                </Stack>
-
-                <Divider />
-
-                <Stack direction="row">
-                  <List>
-                    <ListItem>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                        <NextImage
-                          src="/items/monitor.png"
-                          width={20}
-                          height={20}
-                        />
-                        <Box
-                          sx={{
-                            alignItems: 'flex-start',
-                            ml: 1,
-                            display: 'flex',
-                            flexDirection: 'column',
-                          }}
-                        >
-                          <Typography>Monitor</Typography>
-                          <Typography>{screen}</Typography>
-                        </Box>
-                      </Box>
-                    </ListItem>
-                  </List>
-                  <List>
-                    <ListItem>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                        <NextImage
-                          src="/items/ram.png"
-                          width={20}
-                          height={20}
-                          // sizes
-                        />
-                        <Box
-                          sx={{
-                            alignItems: 'flex-start',
-                            ml: 1,
-                            display: 'flex',
-                            flexDirection: 'column',
-                          }}
-                        >
-                          <Typography>Graphic Processing Unit</Typography>
-                          <Typography>{graphicProcessor}</Typography>
-                        </Box>
-                      </Box>
-                    </ListItem>
-                  </List>
-                </Stack>
-
-                <Divider />
-
-                <Stack direction="row">
-                  <List>
-                    <ListItem>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                        <NextImage
-                          src="/items/storage.png"
-                          width={20}
-                          height={20}
-                        />
-                        <Box
-                          sx={{
-                            alignItems: 'flex-start',
-                            ml: 1,
-                            display: 'flex',
-                            flexDirection: 'column',
-                          }}
-                        >
-                          <Typography>Storage</Typography>
-                          <Typography>{ssd}</Typography>
-                        </Box>
-                      </Box>
-                    </ListItem>
-                  </List>
-                  <List>
-                    <ListItem>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                        <NextImage
-                          src="/items/battery.png"
-                          width={20}
-                          height={20}
-                          // sizes
-                        />
-                        <Box
-                          sx={{
-                            alignItems: 'flex-start',
-                            ml: 1,
-                            display: 'flex',
-                            flexDirection: 'column',
-                          }}
-                        >
-                          <Typography>Battery</Typography>
-                        </Box>
-                      </Box>
-                    </ListItem>
-                  </List>
-                </Stack>
-
-                <Divider />
-
-                <Stack direction="row">
-                  <List>
-                    <ListItem>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                        <NextImage
-                          src="/items/port.png"
-                          width={20}
-                          height={20}
-                        />
-                        <Box
-                          sx={{
-                            alignItems: 'flex-start',
-                            ml: 1,
-                            display: 'flex',
-                            flexDirection: 'column',
-                          }}
-                        >
-                          <Typography>Ports</Typography>
-                          <Typography>{ports}</Typography>
-                        </Box>
-                      </Box>
-                    </ListItem>
-                  </List>
-                </Stack>
-
-                <Divider />
+                      ))}
+                    </Stack>
+                    {index < properties.length - 1 && <Divider />}
+                  </>
+                ))}
               </CardContent>
             </Card>
           </Grid>
         </Grid>
 
         <Grid item container md={6} xs={12}>
-          <Grid item xs={12} position="sticky">
-            <Card>
+          <Grid item xs={12}>
+            <Card
+              className={classes.slugCard}
+              sx={{ position: 'sticky', top: 10 }}
+            >
               <CardContent>
                 <Typography className={classes.slug_productName}>
                   {product.name}

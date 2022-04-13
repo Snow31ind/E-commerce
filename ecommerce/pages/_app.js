@@ -3,6 +3,7 @@ import { SnackbarProvider } from 'notistack';
 import '../styles/globals.css';
 import { StoreProvider } from '../utils/Store';
 import DateAdapter from '@mui/lab/AdapterDateFns';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -14,7 +15,9 @@ function MyApp({ Component, pageProps }) {
     >
       <LocalizationProvider dateAdapter={DateAdapter}>
         <StoreProvider>
-          <Component {...pageProps} />
+          <PayPalScriptProvider>
+            <Component {...pageProps} />
+          </PayPalScriptProvider>
         </StoreProvider>
       </LocalizationProvider>
     </SnackbarProvider>

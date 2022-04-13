@@ -1,8 +1,8 @@
-import axios from "axios";
-import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
-import NextLink from "next/link";
-import React, { useEffect, useContext, useReducer } from "react";
+import axios from 'axios';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
+import NextLink from 'next/link';
+import React, { useEffect, useContext, useReducer, useState } from 'react';
 import {
   CircularProgress,
   Grid,
@@ -10,175 +10,264 @@ import {
   ListItem,
   Typography,
   Card,
-  Button,
-  ListItemText,
-  TableContainer,
-  Table,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableBody,
-  MenuList,
-  MenuItem,
-  ListItemIcon,
-  Divider,
-  Paper,
-} from "@mui/material";
-import {
-  GroupOutlined,
-  HomeOutlined,
-  ProductionQuantityLimitsOutlined,
-  SummarizeOutlined,
-} from "@mui/icons-material";
-import { getError } from "../../utils/errors";
-import { Store } from "../../utils/Store";
-import Layout from "../../layouts/Layout";
-import { useStyles } from "../../utils/styles";
-import { useSnackbar } from "notistack";
+  Box,
+  Chip,
+  Stack,
+  Skeleton,
+} from '@mui/material';
+import { getError } from '../../utils/errors';
+import { Store } from '../../utils/Store';
+import Layout from '../../layouts/Layout';
+import { useStyles } from '../../utils/styles';
+import Dashboard from '../../components/Dashboard';
+import { DataGrid, GridToolbar, GridActionsCellItem } from '@mui/x-data-grid';
+import { formatPriceToVND } from '../../utils/helpers';
+import { Autorenew, Done, Edit, Delete } from '@mui/icons-material';
+import CustomNoRowsOverlay from '../../components/CustomNoRowsOverlay';
 
 function reducer(state, action) {
   switch (action.type) {
-    case "FETCH_REQUEST":
-      return { ...state, loading: true, error: "" };
-    case "FETCH_SUCCESS":
-      return { ...state, loading: false, orders: action.payload, error: "" };
-    case "FETCH_FAIL":
+    case 'FETCH_REQUEST':
+      return { ...state, loading: true, error: '' };
+    case 'FETCH_SUCCESS':
+      return { ...state, loading: false, orders: action.payload, error: '' };
+    case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
     default:
       state;
   }
 }
 
+const actionsOnOrder = [
+  {
+    label: 'Edit',
+    onClick: () => {},
+    icon: <Edit />,
+    showInMenu: false,
+  },
+  {
+    label: 'Remove',
+    onClick: () => {},
+    icon: <Delete />,
+    showInMenu: true,
+  },
+];
+
+const columns = [
+  {
+    field: 'id',
+    headerName: 'No.',
+    description: "Order's ID",
+    width: 200,
+  },
+  {
+    field: 'userId',
+    headerName: 'User',
+    description: "User's ID",
+    width: 220,
+  },
+  {
+    field: 'date',
+    headerName: 'Ordered',
+    type: 'date',
+    width: 100,
+    flex: 1,
+    valueGetter: ({ value }) => value && new Date(value),
+
+    description: 'Day of purchase',
+
+    valueParser: (value) => value,
+  },
+  {
+    field: 'paymentMethod',
+    headerName: 'Payment',
+    type: 'singleSelect',
+    valueOptions: ['PayPal', 'Cash'],
+    width: 100,
+    description: 'Payment method',
+    renderCell: (params) => {
+      const paymentMethod = params.value;
+
+      return (
+        <Chip
+          variant="outlined"
+          color={paymentMethod === 'PayPal' ? 'secondary' : 'primary'}
+          label={paymentMethod}
+        />
+      );
+    },
+  },
+  {
+    field: 'total',
+    headerName: 'Total (VND)',
+    type: 'number',
+    width: 100,
+    description: 'Total price',
+
+    valueFormatter: (params) => formatPriceToVND(params.value),
+  },
+  {
+    field: 'isPaid',
+    headerName: 'Paid',
+    type: 'singleSelect',
+    // flex: 1,
+    valueOptions: ['Pending', 'Completed'],
+    width: 120,
+    description: 'Payment status',
+    renderCell: (params) => {
+      const status = params.value ? 'Completed' : 'Pending';
+
+      return (
+        <Chip
+          variant="outlined"
+          icon={params.value ? <Done /> : <Autorenew />}
+          color={params.value ? 'success' : 'warning'}
+          label={status}
+        />
+      );
+    },
+    valueParser: (value) => (value ? 'Completed' : 'Pending'),
+  },
+  {
+    field: 'isDelivered',
+    headerName: 'Delivered',
+    type: 'singleSelect',
+    valueOptions: ['Pending', 'Completed'],
+    width: 120,
+    description: 'Delivery status',
+    renderCell: (params) => {
+      const status = params.value ? 'Completed' : 'Pending';
+
+      return (
+        <Chip
+          variant="outlined"
+          icon={params.value ? <Done /> : <Autorenew />}
+          color={params.value ? 'success' : 'warning'}
+          label={status}
+        />
+      );
+    },
+  },
+  {
+    field: 'actions',
+    headerName: 'Actions',
+    type: 'actions',
+    flex: 1,
+    getActions: (params) => {
+      const actions = actionsOnOrder.map((action) => (
+        <GridActionsCellItem key={action.label} {...action} />
+      ));
+
+      return actions;
+    },
+  },
+];
+
 function AdminOrders() {
   const { state } = useContext(Store);
   const router = useRouter();
   const classes = useStyles();
   const { user } = state;
+  const [pageSize, setPageSize] = useState(10);
 
   const [{ loading, error, orders }, dispatch] = useReducer(reducer, {
     loading: true,
     orders: [],
-    error: "",
+    error: '',
   });
 
   useEffect(() => {
     if (!user) {
-      router.push("/login");
+      router.push('/login');
     }
     const fetchData = async () => {
       try {
-        dispatch({ type: "FETCH_REQUEST" });
+        dispatch({ type: 'FETCH_REQUEST' });
         const { data } = await axios.get(`/api/admin/orders`, {
           headers: { authorization: `Bearer ${user.token}` },
         });
-        dispatch({ type: "FETCH_SUCCESS", payload: data });
+
+        const formattedOrders = data.map((order) => ({
+          id: order._id,
+          userId: order.user._id,
+          userPhoneNumber: order.user.phoneNumber,
+          date: order.createdAt,
+          total: order.totalPrice,
+          isPaid: order.isPaid,
+          isDelivered: order.isDelivered,
+          paymentMethod: order.paymentMethod,
+        }));
+
+        // console.log(data);
+        dispatch({ type: 'FETCH_SUCCESS', payload: formattedOrders });
       } catch (err) {
-        dispatch({ type: "FETCH_FAIL", payload: getError(err) });
+        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
     };
     fetchData();
   }, []);
+
+  const pageSizeChangeHandler = (newPageSize) => {
+    setPageSize(newPageSize);
+  };
+
   return (
     <Layout title="Orders">
       <Grid container spacing={1}>
         <Grid item md={3} xs={12}>
-          <Paper>
-            <MenuList>
-              <MenuItem>
-                <ListItemIcon>
-                  <HomeOutlined />
-                </ListItemIcon>
-                <NextLink href="/admin/dashboard" passHref>
-                  <ListItemText>Admin Dashboard</ListItemText>
-                </NextLink>
-              </MenuItem>
-              <Divider />
-              <MenuItem>
-                <ListItemIcon>
-                  <SummarizeOutlined fontSize="small" />
-                </ListItemIcon>
-                <NextLink href="/admin/orders" passHref>
-                  <ListItemText>Orders</ListItemText>
-                </NextLink>
-              </MenuItem>
-              <Divider />
-              <MenuItem>
-                <ListItemIcon>
-                  <ProductionQuantityLimitsOutlined fontSize="small" />
-                </ListItemIcon>
-                <NextLink href="/admin/products" passHref>
-                  <ListItemText>Products</ListItemText>
-                </NextLink>
-              </MenuItem>
-              <Divider />
-              <MenuItem>
-                <ListItemIcon>
-                  <GroupOutlined fontSize="small" />
-                </ListItemIcon>
-                <NextLink href="/admin/users" passHref>
-                  <ListItemText>Users</ListItemText>
-                </NextLink>
-              </MenuItem>
-            </MenuList>
-          </Paper>
+          <Dashboard selectedSection={'orders'} />
         </Grid>
         <Grid item md={9} xs={12}>
           <Card className={classes.section}>
             <List>
               <ListItem>
-                <Typography variant="h3">
-                  Orders
-                </Typography>
-              </ListItem>
-
-              <ListItem>
                 {loading ? (
-                  <CircularProgress />
+                  <Stack spacing={1} flex={1}>
+                    <Skeleton variant="text" animation="wave" />
+                    <Skeleton
+                      variant="rectangular"
+                      animation="wave"
+                      height={250}
+                    />
+                  </Stack>
                 ) : error ? (
                   <Typography className={classes.error}>{error}</Typography>
                 ) : (
-                  <TableContainer>
-                    <Table>
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>ID</TableCell>
-                          <TableCell>USER</TableCell>
-                          <TableCell>DATE</TableCell>
-                          <TableCell>TOTAL</TableCell>
-                          <TableCell>PAID</TableCell>
-                          <TableCell>DELIVERED</TableCell>
-                          <TableCell>ACTION</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {orders.map((order) => (
-                          <TableRow key={order._id}>
-                            <TableCell>{order._id.substring(20, 24)}</TableCell>
-                            <TableCell>
-                              {order.user ? order.user.name : "DELETED USER"}
-                            </TableCell>
-                            <TableCell>{order.createdAt}</TableCell>
-                            <TableCell>${order.totalPrice}</TableCell>
-                            <TableCell>
-                              {order.isPaid
-                                ? `paid at ${order.paidAt}`
-                                : "not paid"}
-                            </TableCell>
-                            <TableCell>
-                              {order.isDelivered
-                                ? `delivered at ${order.deliveredAt}`
-                                : "not delivered"}
-                            </TableCell>
-                            <TableCell>
-                              <NextLink href={`/order/${order._id}`} passHref>
-                                <Button variant="contained">Details</Button>
-                              </NextLink>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      flex: 1,
+                      height: '100%',
+                    }}
+                  >
+                    <Stack spacing={1} flex={1}></Stack>
+                    <Box sx={{ flex: 1 }}>
+                      <DataGrid
+                        // autoPageSize
+                        autoHeight
+                        checkboxSelection
+                        density="standard"
+                        columns={columns}
+                        rows={orders}
+                        pageSize={pageSize}
+                        onPageSizeChange={pageSizeChangeHandler}
+                        rowsPerPageOptions={[5, 10, 20]}
+                        initialState={{}}
+                        components={{
+                          Toolbar: GridToolbar,
+                          NoRowsOverlay: CustomNoRowsOverlay,
+                        }}
+                        sx={{
+                          border: 2,
+                          borderColor: 'primary.light',
+                          '& .MuiDataGrid-cell:hover': {
+                            color: 'primary.main',
+                          },
+                        }}
+                      />
+                    </Box>
+                  </Box>
                 )}
               </ListItem>
             </List>
