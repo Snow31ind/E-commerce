@@ -4,7 +4,6 @@ import {
   List,
   ListItem,
   Typography,
-  CircularProgress,
   CardContent,
   Stack,
   Skeleton,
@@ -29,12 +28,7 @@ import {
   Legend,
   Tooltip,
 } from 'chart.js';
-import {
-  Chart,
-  getDatasetAtEvent,
-  getElementAtEvent,
-  getElementsAtEvent,
-} from 'react-chartjs-2';
+import { Chart, getElementsAtEvent } from 'react-chartjs-2';
 import { formatPriceToVND } from '../../utils/helpers';
 ChartJS.register(
   LinearScale,
@@ -48,11 +42,11 @@ ChartJS.register(
 
 function reducer(state, action) {
   switch (action.type) {
-    case "FETCH_REQUEST":
-      return { ...state, loading: true, error: "" };
-    case "FETCH_SUCCESS":
-      return { ...state, loading: false, error: "", summary: action.payload };
-    case "FETCH_FAIL":
+    case 'FETCH_REQUEST':
+      return { ...state, loading: true, error: '' };
+    case 'FETCH_SUCCESS':
+      return { ...state, loading: false, error: '', summary: action.payload };
+    case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
     default:
       state;
@@ -67,23 +61,23 @@ function AdminDashboard() {
   const [{ summary, loading, error }, dispatch] = useReducer(reducer, {
     summary: { salesData: [] },
     loading: true,
-    error: "",
+    error: '',
   });
   const chartRef = useRef();
 
   useEffect(() => {
     if (!user) {
-      router.push("/login");
+      router.push('/login');
     }
     const fetchData = async () => {
       try {
-        dispatch({ type: "FETCH_REQUEST" });
-        const { data } = await axios.get("/api/admin/summary", {
+        dispatch({ type: 'FETCH_REQUEST' });
+        const { data } = await axios.get('/api/admin/summary', {
           headers: { authorization: `Bearer ${user.token}` },
         });
-        dispatch({ type: "FETCH_SUCCESS", payload: data });
+        dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
-        dispatch({ type: "FETCH_FAIL", payload: getError(err) });
+        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
     };
     fetchData();
@@ -198,7 +192,7 @@ function AdminDashboard() {
                   // onClick={clickGraphHandler}
                   data={chartData}
                   options={{
-                    legend: { display: true, position: "right" },
+                    legend: { display: true, position: 'right' },
                   }}
                 ></Chart>
               </ListItem>

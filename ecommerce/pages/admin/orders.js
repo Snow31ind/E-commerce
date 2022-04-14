@@ -1,10 +1,8 @@
 import axios from 'axios';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import NextLink from 'next/link';
 import React, { useEffect, useContext, useReducer, useState } from 'react';
 import {
-  CircularProgress,
   Grid,
   List,
   ListItem,

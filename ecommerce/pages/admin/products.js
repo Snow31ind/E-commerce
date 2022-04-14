@@ -1,7 +1,6 @@
 import axios from 'axios';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import NextLink from 'next/link';
 import React, { useEffect, useContext, useReducer } from 'react';
 import {
   CircularProgress,
@@ -77,7 +76,6 @@ function AdminProducts() {
   const pageSizeChangeHandler = (newPageSize) => {
     setPageSize(newPageSize);
   };
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const [openModal, setOpenModal] = useState({
     state: false,
     productId: null,
