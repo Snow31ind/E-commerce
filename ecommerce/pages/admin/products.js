@@ -230,51 +230,8 @@ function AdminProducts() {
   return (
     <Layout title="Products Dashboard">
       <Grid container spacing={1}>
-<<<<<<< HEAD
         <Grid item md={3} xs={12}>
           <Dashboard selectedSection={'products'} />
-=======
-        <Grid item md={2} xs={12}>
-          <Paper className={classes.section}>
-            <MenuList>
-              <MenuItem>
-                <ListItemIcon>
-                  <HomeOutlined />
-                </ListItemIcon>
-                <NextLink href="/admin/dashboard" passHref>
-                  <ListItemText>Admin Dashboard</ListItemText>
-                </NextLink>
-              </MenuItem>
-              <Divider />
-              <MenuItem>
-                <ListItemIcon>
-                  <SummarizeOutlined fontSize="small" />
-                </ListItemIcon>
-                <NextLink href="/admin/orders" passHref>
-                  <ListItemText>Orders</ListItemText>
-                </NextLink>
-              </MenuItem>
-              <Divider />
-              <MenuItem>
-                <ListItemIcon>
-                  <ProductionQuantityLimitsOutlined fontSize="small" />
-                </ListItemIcon>
-                <NextLink href="/admin/products" passHref>
-                  <ListItemText>Products</ListItemText>
-                </NextLink>
-              </MenuItem>
-              <Divider />
-              <MenuItem>
-                <ListItemIcon>
-                  <GroupOutlined fontSize="small" />
-                </ListItemIcon>
-                <NextLink href="/admin/users" passHref>
-                  <ListItemText>Users</ListItemText>
-                </NextLink>
-              </MenuItem>
-            </MenuList>
-          </Paper>
->>>>>>> 4c5a7fcdf7a871ff0346b5b689e83d7a13483f8a
         </Grid>
         <Grid item md={9} xs={12}>
           <Card className={classes.section}>
@@ -300,7 +257,6 @@ function AdminProducts() {
                 ) : error ? (
                   <Typography className={classes.error}>{error}</Typography>
                 ) : (
-<<<<<<< HEAD
                   <Box sx={{ display: 'flex', flex: 1 }}>
                     <Box sx={{ flex: 1 }}>
                       <DataGrid
@@ -326,55 +282,6 @@ function AdminProducts() {
                       />
                     </Box>
                   </Box>
-=======
-                  <TableContainer>
-                    <Table>
-                      <TableHead>
-                        <TableRow>
-                          <TableCell>ID</TableCell>
-                          <TableCell>NAME</TableCell>
-                          <TableCell>PRICE</TableCell>
-                          <TableCell>CATEGORY</TableCell>
-                          <TableCell>COUNT</TableCell>
-                          <TableCell>RATING</TableCell>
-                          <TableCell>ACTIONS</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {products.map((product) => (
-                          <TableRow key={product._id}>
-                            <TableCell>
-                              {product._id.substring(20, 24)}
-                            </TableCell>
-                            <TableCell>{product.name}</TableCell>
-                            <TableCell>${product.price}</TableCell>
-                            <TableCell>{product.category}</TableCell>
-                            <TableCell>{product.countInStock}</TableCell>
-                            <TableCell>{product.rating}</TableCell>
-                            <TableCell>
-                              <NextLink
-                                href={`/admin/product/${product._id}`}
-                                passHref
-                              >
-                                <Button size="small" variant="contained">
-                                  Edit
-                                </Button>
-                              </NextLink>
-                              <Button
-                                onClick={() => deleteHandler(product._id)}
-                                size="small"
-                                variant="contained"
-                                color="secondary"
-                              >
-                                Delete
-                              </Button>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
->>>>>>> 4c5a7fcdf7a871ff0346b5b689e83d7a13483f8a
                 )}
               </ListItem>
             </List>

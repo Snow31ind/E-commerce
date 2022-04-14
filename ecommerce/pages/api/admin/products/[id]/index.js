@@ -1,7 +1,7 @@
-import nc from "next-connect";
-import { isAdmin, isAuth } from "../../../../../utils/auth";
-import Product from "../../../../../models/Product";
-import db from "../../../../../utils/db";
+import nc from 'next-connect';
+import { isAdmin, isAuth } from '../../../../../utils/auth';
+import Product from '../../../../../models/Product';
+import db from '../../../../../utils/db';
 
 const handler = nc();
 handler.use(isAuth, isAdmin);
@@ -41,10 +41,10 @@ handler.put(async (req, res) => {
     };
     await product.save();
     await db.disconnect();
-    res.send({ message: "Product Updated Successfully!" });
+    res.send({ message: 'Product Updated Successfully!' });
   } else {
     await db.disconnect();
-    res.status(404).send({ message: "Product Not Found!" });
+    res.status(404).send({ message: 'Product Not Found!' });
   }
 });
 
@@ -54,10 +54,10 @@ handler.delete(async (req, res) => {
   if (product) {
     await product.remove();
     await db.disconnect();
-    res.send({ message: "Product Deleted Successfully!" });
+    res.send({ message: 'Product Deleted Successfully!' });
   } else {
     await db.disconnect();
-    res.status(404).send({ message: "Product Not Found!" });
+    res.status(404).send({ message: 'Product Not Found!' });
   }
 });
 
