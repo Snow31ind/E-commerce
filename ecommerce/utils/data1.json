@@ -1,0 +1,3902 @@
+{
+  "products": [{
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Not available",
+              "keyboard": "Not available",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "Not available"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "4.2 combo",
+              "ethernet": "Not available",
+              "wirelessLAN": "Not available"
+          },
+          "dimensions": {
+              "dimensions": "Unknown",
+              "weight": -1
+          },
+          "displayAndAudio": {
+              "internalMic": "Not available",
+              "refreshRate": -1,
+              "screenResolution": "1920*1080 pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Unknown",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Not available",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 8.0,
+              "batteryCell": -1,
+              "color": "Natural Silver",
+              "modelName": "Laptop 15s-eq2144AU",
+              "modelNumber": "EQ2144AU",
+              "msOfficeProvided": "Available",
+              "partNumber": "EQ2144AU",
+              "powerSupply": "Unknown",
+              "salesPackage": "LAPTOP, ADAPTER, POWER CORD, USER MAUAL",
+              "series": "Unknown",
+              "suitableFor": [
+                  "Everyday Use"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kzfvzww0/computer/r/g/i/hp-laptop-15s-eq2144au-amd-ryzen-5-5500u-8gb-ddr4-512-gb-pcie-original-imagbg5jctdf4xwf.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzfvzww0/computer/c/y/m/hp-laptop-15s-eq2144au-amd-ryzen-5-5500u-8gb-ddr4-512-gb-pcie-original-imagbg5jgeygzhwv.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzfvzww0/computer/7/d/i/hp-laptop-15s-eq2144au-amd-ryzen-5-5500u-8gb-ddr4-512-gb-pcie-original-imagbg5jyggmchrn.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzfvzww0/computer/r/s/1/hp-laptop-15s-eq2144au-amd-ryzen-5-5500u-8gb-ddr4-512-gb-pcie-original-imagbg5jfpcktfqz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzfvzww0/computer/s/l/u/hp-laptop-15s-eq2144au-amd-ryzen-5-5500u-8gb-ddr4-512-gb-pcie-original-imagbg5jfq8nnycv.jpeg?q=70"
+          ],
+          "name": "HP EQ2144AU",
+          "oldPrice": 18200000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "Unknown"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "Not available",
+              "micIn": "Not available",
+              "multiCardSlot": "Not available",
+              "usbPort": "Not available"
+          },
+          "price": 14300000,
+          "processorAndMemory": {
+              "cache": -1,
+              "clockSpeed": "Unknown",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "AMD Radeon AMD Radeon\u2122 Graphics",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": -1,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 5 Hexa Core",
+              "processorVariant": "Unknown",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "HP Documentation, HP e-service, HP BIOS Recovery, HP SSRM, HP Smart, HP Jumpstarts",
+              "keyboard": "Full-size, Ultra Violet Backlit, Shadow Black Keyboard with Numeric Keypad",
+              "lockPort": "Not available",
+              "pointerDevice": "HP Imagepad with Multi-Touch Gesture Support",
+              "securityChip": "Not available",
+              "webCamera": "HP TrueVision HD Webcam"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "10/100/1000 GbE LAN",
+              "wirelessLAN": "RTL8822CE 802.11a/b/g/n/ac (2x2)"
+          },
+          "dimensions": {
+              "dimensions": "360 x 257 x 23.5 mm",
+              "weight": 1.98
+          },
+          "displayAndAudio": {
+              "internalMic": "Integrated Dual Array Digital Microphone",
+              "refreshRate": 144,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD WLED-Backlit IPS Anti-glare Micro-edge Display (Brightness: 250 nits, 141 PPI, Color Gamut: 45% NTSC)",
+              "soundChip": "Not available",
+              "soundProperties": "Audio by Bang & Olufsen, Dual Speakers",
+              "speakers": "Built-in Dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Shadow Black",
+              "modelName": "Unknown",
+              "modelNumber": "15-ec2004AX",
+              "msOfficeProvided": "Not available",
+              "partNumber": "3E3R5PA#ACJ",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Pavilion",
+              "suitableFor": [
+                  "Gaming"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kbqu4cw0/computer/q/x/r/hp-original-imaftyzachgrav8f.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krtjgcw0/computer/z/3/6/15-ec2004ax-gaming-laptop-hp-original-imag5j3bx5zynqgm.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krtjgcw0/computer/p/n/g/15-ec2004ax-gaming-laptop-hp-original-imag5j3b48askf4b.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krtjgcw0/computer/g/s/h/15-ec2004ax-gaming-laptop-hp-original-imag5j3bspfvmvfv.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krtjgcw0/computer/e/n/o/15-ec2004ax-gaming-laptop-hp-original-imag5j3bfsu5h3zz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kr2e3680/computer/m/6/e/na-gaming-laptop-hp-original-imag4xqwnbpzxff9.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krtjgcw0/computer/y/i/n/15-ec2004ax-gaming-laptop-hp-original-imag5j3bem5snef4.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kl5hh8w0/computer/g/y/f/hp-original-imagyckn8ygzhzjh.jpeg?q=70"
+          ],
+          "name": "HP Pavilion 15-ec2004AX",
+          "oldPrice": 20900000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe M.2",
+              "hdmiPort": "1 x HDMI 2.0",
+              "micIn": "Available",
+              "multiCardSlot": "3-in-1 Card Reader (SD, SDHC, SDxC)",
+              "usbPort": "1 x SuperSpeed USB Type-C (5Gbps Signaling Rate), 1 x SuperSpeed USB Type-A (5Gbps Signaling Rate), 1 x USB 2.0 Type-A (HP Sleep and Charge)"
+          },
+          "price": 17900000,
+          "processorAndMemory": {
+              "cache": 16,
+              "clockSpeed": "3.3 GHz with Turbo Boost Upto 4.2 GHz",
+              "dedicatedGraphicMemoryCapacity": 4,
+              "dedicatedGraphicMemoryType": "GDDR6",
+              "expandableMemory": 16,
+              "graphicProcessor": "NVIDIA GeForce GTX 1650",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 6,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 5 Hexa Core",
+              "processorVariant": "5600H",
+              "ram": 8,
+              "ramFrequency": 3200,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Splendid",
+              "keyboard": "Chiclet Keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "Touchpad",
+              "securityChip": "TPM",
+              "webCamera": "VGA Webcam (without Privacy Shutter)"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.1",
+              "ethernet": "Not available",
+              "wirelessLAN": "IEEE 802.11ac (Wi-Fi 5)"
+          },
+          "dimensions": {
+              "dimensions": "381 x 251 x 27.2 mm",
+              "weight": 1.9
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Microphone",
+              "refreshRate": -1,
+              "screenResolution": "1366 x 768 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "HD LED Backlit Anti-glare Display (200 nits Brightness, 45% NTSC, 75% Screen-to-body Ratio)",
+              "soundChip": "Not available",
+              "soundProperties": "Audio by ICEpower, Sonic Master",
+              "speakers": "Built-in Speaker",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Transparent Silver",
+              "modelName": "Unknown",
+              "modelNumber": "X543MA-GQ1015T",
+              "msOfficeProvided": "Not available",
+              "partNumber": "90NB0IR6-M19120",
+              "powerSupply": "33 W AC Adapter",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Unknown",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/k9d3p8w0/computer/c/a/h/asus-na-laptop-original-imafr6cbfurgkspg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/k9d3p8w0/computer/v/q/m/asus-na-laptop-original-imafr6cbkh3cyuhc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kbqu4cw0/computer/c/y/z/asus-na-laptop-original-imaftyzqhf7efhfk.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/k9d3p8w0/computer/v/q/m/asus-na-laptop-original-imafr6cbkgtrfmry.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/k9d3p8w0/computer/v/q/m/asus-na-laptop-original-imafr6cbzrupqghe.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/k9d3p8w0/computer/v/q/m/asus-na-laptop-original-imafr6cbcm9qz7ms.jpeg?q=70"
+          ],
+          "name": "ASUS X543MA-GQ1015T",
+          "oldPrice": 8000000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "SATA",
+              "hdmiPort": "1 x HDMI Port (v1.4)",
+              "micIn": "Available",
+              "multiCardSlot": "Micro SD Card Reader",
+              "usbPort": "1 x USB 3.2 (1st Gen) Type A, 2 x USB 2.0 Type A"
+          },
+          "price": 7200000,
+          "processorAndMemory": {
+              "cache": 4,
+              "clockSpeed": "1.1 GHz with Turbo Boost Upto 2.8 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD 600",
+              "hdd": "Not available",
+              "hddCapacity": 1024,
+              "memorySlots": -1,
+              "numberofCores": 2,
+              "processorBrand": "Intel",
+              "processorGeneration": "Unknown",
+              "processorName": "Celeron Dual Core",
+              "processorVariant": "N4020",
+              "ram": 4,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": 5400,
+              "ssd": "Not available",
+              "ssdCapacity": -1
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "\"Microsoft Office Home & Student 2019, HP Documentation, HP SSRM, HP Smart \"",
+              "keyboard": "Full-size, Natural Silver Keyboard with Numeric Keypad",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "HP True Vision 720p HD camera"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "Realtek RTL8822CE 802.11a/b/g/n/ac (2x2) Wi-Fi"
+          },
+          "dimensions": {
+              "dimensions": "358 x 242 x 17.9 mm",
+              "weight": 1.69
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Dual Array Digital Microphones",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD, micro-edge, anti-glare, Brightness: 250 nits, 141 ppi, Color Gamut: 45%NTSC",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Built-in Dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Natural Silver",
+              "modelName": "15s-fq2629TU",
+              "modelNumber": "15s-fq2629TU",
+              "msOfficeProvided": "Available",
+              "partNumber": "546K7PA#ACJ",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Unknown",
+              "suitableFor": [
+                  "Everyday Use",
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/5/q/g/-original-imagbzyyk8she3jc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/4/n/r/-original-imagbzyyh4fthxtg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/t/s/z/-original-imagbzyyguu8g8pb.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/v/q/6/-original-imagbzyytuepp4tf.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/r/x/x/-original-imagbzyyypyzyqzy.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/4/v/m/-original-imagbzyy8vxgwyhw.jpeg?q=70"
+          ],
+          "name": "HP 15s-fq2629TU",
+          "oldPrice": 17100000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1x HDMI 1.4b",
+              "micIn": "Available",
+              "multiCardSlot": "1 x card reader",
+              "usbPort": "1 x SuperSpeed USB Type-C 5Gbps signaling rate, 2 x SuperSpeed USB Type-A 5Gbps signaling rate"
+          },
+          "price": 12800000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "1.7 GHz upto max turbo frequency at 3.7 Ghz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 4,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1125G4",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Quick Access, Acer Care Center, Acer Product Registration, Acer Collection",
+              "keyboard": "FineTip Backlit Keyboard with Independent Standard Numeric Keypad ( International Language Support and Power Button)",
+              "lockPort": "Kensington Lock Slot",
+              "pointerDevice": "Multi-gesture Touchpad, Supporting Two-finger Scroll; Pinch; Gestures to Open Cortana, Action Center, Multitasking; Application Commands",
+              "securityChip": "Not available",
+              "webCamera": "720p HD Webcam (1280 x 720 Resolution)"
+          },
+          "brand": "acer",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Gigabit",
+              "wirelessLAN": "802.11a/b/g/n/acR2+ax wireless LAN"
+          },
+          "dimensions": {
+              "dimensions": "363.4 x 254.5 x 20.9",
+              "weight": 2.15
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Dual Microphones",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixels",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD Acer ComfyView LED Backlit TFT LCD Anti-glare Display (45% NTSC Color Gamut, Wide Viewing Angle up to 170 Degrees, Ultra-Slim Design, 16:9 Aspect Ratio, IPS Level Panel, Mercury Free, Environment Friendly)",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Built-in Dual Stereo Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Black",
+              "modelName": "Unknown",
+              "modelNumber": "A715-75G-50TA/ A715-75G-41G/ A715-75G-52AA",
+              "msOfficeProvided": "Not available",
+              "partNumber": "NH.Q97SI.001/ NH.Q97SI.004",
+              "powerSupply": "3-pin 135 W AC Adapter",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Aspire 7",
+              "suitableFor": [
+                  "Gaming"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kp1imq80/computer/u/b/z/na-gaming-laptop-acer-original-imag3d63hk3h8nm2.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp1imq80/computer/u/b/z/na-gaming-laptop-acer-original-imag3d63hk3h8nm2.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuvkcy80/computer/e/e/c/na-gaming-laptop-acer-original-imag7whqeputbayu.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuvkcy80/computer/o/i/k/na-gaming-laptop-acer-original-imag7whqptppxms9.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuvkcy80/computer/y/f/s/na-gaming-laptop-acer-original-imag7whq75hfzpba.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuvkcy80/computer/q/t/p/na-gaming-laptop-acer-original-imag7whqwyhtyydz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuvkcy80/computer/r/o/y/na-gaming-laptop-acer-original-imag7whqnkxnwhk8.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp1imq80/computer/e/g/s/na-gaming-laptop-acer-original-imag3d63hrxptn7p.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp1imq80/computer/w/r/k/na-gaming-laptop-acer-original-imag3d63ezfxh63w.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp1imq80/computer/t/g/j/na-gaming-laptop-acer-original-imag3d63fzx4yjmc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp1imq80/computer/b/p/o/na-gaming-laptop-acer-original-imag3d63uuyrghqc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp1imq80/computer/r/i/0/na-gaming-laptop-acer-original-imag3d63rexv5mnr.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp1imq80/computer/d/e/x/na-gaming-laptop-acer-original-imag3d63buekfv2j.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp1imq80/computer/v/u/i/na-gaming-laptop-acer-original-imag3d63g8ws7g89.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp1imq80/computer/a/3/h/na-gaming-laptop-acer-original-imag3d63uezfb2gs.jpeg?q=70"
+          ],
+          "name": "acer Aspire 7 A715-75G-50TA/ A715-75G-41G/ A715-75G-52AA",
+          "oldPrice": 26800000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe",
+              "hdmiPort": "1 x HDMI Port",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "1 x USB Type-C Port, 2 x USB 3.2 Gen 1 Ports, 1 x USB 2.0 Port"
+          },
+          "price": 15200000,
+          "processorAndMemory": {
+              "cache": -1,
+              "clockSpeed": "2.4 GHz with Turbo Boost Upto 5 GHz",
+              "dedicatedGraphicMemoryCapacity": 4,
+              "dedicatedGraphicMemoryType": "GDDR6",
+              "expandableMemory": 32,
+              "graphicProcessor": "NVIDIA GeForce GTX 1650",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": -1,
+              "processorBrand": "Intel",
+              "processorGeneration": "10th Gen",
+              "processorName": "Core i5",
+              "processorVariant": "Unknown",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Microsoft Office Home & Student 2019",
+              "keyboard": "Non-backlit, English",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "720p with Privacy Shutter"
+          },
+          "brand": "Lenovo",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "11ac, 2x2"
+          },
+          "dimensions": {
+              "dimensions": "362.2 x 253.4 x 19.9 mm",
+              "weight": 1.7
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in array microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 Inch)",
+              "screenType": "Full HD TN 220nits Anti-glare",
+              "soundChip": "Not available",
+              "soundProperties": "2 x 1.5W Stereo Speakers with Dolby Audio",
+              "speakers": "Built-in Stereo Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 11.5,
+              "batteryCell": -1,
+              "color": "Platinum Grey",
+              "modelName": "15IML05",
+              "modelNumber": "15IML05",
+              "msOfficeProvided": "Available",
+              "partNumber": "81WB0193IN, 81WB01BNIN, 81WB01EAIN, 81WB018EIN",
+              "powerSupply": "45W Round Tip",
+              "salesPackage": "Laptop, battery, adapter, cables and user manuals",
+              "series": "IdeaPad 3",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/keaaavk0/computer/x/m/y/lenovo-na-laptop-original-imafuzt8r5jqppfn.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kbb49zk0/computer/x/m/y/lenovo-na-laptop-original-imafsnkx2tkh6vgm.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/l/i/5/na-thin-and-light-laptop-lenovo-original-imag5k4qqhvwzdzh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/v/d/n/na-thin-and-light-laptop-lenovo-original-imag5k4qqfvz3yhb.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kebpqq80/computer/p/h/d/lenovo-na-laptop-original-imafvyqwfzn8euu5.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kc29n680/computer/4/e/2/lenovo-na-laptop-original-imaft9uxtwxnraez.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/j/c/9/na-thin-and-light-laptop-lenovo-original-imag5k3ja6bggu6z.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/knni7ww0/computer/u/0/f/na-thin-and-light-laptop-lenovo-original-imag2ah6uag8gtyt.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/knni7ww0/computer/u/v/p/na-thin-and-light-laptop-lenovo-original-imag2ah6u9udcqgh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/4/l/e/na-thin-and-light-laptop-lenovo-original-imag5k4qebx7ns6s.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/u/n/6/na-thin-and-light-laptop-lenovo-original-imag5k4qzwcgcqjr.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/a/s/j/na-thin-and-light-laptop-lenovo-original-imag5k4qn3jxhvgs.jpeg?q=70"
+          ],
+          "name": "Lenovo IdeaPad 3 15IML05",
+          "oldPrice": 17300000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "Unknown"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1 x HDMI 1.4 b",
+              "micIn": "Available",
+              "multiCardSlot": "1 x card reader",
+              "usbPort": "1 x USB 2.0, 2 x USB 3.2 Gen 1"
+          },
+          "price": 11300000,
+          "processorAndMemory": {
+              "cache": -1,
+              "clockSpeed": "Max Frequency Up to 4.1 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": -1,
+              "processorBrand": "Intel",
+              "processorGeneration": "10th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "10110U",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Available",
+              "includedSoftware": "Office Home and Student 2021",
+              "keyboard": "Chiclet Keyboard with Num-key",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "VGA Webcam"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.1",
+              "ethernet": "Not available",
+              "wirelessLAN": "Wi-Fi 5(802.11ac) 1x1"
+          },
+          "dimensions": {
+              "dimensions": "360.2 x 234.9 x 19.9 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD (200nits, 45% NTSC color gamut, non-OLED, Anti-glare display)",
+              "soundChip": "Not available",
+              "soundProperties": "SonicMaster Audio by ICEpower",
+              "speakers": "Built-in Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 2,
+              "color": "Transparent Silver",
+              "modelName": "X515JA-EJ362WS",
+              "modelNumber": "X515JA-EJ362WS",
+              "msOfficeProvided": "Available",
+              "partNumber": "90NB0SR2-M44040",
+              "powerSupply": "45W AC Adapter",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "VivoBook 15 (2021)",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/f/9/9/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9kxzc6rrh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/k/7/r/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9ahmaj7gz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/d/o/t/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc95abtyzrw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/u/d/v/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9uyfcgzyf.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/z/5/r/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9bqay2ymh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/n/h/n/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9ydmfyshc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/0/n/2/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9utapg2cd.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/r/a/a/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9hzf2pedh.jpeg?q=70"
+          ],
+          "name": "ASUS VivoBook 15 (2021) X515JA-EJ362WS",
+          "oldPrice": 15200000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1x HDMI 1.4 port",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "1 x USB 3.2 Gen 1 Type-A,1 x USB 3.2 Gen 1 Type-C, 2 x USB 2.0 Type-A"
+          },
+          "price": 11300000,
+          "processorAndMemory": {
+              "cache": 4,
+              "clockSpeed": "1.2 GHz upto max turbo frequency at 3.4 Ghz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": -1,
+              "processorBrand": "Intel",
+              "processorGeneration": "10th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1005G1",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Microsoft Office Home & Student 2019",
+              "keyboard": "Full-size, backlit, Natural Silver keyboard with numeric keypad",
+              "lockPort": "Not available",
+              "pointerDevice": "HP Imagepad with multi-touch gesture support",
+              "securityChip": "Not available",
+              "webCamera": "HP Wide Vision 720p HD camera"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "Realtek RTL8822CE 802.11a/b/g/n/ac (2x2) Wi-Fi"
+          },
+          "dimensions": {
+              "dimensions": "360 x 234 x 17.9 mm",
+              "weight": 1.75
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in dual array digital microphones",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 Inch)",
+              "screenType": "Full HD (144 Hz, IPS, micro-edge, anti-glare, Brightness: 250 nits, 141 ppi, Color Gamut: 45% NTSC)",
+              "soundChip": "Not available",
+              "soundProperties": "Audio by B&O, Dual speakers",
+              "speakers": "Built-in Dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Natural Silver",
+              "modelName": "15-eh1101AU",
+              "modelNumber": "15-eh1101AU",
+              "msOfficeProvided": "Available",
+              "partNumber": "4X7E6PA#ACJ",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adapter, User Guide, Warranty Documents",
+              "series": "Pavilion",
+              "suitableFor": [
+                  "Entertainment",
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/ksru0sw0/computer/d/p/w/15-eh1101au-thin-and-light-laptop-hp-original-imag69prbzxur5qq.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksru0sw0/computer/r/w/w/15-eh1101au-thin-and-light-laptop-hp-original-imag69przxqmehzm.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksru0sw0/computer/6/f/b/15-eh1101au-thin-and-light-laptop-hp-original-imag69pr6ypdufrd.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksru0sw0/computer/v/h/z/15-eh1101au-thin-and-light-laptop-hp-original-imag69prcgz6atqd.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksru0sw0/computer/m/k/w/15-eh1101au-thin-and-light-laptop-hp-original-imag69pr2puauhgg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksdjma80/computer/i/2/y/13-ay0508au-thin-and-light-laptop-hp-original-imag5yhrw9rfggdf.jpeg?q=70"
+          ],
+          "name": "HP Pavilion 15-eh1101AU",
+          "oldPrice": 21000000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe",
+              "hdmiPort": "1x HDMI 2.0",
+              "micIn": "Available",
+              "multiCardSlot": "1 x Micro SD Card Reader",
+              "usbPort": "1 x SuperSpeed USB Type-C, 2 x SuperSpeed USB Type-A 5Gbps signaling rate"
+          },
+          "price": 17300000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "2.1 GHz with Turbo Boost Upto 4 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "AMD Radeon AMD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": -1,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 5 Hexa Core",
+              "processorVariant": "5500U",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Microsoft Office Home & Student 2019",
+              "keyboard": "Chiclet Keyboard with Num-key",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "VGA camera"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "Wi-Fi 6(802.11ax)"
+          },
+          "dimensions": {
+              "dimensions": "360 x 235 x 19.9 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in array microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD Anti-glare display (200nits, NTSC: 45%)",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Built-in speaker",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 2,
+              "color": "Transparent Silver",
+              "modelName": "X515EA-EJ302TS",
+              "modelNumber": "X515EA-EJ302TS",
+              "msOfficeProvided": "Available",
+              "partNumber": "90NB0TY2-M17280",
+              "powerSupply": "45 W AC Adapter",
+              "salesPackage": "Laptop, battery, adapter, cables and user manuals",
+              "series": "VivoBook 15 (2021)",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/f/9/9/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9kxzc6rrh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuvkcy80/computer/x/8/l/na-thin-and-light-laptop-asus-original-imag7wj3hcg2dv9y.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku1k4280/computer/a/z/m/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag7949z2apngxr.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku1k4280/computer/y/1/q/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag7949qd9kzg8s.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku1k4280/computer/p/d/v/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag7949vnshmnfr.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/r/a/a/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9hzf2pedh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/k/7/r/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9ahmaj7gz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/d/o/t/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc95abtyzrw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/n/h/n/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9ydmfyshc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/d/q/v/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9fxpgjfh2.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp2y2kw0/computer/r/i/5/na-thin-and-light-laptop-asus-original-imag3ebncxbhmbrq.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/0/n/2/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9utapg2cd.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/u/d/v/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9uyfcgzyf.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/z/5/r/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9bqay2ymh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku1k4280/cpu/u/s/r/rog-strix-gl10cs-in085t-asus-original-imag7948ykq2hmy3.jpeg?q=70"
+          ],
+          "name": "ASUS VivoBook 15 (2021) X515EA-EJ302TS",
+          "oldPrice": 14900000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "Unknown"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1 x HDMI 1.4",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "1 x USB 3.2 Gen 1 Type-A, 1 x USB 3.2 Gen 1 Type-C, 2 x USB 2.0 Type-A"
+          },
+          "price": 10400000,
+          "processorAndMemory": {
+              "cache": 6,
+              "clockSpeed": "3.0GHz with Turbo Boost Upto 4.1GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": -1,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1115G4",
+              "ram": 4,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Not available",
+              "keyboard": "English International Backlit Keyboard",
+              "lockPort": "Kensington Lock Port",
+              "pointerDevice": "Touchpad",
+              "securityChip": "Not available",
+              "webCamera": "HD"
+          },
+          "brand": "DELL",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Available",
+              "wirelessLAN": "802.11ac"
+          },
+          "dimensions": {
+              "dimensions": "235 X 358 X 18.9 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Available",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixels",
+              "screenSize": "39.62 cm (15.6 Inch)",
+              "screenType": "FHD WVA AG Narrow Border",
+              "soundChip": "Not available",
+              "soundProperties": "Waves Maxx Audio Pro",
+              "speakers": "Available",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 7.0,
+              "batteryCell": 3,
+              "color": "Carbon Black",
+              "modelName": "3511",
+              "modelNumber": "3511",
+              "msOfficeProvided": "Available",
+              "partNumber": "D560720WIN9B",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, battery, adapter, cables and user manuals",
+              "series": "Inspiron",
+              "suitableFor": [
+                  "Everyday Use",
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/n/m/v/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kbmfcgxk6.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/u/v/x/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5k2guhfvu3.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/j/9/w/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kf6zufkg3.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/a/7/q/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kx7hyffxg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/u/g/g/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kvhvgjxbh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/9/t/a/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kjfdkwups.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/x/n/l/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kz3pryrbf.jpeg?q=70"
+          ],
+          "name": "DELL Inspiron 3511",
+          "oldPrice": 18000000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "M.2 SATA",
+              "hdmiPort": "1x HDMI 1.4 port",
+              "micIn": "Available",
+              "multiCardSlot": "1x SD Media Card Reader",
+              "usbPort": "2x USB 3.2 Gen1 ,1x USB 2.0"
+          },
+          "price": 13400000,
+          "processorAndMemory": {
+              "cache": 6,
+              "clockSpeed": "4.1",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "Intel Integrated UHD Graphics",
+              "hdd": "Not available",
+              "hddCapacity": 1024,
+              "memorySlots": 2,
+              "numberofCores": 2,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1115G4",
+              "ram": 8,
+              "ramFrequency": 2666,
+              "ramType": "DDR4",
+              "rpm": 5400,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Available",
+              "includedSoftware": "Office Home and Student 2019 included",
+              "keyboard": "Chiclet Keyboard with Num-key",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "VGA camera"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.2",
+              "ethernet": "Not available",
+              "wirelessLAN": "Wi-Fi 5(802.11ac)"
+          },
+          "dimensions": {
+              "dimensions": "360 x 235 x 19.9 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD Anti-glare display (NTSC: 45%, 250nits)",
+              "soundChip": "Not available",
+              "soundProperties": "SonicMaster Built-in speaker",
+              "speakers": "Built-in speaker",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 2,
+              "color": "Transparent Silver",
+              "modelName": "M515DA-BQ322TS",
+              "modelNumber": "M515DA-BQ322TS",
+              "msOfficeProvided": "Available",
+              "partNumber": "90NB0T42-M20410",
+              "powerSupply": "45W AC Adapter",
+              "salesPackage": "Laptop, battery, adapter, cables and user manuals",
+              "series": "Unknown",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/y/v/b/na-thin-and-light-laptop-asus-original-imag7bh52qsvjgqh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kumzpu80/computer/i/v/x/na-thin-and-light-laptop-asus-original-imag7qyg3zez63hx.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/i/b/g/na-thin-and-light-laptop-asus-original-imag7bh5u7wr58ex.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/1/z/p/na-thin-and-light-laptop-asus-original-imag7bh537v7hpuv.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/h/q/v/na-thin-and-light-laptop-asus-original-imag7bh5bgwcfxrp.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/o/m/5/na-thin-and-light-laptop-asus-original-imag7bh6gfvuqqfp.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/z/0/8/na-thin-and-light-laptop-asus-original-imag7bh5gpj8vr4d.jpeg?q=70"
+          ],
+          "name": "ASUS M515DA-BQ322TS",
+          "oldPrice": 14000000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1 x HDMI 1.4",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "1 x USB 3.2 Gen 1 Type-A, 1 x USB 3.2 Gen 1 Type-C, 2 x USB 2.0 Type-A"
+          },
+          "price": 10700000,
+          "processorAndMemory": {
+              "cache": 4,
+              "clockSpeed": "2.6 GHz with Turbo Boost Upto 3.5 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "AMD Radeon AMD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 2,
+              "processorBrand": "AMD",
+              "processorGeneration": "3rd Gen",
+              "processorName": "Ryzen 3 Dual Core",
+              "processorVariant": "3250U",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Office Home and Student 2021",
+              "keyboard": "Non-backlit, English",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "720p with Privacy Shutter"
+          },
+          "brand": "Lenovo",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "11ac, 2x2"
+          },
+          "dimensions": {
+              "dimensions": "359.2 x 236.5 x 19.9 mm",
+              "weight": 1.65
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in array microphones",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD TN 250nits Anti-glare",
+              "soundChip": "Not available",
+              "soundProperties": "High Definition (HD) Audio, Realtek ALC3287 codec, Dolby Audio",
+              "speakers": "Built-in dual stereo speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 12.0,
+              "batteryCell": -1,
+              "color": "Arctic Grey",
+              "modelName": "15ITL6",
+              "modelNumber": "15ITL6",
+              "msOfficeProvided": "Available",
+              "partNumber": "82H802EYIN|82H801L3IN",
+              "powerSupply": "65 W Round Tip",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "IdeaPad 3",
+              "suitableFor": [
+                  "Everyday Use",
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/f/i/u/na-thin-and-light-laptop-lenovo-original-imag5jy6fsm2yx4q.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/e/h/f/na-thin-and-light-laptop-lenovo-original-imag5jy6chya8jjg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/c/t/x/na-thin-and-light-laptop-lenovo-original-imag5jy6whzkkyeq.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/9/e/9/na-thin-and-light-laptop-lenovo-original-imag5jy6cj3bsyhp.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/g/w/h/15itl6-thin-and-light-laptop-lenovo-original-imag7anthzzmbhed.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/d/w/a/15itl6-thin-and-light-laptop-lenovo-original-imag7antuvez7y8z.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/w/g/7/15itl6-thin-and-light-laptop-lenovo-original-imag7anta9hyz8ej.jpeg?q=70"
+          ],
+          "name": "Lenovo IdeaPad 3 15ITL6",
+          "oldPrice": 18400000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1 x HDMI 1.4b",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "1 x USB-C 3.2 Gen 1, 1 x USB 2.0 , 1 x USB 3.2 Gen 1"
+          },
+          "price": 11900000,
+          "processorAndMemory": {
+              "cache": 6,
+              "clockSpeed": "Base Frequency 3.00 GHz, Max Turbo Boost Frequency Up to 4.10 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 12,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 2,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1115G4",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Not available",
+              "keyboard": "Full-size, backlit natural silver keyboard with numeric keypad",
+              "lockPort": "Not available",
+              "pointerDevice": "HP Imagepad with multi-touch gesture support",
+              "securityChip": "Not available",
+              "webCamera": "HP True Vision 720p HD camera"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.2",
+              "ethernet": "Not available",
+              "wirelessLAN": "MediaTek Wi-Fi CERTIFIED 6 MT7921 (2x2)"
+          },
+          "dimensions": {
+              "dimensions": "358 x 242 x 17.9 mm",
+              "weight": 1.69
+          },
+          "displayAndAudio": {
+              "internalMic": "Integrated dual array digital microphones",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixels",
+              "screenSize": "39.62 cm (15.6 Inch)",
+              "screenType": "FHD, micro-edge, anti-glare (Brightness: 250 nits, 141 ppi, Color Gamut: 45%NTSC)",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Inbuilt dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 7.25,
+              "batteryCell": 3,
+              "color": "Natural Silver",
+              "modelName": "15s- fq4021TU",
+              "modelNumber": "15s- fq4021TU",
+              "msOfficeProvided": "Available",
+              "partNumber": "546K8PA#ACJ",
+              "powerSupply": "65 W Smart AC power adapter",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Unknown",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kyrlifk0/computer/2/w/5/15s-fq4021tu-thin-and-light-laptop-hp-original-imagaxg6eanksddm.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyrlifk0/computer/8/9/9/15s-fq4021tu-thin-and-light-laptop-hp-original-imagaxg64x9cxd37.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyrlifk0/computer/a/u/i/15s-fq4021tu-thin-and-light-laptop-hp-original-imagaxg6ggthycv3.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyrlifk0/computer/b/f/o/15s-fq4021tu-thin-and-light-laptop-hp-original-imagaxg6kqueks9t.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyrlifk0/computer/s/1/s/15s-fq4021tu-thin-and-light-laptop-hp-original-imagaxg6wzvzscz8.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyrlifk0/computer/j/5/c/15s-fq4021tu-thin-and-light-laptop-hp-original-imagaxg6jjghupmg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kl5hh8w0/computer/g/y/f/hp-original-imagyckn8ygzhzjh.jpeg?q=70"
+          ],
+          "name": "HP 15s- fq4021TU",
+          "oldPrice": 20900000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe",
+              "hdmiPort": "1x HDMI 1.4b",
+              "micIn": "Available",
+              "multiCardSlot": "1 x multi-format SD media card reader",
+              "usbPort": "1 x Super Speed USB Type-C, 2 x Super Speed USB Type-A"
+          },
+          "price": 16100000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "4.5",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "Intel Integrated Iris Xe Graphics",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 4,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i5",
+              "processorVariant": "1155G7",
+              "ram": 8,
+              "ramFrequency": 3200,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Acer Care Center, Quick Access, Acer Product Registration",
+              "keyboard": "100-/101-/104-key FineTip keyboard with independent numeric keypad, international language support, and power button",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "Available"
+          },
+          "brand": "acer",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.2",
+              "ethernet": "Gigabit Ethernet, Wake-on-LAN Ready",
+              "wirelessLAN": "802.11a/b/g/n/ac wireless LAN"
+          },
+          "dimensions": {
+              "dimensions": "363.4 x 250.5 x 19.9 mm",
+              "weight": 1.9
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Dual Microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD high-brightness Acer ComfyView LED-backlit TFT LCD",
+              "soundChip": "Not available",
+              "soundProperties": "SonicMaster",
+              "speakers": "Built-in dual stereo speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 11.0,
+              "batteryCell": 2,
+              "color": "Pure Silver",
+              "modelName": "A315-23",
+              "modelNumber": "A315-23",
+              "msOfficeProvided": "Not available",
+              "partNumber": "UN.HVUSI.032",
+              "powerSupply": "45 W AC Adapter",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Aspire 3",
+              "suitableFor": [
+                  "Entertainment",
+                  "Everyday Use",
+                  "Performance",
+                  "Processing & Multitasking",
+                  "Travel & Business"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/ktketu80/computer/n/r/0/a315-23-laptop-acer-original-imag6w27yw7bmdz5.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktketu80/computer/y/f/y/a315-23-laptop-acer-original-imag6w27bahvgg6e.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktketu80/computer/i/n/u/a315-23-laptop-acer-original-imag6w27kwxqpa6h.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktketu80/computer/u/q/k/a315-23-laptop-acer-original-imag6w27vqqwsz7g.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktketu80/computer/s/5/j/a315-23-laptop-acer-original-imag6w27aznxhfjg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktketu80/computer/z/g/c/a315-23-laptop-acer-original-imag6w27qjze232w.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktketu80/computer/r/j/i/a315-23-laptop-acer-original-imag6w2725ebvheg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktketu80/computer/v/g/j/a315-23-laptop-acer-original-imag6w279vg2kphf.jpeg?q=70"
+          ],
+          "name": "acer Aspire 3 A315-23",
+          "oldPrice": 13400000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1 x HDMI Port",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "2 x USB 3.2 Gen 1ports, 1 x USB 2.0 port"
+          },
+          "price": 11000000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "Base Frequency 2.60 GHz, Max Turbo Boost Frequency Up to 3.5 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "AMD Radeon AMD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 2,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 3 Dual Core",
+              "processorVariant": "3250U",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Not available",
+              "keyboard": "English International Non Backlit Keyboard",
+              "lockPort": "Kensington Lock Port",
+              "pointerDevice": "Touchpad",
+              "securityChip": "Not available",
+              "webCamera": "Available"
+          },
+          "brand": "DELL",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Available",
+              "wirelessLAN": "802.11ac"
+          },
+          "dimensions": {
+              "dimensions": "189 X 358 X 23.5 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Available",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "38.0 cm (14.96 Inch)",
+              "screenType": "FHD WVA AG Narrow Border",
+              "soundChip": "Not available",
+              "soundProperties": "Waves Maxx Audio Pro",
+              "speakers": "Available",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 7.0,
+              "batteryCell": 3,
+              "color": "Carbon Black",
+              "modelName": "3515",
+              "modelNumber": "INSPIRON 3515",
+              "msOfficeProvided": "Available",
+              "partNumber": "D560708WIN9BE",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, battery, adapter, cables and user manuals",
+              "series": "Inspiron",
+              "suitableFor": [
+                  "Everyday Use",
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/n/m/v/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kbmfcgxk6.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/j/9/w/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kf6zufkg3.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/u/v/x/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5k2guhfvu3.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/a/7/q/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kx7hyffxg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/9/t/a/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kjfdkwups.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/u/g/g/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kvhvgjxbh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kt8zb0w0/computer/x/n/l/inspiron-3511-thin-and-light-laptop-dell-original-imag6n5kz3pryrbf.jpeg?q=70"
+          ],
+          "name": "DELL Inspiron INSPIRON 3515",
+          "oldPrice": 14200000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "M.2 SATA",
+              "hdmiPort": "1x HDMI 1.4",
+              "micIn": "Available",
+              "multiCardSlot": "1x SD Media Card Reader",
+              "usbPort": "2x USB 3.2 ,1x USB 2.0"
+          },
+          "price": 11000000,
+          "processorAndMemory": {
+              "cache": 4,
+              "clockSpeed": "3.5",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "AMD Radeon Radeon Graphics",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": 2,
+              "numberofCores": 2,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 3 Dual Core",
+              "processorVariant": "3250U",
+              "ram": 8,
+              "ramFrequency": 2400,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Not available",
+              "keyboard": "Full-size, backlit, natural silver keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "HP Imagepad with multi-touch gesture support",
+              "securityChip": "Not available",
+              "webCamera": "HP True Vision 720p HD camera"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.2",
+              "ethernet": "Not available",
+              "wirelessLAN": "Realtek RTL8821CE-M 802.11a/b/g/n/ac (1x1) Wi-Fi"
+          },
+          "dimensions": {
+              "dimensions": "324 x 225 x 17.9 mm",
+              "weight": 1.46
+          },
+          "displayAndAudio": {
+              "internalMic": "Integrated dual array digital microphones",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixels",
+              "screenSize": "35.56 cm (14 Inch)",
+              "screenType": "FHD, IPS, micro-edge, BrightView, (Brightness: 250 nits, 157 ppi, Color Gamut: 45%NTSC)",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Built in dual speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 9.75,
+              "batteryCell": 3,
+              "color": "Natural Silver",
+              "modelName": "14s-fq1089au",
+              "modelNumber": "14s-fq1089au",
+              "msOfficeProvided": "Available",
+              "partNumber": "50M59PA#ACJ",
+              "powerSupply": "65 W Smart AC power adapter",
+              "salesPackage": "Laptop, Power Adapter, User Guide, Warranty Documents",
+              "series": "Unknown",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kyt0ya80/computer/y/t/q/14s-fq1089au-thin-and-light-laptop-hp-original-imagayfyth9f3xd8.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyt0ya80/computer/i/r/d/14s-fq1089au-thin-and-light-laptop-hp-original-imagayfype4wggba.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyt0ya80/computer/g/b/t/14s-fq1089au-thin-and-light-laptop-hp-original-imagayfygadckj3s.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyt0ya80/computer/f/1/k/14s-fq1089au-thin-and-light-laptop-hp-original-imagayfykwpzhhys.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyt0ya80/computer/a/q/c/14s-fq1089au-thin-and-light-laptop-hp-original-imagayfynpxkbzcy.jpeg?q=70"
+          ],
+          "name": "HP 14s-fq1089au",
+          "oldPrice": 15800000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe",
+              "hdmiPort": "1x HDMI 1.4b",
+              "micIn": "Available",
+              "multiCardSlot": "1x multi-format SD media card reader",
+              "usbPort": "1x SuperSpeed USB Type-C, 2x SuperSpeed USB Type-A"
+          },
+          "price": 13100000,
+          "processorAndMemory": {
+              "cache": 4,
+              "clockSpeed": "3.8",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "AMD Radeon Radeon Graphics",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 4,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 3 Quad Core",
+              "processorVariant": "5300U",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Available",
+              "includedSoftware": "Office Home and Student 2021",
+              "keyboard": "Chiclet Keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "VGA camera"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.1",
+              "ethernet": "Not available",
+              "wirelessLAN": "Wi-Fi 5(802.11ac)"
+          },
+          "dimensions": {
+              "dimensions": "325.4 x 216 x 19.9 mm",
+              "weight": 1.6
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "35.56 cm (14 inch)",
+              "screenType": "FHD LED Backlit, IPS-level Panel, 250nits, 45% NTSC Color Gamut, Anti-glare display",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Built-in Speaker",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 2,
+              "color": "Transparent Silver",
+              "modelName": "X415EA-EB572WS",
+              "modelNumber": "X415EA-EB572WS",
+              "msOfficeProvided": "Available",
+              "partNumber": "90NB0TT1-M17220",
+              "powerSupply": "45 W AC Adapter",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "VivoBook 14 (2021)",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/l08gsy80/computer/m/a/e/-original-imagc2r5mz3cqdb3.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/l08gsy80/computer/w/m/7/-original-imagc2r5wacxayec.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/l08gsy80/computer/d/e/1/-original-imagc2r5gw57zvmh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/l08gsy80/computer/7/n/t/-original-imagc2r5wpuc4rhg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/l08gsy80/computer/5/k/m/-original-imagc2r5zzyqhdev.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/l08gsy80/computer/c/x/b/-original-imagc2r5uzd6fnrh.jpeg?q=70"
+          ],
+          "name": "ASUS VivoBook 14 (2021) X415EA-EB572WS",
+          "oldPrice": 21800000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1 x HDMI 1.4",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "\"1 x USB 3.2 Gen 1 Type-A, 1 x USB 3.2 Gen 1 Type-C, 2 x USB 2.0 Type-A \""
+          },
+          "price": 14900000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "Base Frequency 2.40 GHz, Max Turbo Boost Frequency Up to 4.20 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated Iris Xe",
+              "hdd": "Not available",
+              "hddCapacity": 1024,
+              "memorySlots": -1,
+              "numberofCores": 4,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i5",
+              "processorVariant": "1135G7",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Microsoft Office Home & Student 2019, HP Documentation",
+              "keyboard": "Full-size, Jet Black Keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "HP True Vision 720p HD camera"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.2",
+              "ethernet": "Not available",
+              "wirelessLAN": "Realtek RTL8821CE-M 802.11a/b/g/n/ac (1x1)"
+          },
+          "dimensions": {
+              "dimensions": "324 x 225 x 17.9 mm",
+              "weight": 1.46
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Dual Array Digital Microphones",
+              "refreshRate": -1,
+              "screenResolution": "1366 x 768 Pixel",
+              "screenSize": "35.56 cm (14 inch)",
+              "screenType": "HD micro-edge, BrightView, Brightness: 250 nits, 112 ppi, Color Gamut: 45%NTSC",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Built-in Dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Jet Black",
+              "modelName": "14s-dq3033tu",
+              "modelNumber": "14s-dq3033tu",
+              "msOfficeProvided": "Available",
+              "partNumber": "637S4PA#ACJ",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Unknown",
+              "suitableFor": [
+                  "Everyday Use",
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/i/e/g/14s-dq3033tu-thin-and-light-laptop-hp-original-imagbpb2uunyvvhc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/u/z/j/14s-dq3033tu-thin-and-light-laptop-hp-original-imagbpb2azezyfkv.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/c/c/g/14s-dq3033tu-thin-and-light-laptop-hp-original-imagbpb2hsf9acxu.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/u/x/h/14s-dq3033tu-thin-and-light-laptop-hp-original-imagbpb2ypcxy2zc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/n/8/u/14s-dq3033tu-thin-and-light-laptop-hp-original-imagbpb2a4g9wc3y.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/v/x/s/14s-dq3033tu-thin-and-light-laptop-hp-original-imagbpb2wr5aeg4q.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/n/p/y/14s-dq3033tu-thin-and-light-laptop-hp-original-imagbpb2s5bxksxu.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kvvad8w0/computer/8/m/y/16-e0362ax-gaming-laptop-hp-original-imag8zh58agxmkha.jpeg?q=70"
+          ],
+          "name": "HP 14s-dq3033tu",
+          "oldPrice": 11000000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1x HDMI 1.4b",
+              "micIn": "Available",
+              "multiCardSlot": "1 x card reader",
+              "usbPort": "1 x SuperSpeed USB Type-C 5Gbps signaling rate, 2 x SuperSpeed USB Type-A 5Gbps signaling rate"
+          },
+          "price": 10200000,
+          "processorAndMemory": {
+              "cache": 4,
+              "clockSpeed": "1.1 GHz with Max Turbo Boost Frequency Up to 3.3 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 4,
+              "processorBrand": "Intel",
+              "processorGeneration": "Unknown",
+              "processorName": "Pentium Quad Core",
+              "processorVariant": "N6000",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Office Home and Student 2019 included",
+              "keyboard": "Full-size, natural silver keyboard with numeric keypad",
+              "lockPort": "Not available",
+              "pointerDevice": "HP Imagepad with multi-touch gesture support",
+              "securityChip": "Not available",
+              "webCamera": "HP True Vision 720p HD camera"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.2",
+              "ethernet": "10/100/1000 GbE LAN",
+              "wirelessLAN": "RTL8821CE 802.11b/g/n/ac (1x1)"
+          },
+          "dimensions": {
+              "dimensions": "358 x 242 x 17.9 mm",
+              "weight": 1.69
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in dual array digital microphones",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixels",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD (Micro-edge, anti-glare, Brightness: 220 nits, 141 ppi, Color Gamut: 45% NTSC)",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Built-in Dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Natural Silver",
+              "modelName": "15s-GY0501AU",
+              "modelNumber": "15s-GY0501AU",
+              "msOfficeProvided": "Available",
+              "partNumber": "4R8B8PA#ACJ",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Unknown",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/ktaeqvk0/computer/b/7/4/15s-gy0501au-thin-and-light-laptop-hp-original-imag6z6muntqnzzc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyt0ya80/computer/6/z/6/-original-imagaybgnrr7eyxb.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyt0ya80/computer/d/d/f/-original-imagaybgwx7nmacr.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyt0ya80/computer/r/6/h/-original-imagaybg4yek8qfw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyt0ya80/computer/c/a/5/-original-imagaybgvez5pr9f.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyt0ya80/computer/m/k/5/-original-imagaybguzrwgxqx.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksdjma80/computer/i/2/y/13-ay0508au-thin-and-light-laptop-hp-original-imag5yhrw9rfggdf.jpeg?q=70"
+          ],
+          "name": "HP 15s-GY0501AU",
+          "oldPrice": 13700000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1x HDMI 1.4 port",
+              "micIn": "Not available",
+              "multiCardSlot": "1 multi-format SD media card reader",
+              "usbPort": "1 x SuperSpeed USB Type-C, 2 x SuperSpeed USB Type-A 5Gbps signaling rate"
+          },
+          "price": 11600000,
+          "processorAndMemory": {
+              "cache": -1,
+              "clockSpeed": "2.6 GHz to max turbo frequency at 3.5 Ghz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "AMD Radeon AMD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 2,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 3 Dual Core",
+              "processorVariant": "3250U",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Microsoft Office Home and Student 2019, HP Documentation, HP SSRM, HP Smart, HP Support Assistant",
+              "keyboard": "Full-size Natural Silver Keyboard with Numeric Keypad",
+              "lockPort": "Not available",
+              "pointerDevice": "Touchpad with Multi-touch Gesture Support",
+              "securityChip": "Not available",
+              "webCamera": "HP True Vision 720p HD Webcam"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.2",
+              "ethernet": "Integrated 10/100/1000 Gigabit Ethernet LAN",
+              "wirelessLAN": "Realtek RTL8821CE 802.11b/g/n/ac (1x1)"
+          },
+          "dimensions": {
+              "dimensions": "358 x 242 x 19.9 mm",
+              "weight": 1.82
+          },
+          "displayAndAudio": {
+              "internalMic": "Integrated Dual Array Digital Microphones",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD LED Backlit Anti-glare IPS Micro-edge Display (250 nits Brightness, 45% NTSC Color Gamut, 141 PPI)",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Built-in Dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 12.0,
+              "batteryCell": 3,
+              "color": "Natural Silver",
+              "modelName": "Unknown",
+              "modelNumber": "-GR0012AU",
+              "msOfficeProvided": "Available",
+              "partNumber": "35K35PA#ACJ",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "15s",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kk2wl8w0/computer/z/u/5/hp-original-imafzgdgcbtxvjka.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kk2wl8w0/computer/v/h/i/hp-original-imafzgdgrapqqrnr.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kk2wl8w0/computer/i/v/5/hp-original-imafzgdgxxmzwhyy.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kk2wl8w0/computer/5/z/s/hp-original-imafzgdgaqgar9eg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kk2wl8w0/computer/e/c/4/hp-original-imafzgdgmg3axjrt.jpeg?q=70"
+          ],
+          "name": "HP 15s -GR0012AU",
+          "oldPrice": 14400000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "SATA",
+              "hdmiPort": "1 x HDMI Port (v1.4b)",
+              "micIn": "Available",
+              "multiCardSlot": "3-in-1 Card Reader (SD, SDHC, SDXC)",
+              "usbPort": "1 x SuperSpeed USB Type C (5 Gbps Signaling Rate), 2 x SuperSpeed USB Type A (5 Gbps Signaling Rate)"
+          },
+          "price": 12500000,
+          "processorAndMemory": {
+              "cache": 5,
+              "clockSpeed": "2.6 GHz with Turbo Boost Upto 3.5 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "AMD Radeon Vega 6",
+              "hdd": "Not available",
+              "hddCapacity": 1024,
+              "memorySlots": -1,
+              "numberofCores": 2,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 3 Dual Core",
+              "processorVariant": "3250U",
+              "ram": 8,
+              "ramFrequency": 2400,
+              "ramType": "DDR4",
+              "rpm": 5400,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Office Home and Student 2021",
+              "keyboard": "Backlit, English",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "720p with Privacy Shutter"
+          },
+          "brand": "Lenovo",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "11ac, 2x2"
+          },
+          "dimensions": {
+              "dimensions": "359.2 x 236.5 x 19.9 mm",
+              "weight": 1.65
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in array microphones",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD TN 250nits Anti-glare, 45% NTSC",
+              "soundChip": "Not available",
+              "soundProperties": "1.5W x 2, Dolby Audio",
+              "speakers": "Built-in Dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 11.0,
+              "batteryCell": -1,
+              "color": "Arctic Grey",
+              "modelName": "15ALC6",
+              "modelNumber": "15ALC6",
+              "msOfficeProvided": "Available",
+              "partNumber": "82KU017KIN",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "IdeaPad 3",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/keaaavk0/computer/x/m/y/lenovo-na-laptop-original-imafuzt8r5jqppfn.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/l/7/k/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5gmptr6tv.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/s/j/9/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5qua7ndr8.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/u/d/g/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5dhfvhnwn.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/s/g/f/15alc6-thin-and-light-laptop-lenovo-original-imag9xz57jaukzzt.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/g/e/x/15alc6-thin-and-light-laptop-lenovo-original-imag9xz56qshvufw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/f/k/z/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5hdfhjz8c.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/p/t/y/15alc6-thin-and-light-laptop-lenovo-original-imag9xz55vp6v8j9.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/a/p/p/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5gnsv8fes.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/s/a/l/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5tgvvxcm3.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/m/x/i/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5ezq2hg5q.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/u/d/t/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5zr9zrfth.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/u/5/y/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5rwsnnc2d.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/o/k/h/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5kwatnfhd.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kxhvf680/computer/h/p/8/15alc6-thin-and-light-laptop-lenovo-original-imag9xz5bevj5sck.jpeg?q=70"
+          ],
+          "name": "Lenovo IdeaPad 3 15ALC6",
+          "oldPrice": 20600000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1 x HDMI 1.4b",
+              "micIn": "Available",
+              "multiCardSlot": "1 x card reader",
+              "usbPort": "1 x USB 2.0, 1 x USB 3.2 Gen 1, 1 x USB-C 3.2 Gen 1 (support data transfer only)"
+          },
+          "price": 14600000,
+          "processorAndMemory": {
+              "cache": 11,
+              "clockSpeed": "2.1 GHz with Max Turbo Boost Frequency Up to 4.0 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 12,
+              "graphicProcessor": "AMD Radeon AMD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 6,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 5 Hexa Core",
+              "processorVariant": "5500U",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Available",
+              "includedSoftware": "Office Home and Student 2021",
+              "keyboard": "Chiclet Keyboard with Num-key",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "VGA Webcam"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.1",
+              "ethernet": "Not available",
+              "wirelessLAN": "Wi-Fi 5(802.11ac)"
+          },
+          "dimensions": {
+              "dimensions": "360 x 235 x 19.9 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD anti-glare, Brightness: 200 nits, Color Gamut: 45% NTSC",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Built-in Speaker",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 2,
+              "color": "Transparent Silver",
+              "modelName": "X515EA-EJ312WS",
+              "modelNumber": "X515EA-EJ312WS",
+              "msOfficeProvided": "Available",
+              "partNumber": "90NB0TY2-M26810",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Unknown",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kp2y2kw0/computer/y/0/c/na-thin-and-light-laptop-asus-original-imag3ebnzawky4kn.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kumzpu80/computer/i/v/x/na-thin-and-light-laptop-asus-original-imag7qyg3zez63hx.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp2y2kw0/computer/f/p/z/na-thin-and-light-laptop-asus-original-imag3ebnfpfcsmvj.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kpk3csw0/computer/g/i/l/na-thin-and-light-laptop-asus-original-imag3rmdhxfkqunt.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp2y2kw0/computer/j/u/b/na-thin-and-light-laptop-asus-original-imag3ebnvwvpwcse.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ko0d6kw0/computer/l/j/c/na-thin-and-light-laptop-asus-original-imag2jtuudyus2zz.jpeg?q=70"
+          ],
+          "name": "ASUS X515EA-EJ312WS",
+          "oldPrice": 15800000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1x HDMI 1.4 port",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "1 x USB 3.2 Gen 1 Type-A, 1 x USB 3.2 Gen 1 Type-C, 2 x USB 2.0 Type-A"
+          },
+          "price": 11600000,
+          "processorAndMemory": {
+              "cache": 6,
+              "clockSpeed": "1.7 GHz upto max turbo frequency at 4.1 Ghz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 2,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1115G4",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Available",
+              "includedSoftware": "Microsoft Office Home & Student 2019",
+              "keyboard": "Full-size, backlit, natural silver keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "HP Imagepad with multi-touch gesture support",
+              "securityChip": "Energy Star Certified, EPEAT Silver Registered",
+              "webCamera": "HP True Vision 720p HD camera"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "Realtek RTL8822CE 802.11a/b/g/n/ac (2x2) Wi-Fi"
+          },
+          "dimensions": {
+              "dimensions": "325 x 216 x 17",
+              "weight": 1.41
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Dual Array Microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "35.56 cm (14 inch)",
+              "screenType": "Full HD, IPS, micro-edge,Brightview, Brightness: 250nits, 157 pppi, Color Gamut: 45%NTSC",
+              "soundChip": "Not available",
+              "soundProperties": "Audio by B&O",
+              "speakers": "Built-in Dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Natural Silver",
+              "modelName": "14-dv1001TU",
+              "modelNumber": "14-dv1001TU",
+              "msOfficeProvided": "Available",
+              "partNumber": "50N47PA#ACJ",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, Battery, Warranty Documents, User Guide",
+              "series": "Pavilion",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kyvvtzk0/computer/2/7/l/-original-imagbygbzq27x6sy.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyvvtzk0/computer/9/k/i/-original-imagbyghcvettcf9.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyvvtzk0/computer/s/u/n/-original-imagbygbhkb7hpza.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyvvtzk0/computer/h/k/2/-original-imagbygb29zagy96.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyvvtzk0/computer/g/i/a/-original-imagbygbqvbhcke4.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyvvtzk0/computer/m/e/a/-original-imagbygbswpgzqxk.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kyvvtzk0/computer/g/d/z/-original-imagbygbgp4fc2hy.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kwdv3bk0/computer/0/z/u/15-ec2145ax-gaming-laptop-hp-original-imag92vpqkcftyzm.jpeg?q=70"
+          ],
+          "name": "HP Pavilion 14-dv1001TU",
+          "oldPrice": 23300000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe M.2",
+              "hdmiPort": "1 x HDMI 2.0",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "1 x SuperSpeed USB Type-C 10Gbps signaling rate (USB Power Delivery, DisplayPort 1.4, HP Sleep and Charge), 2 x SuperSpeed USB Type-A 5Gbps signaling rate"
+          },
+          "price": 20000000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "2.5 GHz Upto Max Turbo Frequency at 4.5 Ghz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated Iris Xe",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 4,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i5",
+              "processorVariant": "1155G7",
+              "ram": 16,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Not available",
+              "keyboard": "English International Non Backlit Keyboard",
+              "lockPort": "Kensington Lock Port",
+              "pointerDevice": "Touchpad",
+              "securityChip": "Not available",
+              "webCamera": "Available"
+          },
+          "brand": "DELL",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Available",
+              "wirelessLAN": "802.11ac"
+          },
+          "dimensions": {
+              "dimensions": "189 X 358 X 23.5 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Available",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 Inch)",
+              "screenType": "FHD WVA AG Narrow Border",
+              "soundChip": "Not available",
+              "soundProperties": "Waves Maxx Audio Pro",
+              "speakers": "Available",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 7.0,
+              "batteryCell": -1,
+              "color": "Platinum Silver",
+              "modelName": "3515",
+              "modelNumber": "3515",
+              "msOfficeProvided": "Available",
+              "partNumber": "D560707WIN9S",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, battery, adapter, cables and user manuals",
+              "series": "Inspiron",
+              "suitableFor": [
+                  "Everyday Use",
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/krdtlzk0/computer/l/k/r/na-laptop-dell-original-imag57f9psmfjcxs.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krdtlzk0/computer/l/0/h/na-laptop-dell-original-imag57f9ytg2x5bz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krdtlzk0/computer/y/4/e/na-laptop-dell-original-imag57f9vrbqz8ef.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krdtlzk0/computer/d/q/k/na-laptop-dell-original-imag57f9zzqjsjg4.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krdtlzk0/computer/s/6/x/na-laptop-dell-original-imag57f9vpjpjy7b.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krdtlzk0/computer/3/w/q/na-laptop-dell-original-imag57f9zyr2qmh4.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krdtlzk0/computer/m/d/b/na-laptop-dell-original-imag57f9zwyzqsg6.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krdtlzk0/computer/2/8/y/na-laptop-dell-original-imag57f978qz4kqz.jpeg?q=70"
+          ],
+          "name": "DELL Inspiron 3515",
+          "oldPrice": 14800000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "M.2 SATA",
+              "hdmiPort": "1x HDMI 1.4 port",
+              "micIn": "Available",
+              "multiCardSlot": "1x SD Media Card Reader",
+              "usbPort": "2x USB 3.2 Gen1 ,1x USB 2.0"
+          },
+          "price": 11700000,
+          "processorAndMemory": {
+              "cache": 4,
+              "clockSpeed": "3.5",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "AMD Radeon Radeon Graphics",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": 2,
+              "numberofCores": 2,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 3 Dual Core",
+              "processorVariant": "3250U",
+              "ram": 8,
+              "ramFrequency": 2400,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Not available",
+              "keyboard": "Full-size, natural silver keyboard with numeric keypad",
+              "lockPort": "Not available",
+              "pointerDevice": "HP Imagepad with multi-touch gesture support",
+              "securityChip": "Not available",
+              "webCamera": "HP True Vision 720p HD camera"
+          },
+          "brand": "HP",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "Realtek RTL8822CE 802.11a/b/g/n/ac (2x2) Wi-Fi"
+          },
+          "dimensions": {
+              "dimensions": "358 x 242 x 17.9 mm",
+              "weight": 1.69
+          },
+          "displayAndAudio": {
+              "internalMic": "Not available",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixels",
+              "screenSize": "39.62 cm (15.6 Inch)",
+              "screenType": "FHD, micro-edge, anti-glare (Brightness: 250 nits, 141 ppi, Color Gamut: 45%NTSC)",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Natural Silver",
+              "modelName": "15s FR2508TU",
+              "modelNumber": "15s-FR2508TU",
+              "msOfficeProvided": "Available",
+              "partNumber": "546K3PA#ACJ",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Unknown",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kzpw2vk0/computer/i/d/h/15s-fr2508tu-laptop-hp-original-imagbz6rpvxa48zd.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/t/s/z/-original-imagbzyyguu8g8pb.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/4/v/m/-original-imagbzyy8vxgwyhw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/r/x/b/-original-imagbzyyca4m8fhk.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/4/n/r/-original-imagbzyyh4fthxtg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/5/q/g/-original-imagbzyyk8she3jc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/v/q/6/-original-imagbzyytuepp4tf.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/r/x/x/-original-imagbzyyypyzyqzy.jpeg?q=70"
+          ],
+          "name": "HP 15s-FR2508TU",
+          "oldPrice": 16500000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe",
+              "hdmiPort": "1 x HDMI 1.4b",
+              "micIn": "Available",
+              "multiCardSlot": "1 x multi-format SD media card reader",
+              "usbPort": "1 x SuperSpeed USB Type-C 5Gbps signaling rate, 2 x SuperSpeed USB Type-A 5Gbps signaling rate"
+          },
+          "price": 13000000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "3.7",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "Intel Integrated UHD Graphics",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 4,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1125G4",
+              "ram": 8,
+              "ramFrequency": 2666,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Microsoft Office Home & Student 2019",
+              "keyboard": "Chiclet Keyboard with Num-key",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "VGA camera"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "Wi-Fi 6(802.11ax)"
+          },
+          "dimensions": {
+              "dimensions": "360 x 235 x 19.9 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in array microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD Anti-glare display (200nits, NTSC: 45%)",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Built-in speaker",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 2,
+              "color": "Transparent Silver",
+              "modelName": "X515EA-EJ502TS",
+              "modelNumber": "X515EA-EJ502TS",
+              "msOfficeProvided": "Available",
+              "partNumber": "90NB0TY2-M17290",
+              "powerSupply": "45 W AC Adapter",
+              "salesPackage": "Laptop, battery, adapter, cables and user manuals",
+              "series": "VivoBook 15 (2021)",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kp2y2kw0/computer/y/0/c/na-thin-and-light-laptop-asus-original-imag3ebnzawky4kn.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuvkcy80/computer/x/8/l/na-thin-and-light-laptop-asus-original-imag7wj3hcg2dv9y.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku1k4280/computer/a/z/m/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag7949z2apngxr.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku1k4280/computer/y/1/q/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag7949qd9kzg8s.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku1k4280/computer/8/5/8/x515ea-ej502ts-thin-and-light-laptop-asus-original-imag7949xkgnjudh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/r/a/a/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9hzf2pedh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/k/7/r/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9ahmaj7gz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/d/o/t/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc95abtyzrw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/n/h/n/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9ydmfyshc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/d/q/v/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9fxpgjfh2.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kp2y2kw0/computer/r/i/5/na-thin-and-light-laptop-asus-original-imag3ebncxbhmbrq.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/0/n/2/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9utapg2cd.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/u/d/v/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9uyfcgzyf.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksyz8280/computer/z/5/r/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9bqay2ymh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku1k4280/cpu/u/s/r/rog-strix-gl10cs-in085t-asus-original-imag7948ykq2hmy3.jpeg?q=70"
+          ],
+          "name": "ASUS VivoBook 15 (2021) X515EA-EJ502TS",
+          "oldPrice": 21200000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "Unknown"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1 x HDMI 1.4",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "1 x USB 3.2 Gen 1 Type-A, 1 x USB 3.2 Gen 1 Type-C, 2 x USB 2.0 Type-A"
+          },
+          "price": 15500000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "2.4 GHz with Turbo Boost Upto 4.2 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated Iris Xe",
+              "hdd": "Not available",
+              "hddCapacity": 1024,
+              "memorySlots": -1,
+              "numberofCores": -1,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i5",
+              "processorVariant": "1135G7",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "McAfee",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Microsoft Office Home & Student 2021",
+              "keyboard": "English International Non Backlit Keyboard",
+              "lockPort": "Kensington Lock Port",
+              "pointerDevice": "Touchpad",
+              "securityChip": "Not available",
+              "webCamera": "HD"
+          },
+          "brand": "DELL",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Available",
+              "wirelessLAN": "802.11ac"
+          },
+          "dimensions": {
+              "dimensions": "358 x 235 x 18.9 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Available",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD WVA AG Narrow Border",
+              "soundChip": "Not available",
+              "soundProperties": "Waves Maxx Audio Pro",
+              "speakers": "Available",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 10.0,
+              "batteryCell": 3,
+              "color": "Black",
+              "modelName": "3510",
+              "modelNumber": "X9K0T",
+              "msOfficeProvided": "Available",
+              "partNumber": "ICC-D585031WIN8",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Battery, Adapter, Cables and User Manuals",
+              "series": "Vostro",
+              "suitableFor": [
+                  "Everyday Use"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/2/j/s/vostro-3510-notebook-dell-original-imagbpbtywaq8ny3.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/x/i/3/vostro-3510-notebook-dell-original-imagbpbtuz2rupdf.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/n/f/c/vostro-3510-notebook-dell-original-imagbpbtshughhac.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kzrbiq80/computer/z/u/f/vostro-3510-notebook-dell-original-imagbpbthv4jxjzk.jpeg?q=70"
+          ],
+          "name": "DELL Vostro X9K0T",
+          "oldPrice": 16300000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "M.2 SATA",
+              "hdmiPort": "1 x HDMI 1.4",
+              "micIn": "Available",
+              "multiCardSlot": "1 x SD Media Card Reader (SD, SDHC, SDXC)",
+              "usbPort": "2 x USB 3.2 Gen1, 1 x USB 2.0"
+          },
+          "price": 12600000,
+          "processorAndMemory": {
+              "cache": 4,
+              "clockSpeed": "1.2 GHz Upto Max Turbo Frequency at 3.4 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": 1024,
+              "memorySlots": 2,
+              "numberofCores": 2,
+              "processorBrand": "Intel",
+              "processorGeneration": "10th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1005G1",
+              "ram": 8,
+              "ramFrequency": 2666,
+              "ramType": "DDR4",
+              "rpm": 5400,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "McAfee Multi Device Security 15 Months Subscription",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Microsoft Office Home and Student 2019",
+              "keyboard": "English International Non Backlit Keyboard",
+              "lockPort": "Kensington Lock Slot",
+              "pointerDevice": "Touchpad",
+              "securityChip": "Not available",
+              "webCamera": "720P HD Webcam"
+          },
+          "brand": "DELL",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.1",
+              "ethernet": "Available",
+              "wirelessLAN": "IEEE 802.11ac"
+          },
+          "dimensions": {
+              "dimensions": "240 x 329 x 20 mm",
+              "weight": 1.58
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Microphones",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "35.56 cm (14 inch)",
+              "screenType": "Full HD LED Backlit Anti-glare Display",
+              "soundChip": "Not available",
+              "soundProperties": "Waves Maxx Audio Pro",
+              "speakers": "Built-in Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 10.0,
+              "batteryCell": 3,
+              "color": "Dune",
+              "modelName": "Unknown",
+              "modelNumber": "3401",
+              "msOfficeProvided": "Available",
+              "partNumber": "D552128WIN9DE",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Vostro",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kn7sdjk0/computer/l/w/f/na-notebook-dell-original-imagfy6ah6k6jqdh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kn7sdjk0/computer/l/w/f/na-notebook-dell-original-imagfy6ah6k6jqdh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku8pbbk0/computer/n/n/i/na-thin-and-light-laptop-dell-original-imag7dzkdekrfkwu.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kj0bp8w0/computer/g/2/f/dell-original-imafyzfnafuytfff.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku8pbbk0/computer/s/g/k/na-thin-and-light-laptop-dell-original-imag7dzkyypkwfqa.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku8pbbk0/computer/f/o/m/na-thin-and-light-laptop-dell-original-imag7dzkxz5qhzvc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku8pbbk0/computer/a/h/6/na-thin-and-light-laptop-dell-original-imag7dzkppk77p78.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku8pbbk0/computer/l/h/p/na-thin-and-light-laptop-dell-original-imag7dzkwhvszyyg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku8pbbk0/computer/z/y/i/na-thin-and-light-laptop-dell-original-imag7dzkanua96mv.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kirr24w0/computer/d/b/g/dell-na-thin-and-light-laptop-original-imafyhm5vqqyyyma.jpeg?q=70"
+          ],
+          "name": "DELL Vostro 3401",
+          "oldPrice": 12900000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "M.2 SATA",
+              "hdmiPort": "1 x HDMI Port (v1.4)",
+              "micIn": "Available",
+              "multiCardSlot": "3-in-1 Card Reader (SD, SDHC, SDXC)",
+              "usbPort": "2 x USB 3.1,1 x USB 2.0"
+          },
+          "price": 11800000,
+          "processorAndMemory": {
+              "cache": 4,
+              "clockSpeed": "1.2 GHz with Turbo Boost Upto 3.4 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": 2,
+              "numberofCores": 2,
+              "processorBrand": "Intel",
+              "processorGeneration": "10th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1005G1",
+              "ram": 8,
+              "ramFrequency": 2666,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Available",
+              "includedSoftware": "Microsoft Office Home and Student 2019",
+              "keyboard": "Standard English Backlit Keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "Touchpad",
+              "securityChip": "Firmware TPM 2.0",
+              "webCamera": "720p HD Webcam with Privacy Shutter"
+          },
+          "brand": "Lenovo",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.1",
+              "ethernet": "Not available",
+              "wirelessLAN": "Wi-Fi 6 11ax (2x2)"
+          },
+          "dimensions": {
+              "dimensions": "356.67 x 233.13 x 17.9",
+              "weight": 1.66
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-In Dual Array Microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 Inch)",
+              "screenType": "Full HD LED Backlit, Anti-Glare IPS Display (300 nits Brightness, 45% NTSC Color Gamut)",
+              "soundChip": "High Definition (HD) Audio",
+              "soundProperties": "2 x 2W Speakers with Dolby Audio",
+              "speakers": "Built-In Dual Stereo Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 11.0,
+              "batteryCell": -1,
+              "color": "Graphite Grey",
+              "modelName": "Unknown",
+              "modelNumber": "15 ITL 05",
+              "msOfficeProvided": "Available",
+              "partNumber": "82FG01H9IN||82FG013WIN",
+              "powerSupply": "65 W AC Adapter",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Ideapad Slim 5i",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/klfhk7k0/computer/w/u/x/na-thin-and-light-laptop-lenovo-original-imagyk4hedcydqx5.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/u/w/b/na-gaming-laptop-lenovo-original-imag5juyyjf8xzaj.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ko382a80/computer/r/a/f/na-thin-and-light-laptop-lenovo-original-imag2mjcuhnww8em.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ko382a80/computer/l/k/c/na-thin-and-light-laptop-lenovo-original-imag2mjc38z5ksnr.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ko382a80/computer/7/m/h/na-thin-and-light-laptop-lenovo-original-imag2mjcwg3bubbz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ko382a80/computer/n/b/h/na-thin-and-light-laptop-lenovo-original-imag2mjcgwv2pqbv.jpeg?q=70"
+          ],
+          "name": "Lenovo Ideapad Slim 5i 15 ITL 05",
+          "oldPrice": 30200000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe M.2",
+              "hdmiPort": "1 x HDMI Port (v1.4b)",
+              "micIn": "Available",
+              "multiCardSlot": "4-in-1 Card Reader",
+              "usbPort": "1 x USB 3.2 (Gen 1), 1 x USB 3.2 Gen 1 (Always On), 1 x USB-C 3.2 Gen 1 (Support Data Transfer, Power Delivery 3.0 and DisplayPort 1.2)"
+          },
+          "price": 18600000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "2.4 GHz with Turbo Boost upto 4.2 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated Iris Xe",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 4,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i5",
+              "processorVariant": "1135G7",
+              "ram": 16,
+              "ramFrequency": 3200,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "MS Office Home & Student 2019, Mi Smart Share, DTS Audio processing",
+              "keyboard": "Chiclet keyboard with Scissor mechanism, 1.5mm key travel",
+              "lockPort": "Available",
+              "pointerDevice": "Trackpad",
+              "securityChip": "TPM 2.0",
+              "webCamera": "720p HD Webcam"
+          },
+          "brand": "Redmibook",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "Not available"
+          },
+          "dimensions": {
+              "dimensions": "363.8 x 243.5 x 19.9 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD Anti glare display, 81.8% Screen to Body ratio and DC Dimming",
+              "soundChip": "Realtek ALC256",
+              "soundProperties": "2 x 2W Stereo Speakers With DTS Audio Processing",
+              "speakers": "Built-in Stereo Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 10.0,
+              "batteryCell": -1,
+              "color": "Charcoal Gray",
+              "modelName": "RedmiBook",
+              "modelNumber": "XMA2101-BN",
+              "msOfficeProvided": "Available",
+              "partNumber": "JYU4366IN",
+              "powerSupply": "65W Adapter",
+              "salesPackage": "1 Laptop, 1 Power Adaptor, 1 Power cord, User Manual",
+              "series": "15 Pro",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kuwzssw0/computer/x/l/a/redmibook-15-pro-thin-and-light-laptop-redmi-original-imag7xhnakyazyma.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuwzssw0/computer/f/y/7/redmibook-15-pro-thin-and-light-laptop-redmi-original-imag7xhnkfezfush.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuwzssw0/computer/w/m/f/redmibook-15-pro-thin-and-light-laptop-redmi-original-imag7xhn8hpnhkgb.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuwzssw0/computer/e/5/b/redmibook-15-pro-thin-and-light-laptop-redmi-original-imag7xhnrcygw5nv.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuwzssw0/computer/5/h/x/redmibook-15-pro-thin-and-light-laptop-redmi-original-imag7xhn9uvywmuz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuwzssw0/computer/v/n/n/redmibook-15-pro-thin-and-light-laptop-redmi-original-imag7xhnnj7uegz9.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krme93k0/computer/0/3/6/redmibook-15-pro-thin-and-light-laptop-redmi-original-imag5d5kwhbgwhgn.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kw3v0cw0/computer/5/k/m/-original-imag8uz3scxkmtb3.jpeg?q=70"
+          ],
+          "name": "Redmibook 15 Pro XMA2101-BN",
+          "oldPrice": 17900000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "Unknown"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe M.2",
+              "hdmiPort": "1 x HDMI Port(1.4)",
+              "micIn": "Available",
+              "multiCardSlot": "SD card reader",
+              "usbPort": "2 X USB 3.2 Gen1, 1 x USB 2.0"
+          },
+          "price": 14600000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "3.1 GHz with Turbo Boost up to 4.4 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated Iris Xe",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": 1,
+              "numberofCores": 4,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i5",
+              "processorVariant": "i5-11300H",
+              "ram": 8,
+              "ramFrequency": 3200,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Not available",
+              "keyboard": "Single Backlight Red Keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "Touchpad",
+              "securityChip": "Not available",
+              "webCamera": "720p HD Webcam (30 fps)"
+          },
+          "brand": "MSI",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.1",
+              "ethernet": "Available",
+              "wirelessLAN": "Intel Wi-Fi 6 AX200 (2*2 ax)"
+          },
+          "dimensions": {
+              "dimensions": "359 x 259 x 24.95",
+              "weight": 2.35
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Microphone",
+              "refreshRate": 144,
+              "screenResolution": "1920 x 1080 Pixels",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD 144Hz 45%NTSC IPS-Level Display",
+              "soundChip": "Not available",
+              "soundProperties": "2 x 2W Speakers, Realtek ALC 233",
+              "speakers": "Built-in Speaker",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Black",
+              "modelName": "Unknown",
+              "modelNumber": "15 B5DD-043IN",
+              "msOfficeProvided": "Not available",
+              "partNumber": "9S7-158K12-043",
+              "powerSupply": "150W AC Adapter",
+              "salesPackage": "Laptop, Battery, Power Adapter, User Guide",
+              "series": "Bravo",
+              "suitableFor": [
+                  "Gaming",
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/ktszgy80/computer/h/5/y/na-gaming-laptop-msi-original-imag72h6handbjdh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/q/8/i/na-gaming-laptop-msi-original-imag4azjqrnncfph.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/x/u/l/na-gaming-laptop-msi-original-imag4azjhfegg3r9.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/u/r/q/na-gaming-laptop-msi-original-imag4azjhhzhwhgw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/5/u/i/na-gaming-laptop-msi-original-imag4azjagzkunmh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/t/7/2/na-gaming-laptop-msi-original-imag4azjczqafjgz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/p/z/7/na-gaming-laptop-msi-original-imag4azjjhgmgynk.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/0/l/t/na-gaming-laptop-msi-original-imag4azjqpkymxpw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/l/4/q/na-gaming-laptop-msi-original-imag4azjh9mamhrh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/l/0/s/na-gaming-laptop-msi-original-imag4azjc3g2jg9y.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/q/o/h/na-gaming-laptop-msi-original-imag4azjxrwhyxcj.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/u/c/0/na-gaming-laptop-msi-original-imag4azjfqjhz6n7.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/0/x/w/na-gaming-laptop-msi-original-imag4azjpvmj2gc2.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kq8dua80/computer/y/m/o/na-gaming-laptop-msi-original-imag4azj4uryuqwq.jpeg?q=70"
+          ],
+          "name": "MSI Bravo 15 B5DD-043IN",
+          "oldPrice": 25000000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe",
+              "hdmiPort": "1 x HDMI (4K @ 60Hz)",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "1 x Type-A USB 2.0, 1 x Type-C USB 3.2 Gen1, 2 x Type-A USB 3.2 Gen1"
+          },
+          "price": 17600000,
+          "processorAndMemory": {
+              "cache": -1,
+              "clockSpeed": "4.2 GHz Max Turbo Frequency",
+              "dedicatedGraphicMemoryCapacity": 4,
+              "dedicatedGraphicMemoryType": "GDDR6",
+              "expandableMemory": -1,
+              "graphicProcessor": "AMD Radeon RX5500M",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 6,
+              "processorBrand": "AMD",
+              "processorGeneration": "Unknown",
+              "processorName": "Ryzen 5 Hexa Core",
+              "processorVariant": "5600H",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Not available",
+              "keyboard": "Non-backlit, English",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "1M HD Camera"
+          },
+          "brand": "Lenovo",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "11ac, 2x2"
+          },
+          "dimensions": {
+              "dimensions": "Unknown",
+              "weight": -1
+          },
+          "displayAndAudio": {
+              "internalMic": "Not available",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "35.56 cm (14 inch)",
+              "screenType": "Full HD",
+              "soundChip": "Not available",
+              "soundProperties": "Not available",
+              "speakers": "Not available",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": -1,
+              "color": "Platinum Grey",
+              "modelName": "14IML05",
+              "modelNumber": "14IML05",
+              "msOfficeProvided": "Available",
+              "partNumber": "81WA00Q3IN",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adapter, User Guide, Warranty Documents",
+              "series": "IdeaPad 3",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/keaaavk0/computer/c/q/t/lenovo-na-thin-and-light-laptop-original-imafuzt873zgp9xe.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kcuug7k0/computer/c/q/t/lenovo-original-imaftw47c83gz79p.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kcuug7k0/computer/c/q/t/lenovo-original-imaftw473axuuzsd.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kebpqq80/computer/p/h/d/lenovo-na-laptop-original-imafvyqwfzn8euu5.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kk4c13k0/computer/x/f/w/lenovo-original-imafzjhv8vcnu5yv.jpeg?q=70"
+          ],
+          "name": "Lenovo IdeaPad 3 14IML05",
+          "oldPrice": 17300000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "Not available",
+              "micIn": "Not available",
+              "multiCardSlot": "Not available",
+              "usbPort": "Not available"
+          },
+          "price": 11300000,
+          "processorAndMemory": {
+              "cache": 4,
+              "clockSpeed": "2.1 GHz with Turbo Boost Upto 4.1 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": -1,
+              "processorBrand": "Intel",
+              "processorGeneration": "10th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "10110U",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Available",
+              "includedSoftware": "Office Home and Student 2021",
+              "keyboard": "Backlit Chiclet Keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "720p HD camera"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "Wi-Fi 6(802.11ax) 2x2"
+          },
+          "dimensions": {
+              "dimensions": "324 x 215 x 19.1 mm",
+              "weight": 1.4
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "35.56 cm (14 inch)",
+              "screenType": "Full HD (IPS-level Panel, 250nits, 45% NTSC color gamut, non-OLED, Anti-glare display)",
+              "soundChip": "Not available",
+              "soundProperties": "Audio by ICEpower",
+              "speakers": "Built-in Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Cobalt Blue",
+              "modelName": "X413EA-EB321WS",
+              "modelNumber": "X413EA-EB321WS",
+              "msOfficeProvided": "Available",
+              "partNumber": "90NB0RLA-M006K0",
+              "powerSupply": "65W AC Adapter",
+              "salesPackage": "Laptop, battery, adapter, cables and user manuals",
+              "series": "VivoBook Ultra 14 (2021)",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kbfeljk0/computer/h/a/s/asus-original-imafss69cdydrwr7.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kh0vonk0/computer/e/6/d/asus-original-imafx4nfhayhpwgh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kbfeljk0/computer/h/a/s/asus-original-imafss68sthzhrh6.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kbfeljk0/computer/h/a/s/asus-original-imafss69h5enzbhz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kbfeljk0/computer/h/a/s/asus-original-imafss6cxghv98fg.jpeg?q=70"
+          ],
+          "name": "ASUS VivoBook Ultra 14 (2021) X413EA-EB321WS",
+          "oldPrice": 17300000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1x HDMI 1.4 port",
+              "micIn": "Available",
+              "multiCardSlot": "1 x Micro SD card reader",
+              "usbPort": "1 x USB 3.2 Gen 1 Type-A, 1 x USB 3.2 Gen 1 Type-C, 2 x USB 2.0 Type-A"
+          },
+          "price": 12800000,
+          "processorAndMemory": {
+              "cache": 6,
+              "clockSpeed": "3.00 GHz, Max Turbo Boost Frequency Up to 4.10 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": -1,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1115G4",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Available",
+              "includedSoftware": "Microsoft Office 2019 Home & Student",
+              "keyboard": "Backlit Keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "Not available"
+          },
+          "brand": "Realme",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.1",
+              "ethernet": "Not available",
+              "wirelessLAN": "Not available"
+          },
+          "dimensions": {
+              "dimensions": "307.2 x 228.9 x 15.5 mm",
+              "weight": 1.38
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in microphone",
+              "refreshRate": -1,
+              "screenResolution": "2160 x 1440 Pixel",
+              "screenSize": "35.56 cm (14 inch)",
+              "screenType": "2K QHD, IPS LCD Display ( 400nits peak brightness, 100% sRGB,3:2 aspect ratio, Full Vision Display)",
+              "soundChip": "Not available",
+              "soundProperties": "DTS Audio Processing",
+              "speakers": "Harman, Built-in Dual Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": -1,
+              "color": "Real Gray",
+              "modelName": "RMNB1001",
+              "modelNumber": "RMNB1001",
+              "msOfficeProvided": "Available",
+              "partNumber": "130290120016",
+              "powerSupply": "65 W Type-C Adaptor",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Book (Slim)",
+              "suitableFor": [
+                  "Everyday Use",
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/ksez24w0/computer/v/b/y/rmnb1001-thin-and-light-laptop-realme-original-imag5zhgw27k4tbb.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksez24w0/computer/v/b/y/rmnb1001-thin-and-light-laptop-realme-original-imag5zhgw27k4tbb.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksez24w0/computer/v/b/y/rmnb1001-thin-and-light-laptop-realme-original-imag5zhgw27k4tbb.jpeg?q=70",
+              "//static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/360-view_c3a99e.png",
+              "https://rukminim1.flixcart.com/image/128/128/ksgehzk0/computer/s/q/h/rmnb1001-thin-and-light-laptop-realme-original-imag6yfkg55eja3y.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kuczmvk0/computer/g/3/t/rmnb1001-thin-and-light-laptop-realme-original-imag7gy4hbuvgxfc.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksez24w0/computer/w/m/k/rmnb1001-thin-and-light-laptop-realme-original-imag5zhghwvg9mmw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksez24w0/computer/s/m/w/rmnb1001-thin-and-light-laptop-realme-original-imag5zhgfhrf7hss.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksez24w0/computer/w/j/x/rmnb1001-thin-and-light-laptop-realme-original-imag5zhgvzepbvgt.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksez24w0/computer/u/2/h/rmnb1001-thin-and-light-laptop-realme-original-imag5zhgby9wed5u.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ksez24w0/computer/u/k/x/rmnb1001-thin-and-light-laptop-realme-original-imag5zhghb8uukhc.jpeg?q=70"
+          ],
+          "name": "Realme Book (Slim) RMNB1001",
+          "oldPrice": 16400000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe",
+              "hdmiPort": "Not available",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "TypeC x 2 USB 3.2 Gen 2; TypeA x 1 USB 3.2 Gen 1"
+          },
+          "price": 14000000,
+          "processorAndMemory": {
+              "cache": 6,
+              "clockSpeed": "3.0GHz with Turbo Boost Upto 4.1GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": -1,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1115G4",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "MS Office Home & Student 2019, Mi Smart Share, DTS Audio processing",
+              "keyboard": "Chiclet keyboard with Scissor mechanism, 1.5mm key travel",
+              "lockPort": "Available",
+              "pointerDevice": "Trackpad",
+              "securityChip": "TPM 2.0",
+              "webCamera": "720p HD Webcam"
+          },
+          "brand": "Redmibook",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "Not available"
+          },
+          "dimensions": {
+              "dimensions": "363.8 x 243.5 x 19.9 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD Anti glare display, 81.8% Screen to Body ratio and DC Dimming",
+              "soundChip": "Realtek ALC256",
+              "soundProperties": "2 x 2W Stereo Speakers With DTS Audio Processing",
+              "speakers": "Built-in Stereo Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 10.0,
+              "batteryCell": -1,
+              "color": "Charcoal Gray",
+              "modelName": "RedmiBook",
+              "modelNumber": "XMA2101-BW",
+              "msOfficeProvided": "Available",
+              "partNumber": "JYU4368IN",
+              "powerSupply": "65W Adapter",
+              "salesPackage": "1 Laptop, 1 Power Adaptor, 1 Power cord, User Manual",
+              "series": "15 e-Learning Edition",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/krxtrww0/computer/e/l/c/redmibook-15-e-learning-edition-thin-and-light-laptop-redmi-original-imag5m8jkjbaybeu.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krtjgcw0/computer/z/v/h/redmibook-15-e-learning-edition-thin-and-light-laptop-redmi-original-imag5gybfzrh7pwy.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krme93k0/computer/5/f/w/redmibook-15-e-learning-edition-thin-and-light-laptop-redmi-original-imag5d5gxztqzb4r.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krme93k0/computer/g/r/s/redmibook-15-e-learning-edition-thin-and-light-laptop-redmi-original-imag5d5gykryhxfr.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krme93k0/computer/q/7/c/redmibook-15-e-learning-edition-thin-and-light-laptop-redmi-original-imag5d5gbzqgxt8g.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/krme93k0/computer/d/0/z/redmibook-15-e-learning-edition-thin-and-light-laptop-redmi-original-imag5d5gznzzhhhh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kw3v0cw0/computer/5/k/m/-original-imag8uz3scxkmtb3.jpeg?q=70"
+          ],
+          "name": "Redmibook 15 e-Learning Edition XMA2101-BW",
+          "oldPrice": 15500000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "Unknown"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "SATA",
+              "hdmiPort": "1 x HDMI Port(1.4)",
+              "micIn": "Available",
+              "multiCardSlot": "SD card reader",
+              "usbPort": "2 X USB 3.2 Gen1, 1 x USB 2.0"
+          },
+          "price": 11600000,
+          "processorAndMemory": {
+              "cache": 6,
+              "clockSpeed": "3.0 GHz with Turbo Boost up to 4.1 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": 1,
+              "numberofCores": -1,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "i3-1115G4",
+              "ram": 8,
+              "ramFrequency": 3200,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Available",
+              "includedSoftware": "Microsoft Office Home and Student 2019",
+              "keyboard": "Standard English Backlit Keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "Touchpad",
+              "securityChip": "Firmware TPM 2.0",
+              "webCamera": "720p HD Webcam with Privacy Shutter"
+          },
+          "brand": "Lenovo",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "11ac (2x2)"
+          },
+          "dimensions": {
+              "dimensions": "324.2 x 215.7 x 19.9",
+              "weight": 1.41
+          },
+          "displayAndAudio": {
+              "internalMic": "In-Built Dual Array Microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "35.56 cm (14 Inch)",
+              "screenType": "Full HD LED Backlit, Anti-Glare IPS Display (300 nits Brightness, 45% NTSC Color Gamut)",
+              "soundChip": "High Definition (HD) Audio, Realtek ALC3287 codec",
+              "soundProperties": "2 x 1.5W Dual Stereo Speakers with Dolby Audio",
+              "speakers": "Built-In Dual Stereo Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 7.5,
+              "batteryCell": -1,
+              "color": "Arctic Grey",
+              "modelName": "Ideapad 3",
+              "modelNumber": "14 ITL 6",
+              "msOfficeProvided": "Available",
+              "partNumber": "82H700KTIN",
+              "powerSupply": "65 W AC Adapter",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "Ideapad Slim 3i (2021)",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/a/w/e/na-thin-and-light-laptop-lenovo-original-imag5k4qyjacgkuh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/e/c/f/na-thin-and-light-laptop-lenovo-original-imag5k4qvu2rzjsg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/y/c/f/na-thin-and-light-laptop-lenovo-original-imag5k4qugnhbjmd.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/t/f/x/na-thin-and-light-laptop-lenovo-original-imag5k4qprpgheh4.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/j/c/9/na-thin-and-light-laptop-lenovo-original-imag5k3ja6bggu6z.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/j/k/d/na-thin-and-light-laptop-lenovo-original-imag5k4qpbkdf8hj.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/r/i/e/na-thin-and-light-laptop-lenovo-original-imag5k4quspgg7ga.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/d/i/i/na-thin-and-light-laptop-lenovo-original-imag5k4qhwbq7xqs.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kruyw7k0/computer/p/6/d/na-thin-and-light-laptop-lenovo-original-imag5k4qpfuzggfk.jpeg?q=70"
+          ],
+          "name": "Lenovo Ideapad Slim 3i (2021) 14 ITL 6",
+          "oldPrice": 22200000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe M.2",
+              "hdmiPort": "1 x HDMI Port (v1.4b)",
+              "micIn": "Available",
+              "multiCardSlot": "4-in-1 Card Reader",
+              "usbPort": "1 x USB 3.2 Gen 1, 1 x USB-C 3.2 Gen 1 (Support Data Transfer Only), 1 x USB 2.0"
+          },
+          "price": 16400000,
+          "processorAndMemory": {
+              "cache": 8,
+              "clockSpeed": "2.4 GHz with Turbo boost up to 4.2 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 12,
+              "graphicProcessor": "Intel Integrated Iris Xe",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": 1,
+              "numberofCores": 4,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i5",
+              "processorVariant": "1135G7",
+              "ram": 8,
+              "ramFrequency": 3200,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 512
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "McAfee",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Microsoft Office Home & Student 2019",
+              "keyboard": "English International Non Backlit Keyboard",
+              "lockPort": "Kensington Lock Port",
+              "pointerDevice": "Touchpad",
+              "securityChip": "Not available",
+              "webCamera": "Available"
+          },
+          "brand": "DELL",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v4.1",
+              "ethernet": "Available",
+              "wirelessLAN": "802.11ac"
+          },
+          "dimensions": {
+              "dimensions": "240 x 329 x 20",
+              "weight": 1.58
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in Microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixels",
+              "screenSize": "35.56 cm (14 inch)",
+              "screenType": "Full HD WVA AG Narrow Border Display",
+              "soundChip": "Not available",
+              "soundProperties": "Waves Maxx Audio Pro",
+              "speakers": "Built-in Speakers",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 10.0,
+              "batteryCell": 3,
+              "color": "Dune",
+              "modelName": "Unknown",
+              "modelNumber": "3400",
+              "msOfficeProvided": "Available",
+              "partNumber": "D552201WIN9DE",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Battery, Adapter, Cables and User Manuals",
+              "series": "Vostro",
+              "suitableFor": [
+                  "Everyday Use"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kn7sdjk0/computer/l/w/f/na-notebook-dell-original-imagfy6ah6k6jqdh.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku5ufm80/computer/z/6/b/na-thin-and-light-laptop-dell-original-imag7cstdkr8g9nw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku5ufm80/computer/4/2/8/na-thin-and-light-laptop-dell-original-imag7cstjqy9q4zt.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku5ufm80/computer/h/d/g/na-thin-and-light-laptop-dell-original-imag7cstgratzupp.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku5ufm80/computer/l/2/m/na-thin-and-light-laptop-dell-original-imag7cstff3khsg4.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku5ufm80/computer/5/j/y/na-thin-and-light-laptop-dell-original-imag7cst2uhhx87k.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku8pbbk0/computer/q/n/8/na-thin-and-light-laptop-dell-original-imag7eafrx3xyqzd.jpeg?q=70"
+          ],
+          "name": "DELL Vostro 3400",
+          "oldPrice": 16500000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "M.2 SATA",
+              "hdmiPort": "1 x HDMI 1.4 Port",
+              "micIn": "Available",
+              "multiCardSlot": "SD Media Card Reader (SD, SDHC, SDXC)",
+              "usbPort": "2 x USB 3.2 Gen 1, 1 x USB 2.0"
+          },
+          "price": 12500000,
+          "processorAndMemory": {
+              "cache": 6,
+              "clockSpeed": "1.7 GHz Upto Max Turbo Frequency at 4.1 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 16,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": 2,
+              "numberofCores": 2,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1115G4",
+              "ram": 8,
+              "ramFrequency": 2666,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "1 Year McAfee",
+              "backlitKeyboard": "Not available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Available",
+              "includedSoftware": "Windows 11 Home, Microsoft Office Home & Student 2019, 1 Year Mcafee",
+              "keyboard": "Chiclet Keyboard",
+              "lockPort": "Not available",
+              "pointerDevice": "MultiGesture Touchpad",
+              "securityChip": "Not available",
+              "webCamera": "VGA"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "4.1",
+              "ethernet": "Not available",
+              "wirelessLAN": "Wi-Fi 5(802.11ac)+Bluetooth 4.1 (Dual band) 1*1"
+          },
+          "dimensions": {
+              "dimensions": "32.54 x 21.60 x 1.99 ~ 1.99 cm",
+              "weight": 1.6
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in microphone",
+              "refreshRate": 60,
+              "screenResolution": "1920 x 1080 pixel",
+              "screenSize": "35.81 cm (14.1 inch)",
+              "screenType": "14.0-inch, FHD (1920 x 1080) 16:9 aspect ratio, IPS-level Panel, LED Backlit, 250nits, 45% NTSC color gamut, Anti-glare display",
+              "soundChip": "Not available",
+              "soundProperties": "SonicMaster",
+              "speakers": "Built-in speaker",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": 6.0,
+              "batteryCell": -1,
+              "color": "Transparent Silver",
+              "modelName": "",
+              "modelNumber": "X415EA-EB372WS",
+              "msOfficeProvided": "Available",
+              "partNumber": "90NB0TT1-M00H50",
+              "powerSupply": "Unknown",
+              "salesPackage": "Laptop, Power Adaptor, User Guide",
+              "series": "Vivobook 14",
+              "suitableFor": [
+                  "Travel & Business",
+                  "Processing & Multitasking",
+                  "Everyday Use",
+                  "Entertainment",
+                  "Performance"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/kwl0akw0/computer/b/c/g/x415ea-eb372ws-thin-and-light-laptop-asus-original-imag98ctqynmmfzw.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kwmfqfk0/computer/o/l/g/x415ea-eb372ws-thin-and-light-laptop-asus-original-imag996yxyabhurb.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kwl0akw0/computer/r/l/p/x415ea-eb372ws-thin-and-light-laptop-asus-original-imag98ctnsq4cmqq.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kvtuxe80/computer/n/f/t/x415ea-ek678ts-x415ea-thin-and-light-laptop-asus-original-imag8mw8zyyn8x8g.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/kwgpz0w0/computer/5/m/k/x415ea-ek302ws-laptop-asus-original-imag94temacnpf2a.jpeg?q=70"
+          ],
+          "name": "ASUS Vivobook 14 X415EA-EB372WS",
+          "oldPrice": 17300000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 11 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "Not available",
+              "hdmiPort": "1x HDMI 1.4",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "1x USB 3.2 Gen 1 Type-A, 1x USB 3.2 Gen 1 Type-C, 2x USB 2.0 Type-A"
+          },
+          "price": 12500000,
+          "processorAndMemory": {
+              "cache": 6,
+              "clockSpeed": "3.0 Ghz With Turbo Upto 4.10",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": 20,
+              "graphicProcessor": "Intel Integrated Intel UHD Graphics",
+              "hdd": "Not available",
+              "hddCapacity": 1024,
+              "memorySlots": -1,
+              "numberofCores": 2,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "i3-1115G4",
+              "ram": 8,
+              "ramFrequency": 3200,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Office Home and Student 2019 included",
+              "keyboard": "Backlit Chiclet Keyboard with Num-key",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Trusted Platform Module (Firmware TPM)",
+              "webCamera": "720p HD Webcam"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.0",
+              "ethernet": "Not available",
+              "wirelessLAN": "802.11ax"
+          },
+          "dimensions": {
+              "dimensions": "359 x 235 x 17.9 mm",
+              "weight": 1.8
+          },
+          "displayAndAudio": {
+              "internalMic": "Not available",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD LED Backlit OLED Glossy Display (16:9, 220nits Brightness, DCI-P3: 100%, Color Gamut, 85% Screen-to-body Ratio)",
+              "soundChip": "Not available",
+              "soundProperties": "Audio by ICEpower",
+              "speakers": "Built-in Speaker",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 3,
+              "color": "Indie Black",
+              "modelName": "K513EA-L302TS",
+              "modelNumber": "K513EA-L302TS",
+              "msOfficeProvided": "Available",
+              "partNumber": "90NB0SG1-M14030",
+              "powerSupply": "65W AC Adapter",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "VivoBook K15 OLED (2021)",
+              "suitableFor": [
+                  "Processing & Multitasking"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/ktop5e80/computer/g/f/h/km513ua-l502ts-thin-and-light-laptop-asus-original-imag6yt2ghwdvyqt.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktop5e80/computer/w/5/x/k513ea-l302ts-thin-and-light-laptop-asus-original-imag6ywfvckhr6cp.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktn9pjk0/computer/c/g/y/na-gaming-laptop-asus-original-imag6xzypek32yqg.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktop5e80/computer/r/p/i/km513ua-l502ts-thin-and-light-laptop-asus-original-imag6yt2huc5hb6x.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktop5e80/computer/4/u/w/km513ua-l502ts-thin-and-light-laptop-asus-original-imag6yt2hmattu6f.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktop5e80/computer/6/a/u/km513ua-l502ts-thin-and-light-laptop-asus-original-imag6yt2xhupvhfb.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ktop5e80/computer/1/w/8/km513ua-l502ts-thin-and-light-laptop-asus-original-imag6yt2qgbkphd3.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ko0d6kw0/computer/l/j/c/na-thin-and-light-laptop-asus-original-imag2jtuudyus2zz.jpeg?q=70"
+          ],
+          "name": "ASUS VivoBook K15 OLED (2021) K513EA-L302TS",
+          "oldPrice": 17600000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe",
+              "hdmiPort": "1 x HDMI 1.4",
+              "micIn": "Available",
+              "multiCardSlot": "Micro SD Card Reader",
+              "usbPort": "1 x USB 3.2 Gen 1 Type-A, 1 x USB 3.2 Gen"
+          },
+          "price": 13700000,
+          "processorAndMemory": {
+              "cache": 6,
+              "clockSpeed": "3.0 GHz Upto 4.1 GHz",
+              "dedicatedGraphicMemoryCapacity": -1,
+              "dedicatedGraphicMemoryType": "Unknown",
+              "expandableMemory": -1,
+              "graphicProcessor": "Intel Integrated UHD",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 2,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i3",
+              "processorVariant": "1115G4",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 256
+          }
+      },
+      {
+          "additional": {
+              "antivirus": "Not available",
+              "backlitKeyboard": "Available",
+              "diskDrive": "Not available",
+              "fingerPrintSensor": "Not available",
+              "includedSoftware": "Not available",
+              "keyboard": "Backlit Chiclet Keyboard RGB",
+              "lockPort": "Not available",
+              "pointerDevice": "Not available",
+              "securityChip": "Not available",
+              "webCamera": "720P HD camera"
+          },
+          "brand": "ASUS",
+          "category": "laptop",
+          "connectivity": {
+              "bluetooth": "v5.2",
+              "ethernet": "Not available",
+              "wirelessLAN": "802.11ax"
+          },
+          "dimensions": {
+              "dimensions": "359 x 256 x 22.8 mm",
+              "weight": 2.3
+          },
+          "displayAndAudio": {
+              "internalMic": "Built-in array microphone",
+              "refreshRate": -1,
+              "screenResolution": "1920 x 1080 Pixel",
+              "screenSize": "39.62 cm (15.6 inch)",
+              "screenType": "Full HD LED Backlit Anti-glare Display (16:9, 250nits Brightness, NTSC: 45% Color Gamut, Value IPS-level)",
+              "soundChip": "Not available",
+              "soundProperties": "2 x 2W speaker, DTS software",
+              "speakers": "Built-in Speaker",
+              "touchscreen": "Not available"
+          },
+          "general": {
+              "batteryBackup": -1,
+              "batteryCell": 4,
+              "color": "Graphite Black",
+              "modelName": "FX506HCB-HN228T",
+              "modelNumber": "FX506HCB-HN228T",
+              "msOfficeProvided": "Not available",
+              "partNumber": "90NR0724-M06710",
+              "powerSupply": "180W AC Adapter",
+              "salesPackage": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+              "series": "ASUS TUF Gaming",
+              "suitableFor": [
+                  "Gaming"
+              ]
+          },
+          "images": [
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/g/z/p/fx506hcb-hn225t-gaming-laptop-asus-original-imag7bhdpzdvtp23.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/j/e/u/fx506hcb-hn228t-gaming-laptop-asus-original-imag7bheukxgyvjz.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/h/b/0/fx506hcb-hn225t-gaming-laptop-asus-original-imag7bhdt9tgpxjd.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/f/4/b/fx506hcb-hn225t-gaming-laptop-asus-original-imag7bhdughwx3c7.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/z/a/i/na-gaming-laptop-asus-original-imag7bhdj6wzbkmb.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/q/d/e/fx506hcb-hn225t-gaming-laptop-asus-original-imag7bhdgeymzmhv.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/b/k/d/fx506hcb-hn225t-gaming-laptop-asus-original-imag7bhdkgcyrv3t.jpeg?q=70",
+              "https://rukminim1.flixcart.com/image/128/128/ku4ezrk0/computer/z/0/8/na-thin-and-light-laptop-asus-original-imag7bh5gpj8vr4d.jpeg?q=70"
+          ],
+          "name": "ASUS ASUS TUF Gaming FX506HCB-HN228T",
+          "oldPrice": 34900000,
+          "operatingSystem": {
+              "operatingSystem": "Windows 10 Home",
+              "osArchitecture": "64 bit"
+          },
+          "portAndSlot": {
+              "hardwareInterface": "PCIe NVMe",
+              "hdmiPort": "1x HDMI 2.0b",
+              "micIn": "Available",
+              "multiCardSlot": "Not available",
+              "usbPort": "3 x USB 3.2 Gen 1 Type-A, 1 x USB 3.2 Gen 2 Type-C support DisplayPort"
+          },
+          "price": 22600000,
+          "processorAndMemory": {
+              "cache": 12,
+              "clockSpeed": "2.7 GHz up to 4.5 GHz",
+              "dedicatedGraphicMemoryCapacity": 4,
+              "dedicatedGraphicMemoryType": "GDDR6",
+              "expandableMemory": -1,
+              "graphicProcessor": "NVIDIA GeForce RTX 3050",
+              "hdd": "Not available",
+              "hddCapacity": -1,
+              "memorySlots": -1,
+              "numberofCores": 6,
+              "processorBrand": "Intel",
+              "processorGeneration": "11th Gen",
+              "processorName": "Core i5",
+              "processorVariant": "11400H",
+              "ram": 8,
+              "ramFrequency": -1,
+              "ramType": "DDR4",
+              "rpm": -1,
+              "ssd": "Available",
+              "ssdCapacity": 1024
+          }
+      }
+  ]
+}
