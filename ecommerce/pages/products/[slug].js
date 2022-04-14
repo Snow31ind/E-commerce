@@ -12,12 +12,8 @@ import {
   Divider,
   Grid,
   Link,
-  List,
-  ListItem,
-  Slide,
   Stack,
   Typography,
-  useScrollTrigger,
 } from '@mui/material';
 import { Store } from '../../utils/Store';
 import { useSnackbar } from 'notistack';
@@ -32,7 +28,7 @@ import NextLink from 'next/link';
 import { Devices, Home, Laptop, NavigateNext } from '@mui/icons-material';
 export default function ProductScreen(props) {
   const classes = useStyles();
-  const { state, dispatch } = useContext(Store);
+  const { dispatch } = useContext(Store);
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   const addToCartHandler = async () => {
@@ -44,8 +40,8 @@ export default function ProductScreen(props) {
   };
 
   const { product } = props;
-  const image = product.images[0];
-  const { name, price, oldPrice, countInStock, numReviews } = product;
+  // const image = product.images[0];
+  // const { name, price, oldPrice, countInStock, numReviews } = product;
 
   const processor = product.processorAndMemory.processorName
     .concat(' ')
@@ -64,7 +60,7 @@ export default function ProductScreen(props) {
       ? product.general.batteryBackup.toString().concat(' hours')
       : 'Unknown';
   const graphicProcessor = product.processorAndMemory.graphicProcessor;
-  const weight = product.dimensions.weight.toString().concat(' kg');
+  // const weight = product.dimensions.weight.toString().concat(' kg');
   const screen = product.displayAndAudio.screenSize
     .substring(
       product.displayAndAudio.screenSize.indexOf('(') + 1,

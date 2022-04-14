@@ -43,9 +43,7 @@ import Layout from '../layouts/Layout';
 import { formatPriceToVND } from '../utils/helpers';
 import LoginModal from '../modals/LoginModal';
 import {
-  Devices,
   Home,
-  LocalShipping,
   NavigateNext,
   PointOfSale,
   ShoppingCart,
@@ -220,11 +218,11 @@ export default function Checkout() {
 
   const [openLoginModal, setOpenLoginModal] = useState(false);
 
-  const openLoginModalHandler = (e) => {
+  const openLoginModalHandler = () => {
     setOpenLoginModal(true);
   };
 
-  const closeLoginModalHandler = (e) => {
+  const closeLoginModalHandler = () => {
     setOpenLoginModal(false);
   };
 
@@ -583,7 +581,7 @@ export default function Checkout() {
                 activeStep={user ? activeStep : 0}
                 orientation="vertical"
               >
-                {steps.map((step, index) => (
+                {steps.map((step) => (
                   <Step key={step.label}>
                     <StepLabel>{step.label}</StepLabel>
                     <StepContent>
