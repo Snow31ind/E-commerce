@@ -379,15 +379,9 @@ function Home(props) {
 
   useEffect(() => {
     if (router.query && Object.keys(router.query).length > 0) {
-      console.log('SCROLL!');
       filterRef.current.scrollIntoView({ behavior: 'auto' });
     }
   }, [router.query]);
-
-  useEffect(() => {
-    console.log(categorizedWeights);
-    console.log(weightPath);
-  }, []);
 
   return (
     <Layout isAtHomePage={isAtHomePage}>

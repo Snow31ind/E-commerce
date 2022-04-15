@@ -19,19 +19,3 @@ const userSchema = new mongoose.Schema(
 const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 export default User;
-
-// "/login": [
-//   "static/chunks/webpack.js",
-//   "static/chunks/main.js",
-//   "static/chunks/pages/login.js"
-// ],
-// "/register": [
-//   "static/chunks/webpack.js",
-//   "static/chunks/main.js",
-//   "static/chunks/pages/register.js"
-// ]
-// "/": [
-//   "static/chunks/webpack.js",
-//   "static/chunks/main.js",
-//   "static/chunks/pages/index.js"
-// ]

@@ -532,7 +532,7 @@ export default function Layout({
         open={openLoginModal}
         closeLoginModalHandler={closeLoginModalHandler}
       />
-      {/* Main content container */}
+      {/* Main content <conta></conta>iner */}
       <Box
         className={!isAtHomePage && classes.main}
         sx={{
@@ -543,20 +543,7 @@ export default function Layout({
         {children}
       </Box>
 
-      <footer>
-        {/* <Box className={classes.footer}>
-          <Box className={classes.footerBox}>
-            <List>
-              <ListItem>
-                <ListItemText primary="About Us" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="TechNerds Team" />
-              </ListItem>
-            </List>
-          </Box>
-        </Box> */}
-      </footer>
+      <footer></footer>
     </div>
   );
 }

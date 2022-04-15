@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    padding: '5px 100px',
+    padding: '0px 100px',
   },
   brand: {
     fontWeight: 'bold',
@@ -18,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   main: {
-    minHeight: '80vh',
+    paddingLeft: 200,
+    paddingRight: 200,
+    paddingTop: 10,
   },
   footer: {
     marginTop: 10,
