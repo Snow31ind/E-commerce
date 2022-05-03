@@ -58,6 +58,12 @@ import DrawerHeader from '../components/DrawerHeader';
 import LoginModal from '../modals/LoginModal';
 import SignUpModal from '../modals/SignUpModal';
 import MiniCartItem from '../components/MiniCartItem';
+import {
+  ADD_TO_FAV,
+  DECREASE_ITEM_QUANTITY_TO_CART,
+  LOGOUT,
+  SIGNOUT,
+} from '../constants/actionTypes';
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -127,12 +133,9 @@ export default function Layout({
   const [brands, setBrands] = useState([]);
   const [searching, setSearching] = useState(false);
   const classes = useStyles();
-  const { state, dispatch } = useContext(Store);
-  const {
-    cart: { cartItemIds },
-  } = state;
+  const { state, dispatch, userState, userDispatch } = useContext(Store);
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-  const { user } = state;
+  const { user } = userState;
   const router = useRouter();
   const theme = createTheme({
     // palette: {
@@ -175,59 +178,59 @@ export default function Layout({
 
     // dispatch({ type: 'REMOVE_FROM_CART', payload: item._id });
 
-    dispatch({ type: 'DECREASE_ITEM_QUANTITY_TO_CART', payload: item._id });
+    dispatch({ type: DECREASE_ITEM_QUANTITY_TO_CART, payload: item._id });
 
     // setCart(prevCart => [...prevCart.filter((cartItem) => cartItem._id !== item._id), {...item, quantity}])
   };
 
   const increaseItemQuantityHandler = (item) => {
-    dispatch({ type: 'ADD_TO_CART', payload: item._id });
+    dispatch({ type: ADD_TO_FAV, payload: item._id });
 
     // dispatch({ type: 'INCREASE_ITEM_QUANTITY_TO_CART', payload: item._id });
   };
 
-  useEffect(() => {
-    const fetchMiniCartItems = async () => {
-      var lst = [];
+  // useEffect(() => {
+  //   const fetchMiniCartItems = async () => {
+  //     var lst = [];
 
-      for (var cartItemId of cartItemIds) {
-        console.log(`cartItemId - ${cartItemId}`);
-        const { data } = await axios.get(`/api/products/${cartItemId}`);
-        // console.log(data);
-        const product = data;
-        // console.log(`Product - ${product}`);
+  //     for (var cartItemId of cartItemIds) {
+  //       console.log(`cartItemId - ${cartItemId}`);
+  //       const { data } = await axios.get(`/api/products/${cartItemId}`);
+  //       // console.log(data);
+  //       const product = data;
+  //       // console.log(`Product - ${product}`);
 
-        const existItemIndex = lst.findIndex(
-          (item) => item._id === product._id
-        );
-        // console.log(`existItemIndex = ${existItemIndex}`);
-        const quantity =
-          existItemIndex > -1 ? lst[existItemIndex].quantity + 1 : 1;
+  //       const existItemIndex = lst.findIndex(
+  //         (item) => item._id === product._id
+  //       );
+  //       // console.log(`existItemIndex = ${existItemIndex}`);
+  //       const quantity =
+  //         existItemIndex > -1 ? lst[existItemIndex].quantity + 1 : 1;
 
-        const newMiniCartItem = {
-          img: product.images[0],
-          _id: product._id,
-          name: product.name,
-          price: product.price,
-          oldPrice: product.oldPrice,
-          quantity: quantity,
-        };
+  //       const newMiniCartItem = {
+  //         img: product.images[0],
+  //         _id: product._id,
+  //         name: product.name,
+  //         price: product.price,
+  //         oldPrice: product.oldPrice,
+  //         quantity: quantity,
+  //       };
 
-        if (quantity > 1) {
-          lst = lst
-            .slice(0, existItemIndex)
-            .concat(newMiniCartItem)
-            .concat(lst.slice(existItemIndex + 1, lst.length));
-        } else {
-          lst.push(newMiniCartItem);
-        }
-      }
+  //       if (quantity > 1) {
+  //         lst = lst
+  //           .slice(0, existItemIndex)
+  //           .concat(newMiniCartItem)
+  //           .concat(lst.slice(existItemIndex + 1, lst.length));
+  //       } else {
+  //         lst.push(newMiniCartItem);
+  //       }
+  //     }
 
-      setMiniCart(lst);
-    };
+  //     setMiniCart(lst);
+  //   };
 
-    fetchMiniCartItems();
-  }, [cartItemIds]);
+  //   fetchMiniCartItems();
+  // }, [cartItemIds]);
 
   const [cartAnchorEl, setCartAnchorEl] = useState(null);
   const openCart = Boolean(cartAnchorEl);
@@ -256,7 +259,8 @@ export default function Layout({
   const logoutClickHandler = () => {
     closeSnackbar();
     setAnchorEl(null);
-    dispatch({ type: 'USER_LOGOUT' });
+    // dispatch({ type: LOGOUT });
+    userDispatch({ type: SIGNOUT });
 
     const msg = 'Logging out succesfully';
     enqueueSnackbar(msg, { variant: 'success' });
@@ -279,22 +283,6 @@ export default function Layout({
   const toggleDrawerHandler = (state) => {
     setOpenDrawer(state);
   };
-
-  // useEffect(() => {
-  //   const fetchDistinctBrands = async () => {
-  //     const { data } = await axios.get('/api/products/brands');
-
-  //     setBrands(data);
-  //   };
-
-  //   fetchDistinctBrands();
-  // }, []);
-
-  // useEffect(() => {
-  //   const fetchMiniCartItems = async () => {
-  //     const { data } = await axios.get('')
-  //   };
-  // }, [cartItemIds]);
 
   const toggleMenuHandler = () => {
     setOpenLaptop(!openLaptop);
@@ -337,7 +325,6 @@ export default function Layout({
                     width="110%"
                     height="60%"
                     layout="fixed"
-                    priority
                   ></NextImage>
                 </Link>
               </NextLink>
@@ -358,7 +345,7 @@ export default function Layout({
                 </SearchBox>
                 {/* <NextLink href="/cart" passHref> */}
                 <StyledIconButton onClick={openCartHandler}>
-                  {state.cart.cartItemIds.length > 0 ? (
+                  {/* {state.cart.cartItemIds.length > 0 ? (
                     <Badge
                       badgeContent={state.cart.cartItemIds.length}
                       color="secondary"
@@ -367,7 +354,7 @@ export default function Layout({
                     </Badge>
                   ) : (
                     <ShoppingCart />
-                  )}
+                  )} */}
                 </StyledIconButton>
                 {/* </NextLink> */}
 
@@ -466,7 +453,7 @@ export default function Layout({
       </ThemeProvider>
 
       {/* Mini cart */}
-      <Popover
+      {/* <Popover
         open={openCart}
         onClose={closeCartHandler}
         anchorEl={cartAnchorEl}
@@ -525,7 +512,7 @@ export default function Layout({
             )}
           </Box>
         </Slide>
-      </Popover>
+      </Popover> */}
 
       {!isAtHomePage && <DrawerHeader />}
       <LoginModal

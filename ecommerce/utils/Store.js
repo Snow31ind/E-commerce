@@ -1,41 +1,23 @@
 import React, { useReducer } from 'react';
 import Cookies from 'js-cookie';
+import { ADD_TO_FAV, REMOVE_FROM_FAV } from '../constants/actionTypes';
+import {
+  userInitialState,
+  userReducer,
+  cartInitialState,
+  cartReducer,
+} from '../reducers';
 
 const Store = React.createContext();
 
 const initialState = {
   darkMode: false,
-  user: Cookies.get('user') ? JSON.parse(Cookies.get('user')) : null,
   favs: Cookies.get('favs') ? JSON.parse(Cookies.get('favs')) : [],
-  cart: {
-    cartItemIds: Cookies.get('cartItemIds')
-      ? JSON.parse(Cookies.get('cartItemIds'))
-      : [],
-    shippingAddress: Cookies.get('shippingAddress')
-      ? JSON.parse(Cookies.get('shippingAddress'))
-      : {},
-    paymentMethod: Cookies.get('paymentMethod')
-      ? JSON.parse(Cookies.get('paymentMethod'))
-      : '',
-  },
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'USER_LOGIN': {
-      const user = action.payload;
-      Cookies.set('user', JSON.stringify(user));
-
-      return { ...state, user };
-    }
-    case 'USER_LOGOUT': {
-      const user = null;
-
-      Cookies.set('user', user);
-
-      return { ...state, user };
-    }
-    case 'ADD_TO_FAV': {
+    case ADD_TO_FAV: {
       const fav = action.payload;
       const favs = [...state.favs, fav];
 
@@ -43,91 +25,13 @@ function reducer(state, action) {
 
       return { ...state, favs };
     }
-    case 'REMOVE_FROM_FAV': {
+    case REMOVE_FROM_FAV: {
       const fav = action.payload;
       const favs = state.favs.filter((e) => e !== fav);
 
       Cookies.set('favs', JSON.stringify(favs));
 
       return { ...state, favs };
-    }
-    case 'ADD_TO_CART': {
-      const newItemId = action.payload;
-
-      const index = state.cart.cartItemIds.indexOf(newItemId);
-
-      const cartItemIds =
-        index > -1
-          ? state.cart.cartItemIds
-              .slice(0, index)
-              .concat(newItemId)
-              .concat(
-                state.cart.cartItemIds.slice(
-                  index,
-                  state.cart.cartItemIds.length
-                )
-              )
-          : state.cart.cartItemIds.concat(newItemId);
-
-      Cookies.set('cartItemIds', JSON.stringify(cartItemIds));
-
-      return { ...state, cart: { ...state.cart, cartItemIds } };
-    }
-    case 'REMOVE_FROM_CART': {
-      const itemId = action.payload;
-
-      const cartItemIds = state.cart.cartItemIds.filter(
-        (cartItemId) => cartItemId !== itemId
-      );
-
-      Cookies.set('cartItemIds', JSON.stringify(cartItemIds));
-
-      return { ...state, cart: { ...state.cart, cartItemIds } };
-    }
-    case 'CART_CLEAR': {
-      const cartItemIds = [];
-
-      Cookies.set('cartItemIds', JSON.stringify(cartItemIds));
-
-      return { ...state, cart: { ...state.cart, cartItemIds } };
-    }
-    case 'DECREASE_ITEM_QUANTITY_TO_CART': {
-      const itemId = action.payload;
-      const lastIdx = state.cart.cartItemIds.lastIndexOf(itemId);
-      const cartItemIds = state.cart.cartItemIds
-        .slice(0, lastIdx)
-        .concat(
-          state.cart.cartItemIds.slice(
-            lastIdx + 1,
-            state.cart.cartItemIds.length
-          )
-        );
-
-      Cookies.set('cartItemIds', JSON.stringify(cartItemIds));
-
-      return { ...state, cart: { ...state.cart, cartItemIds } };
-    }
-    case 'INCREASE_ITEM_QUANTITY_TO_CART': {
-      const itemId = action.payload;
-      const cartItemIds = [...state.cart.cartItemIds, itemId];
-
-      Cookies.set('cartItemIds', JSON.stringify(cartItemIds));
-
-      return { ...state, cart: { ...state.cart, cartItemIds } };
-    }
-    case 'SAVE_SHIPPING_ADDRESS': {
-      const shippingAddress = action.payload;
-
-      Cookies.set('shippingAddress', JSON.stringify(shippingAddress));
-
-      return { ...state, cart: { ...state.cart, shippingAddress } };
-    }
-    case 'SAVE_PAYMENT_METHOD': {
-      const paymentMethod = action.payload;
-
-      Cookies.set('paymentMethod', JSON.stringify(paymentMethod));
-
-      return { ...state, cart: { ...state.cart, paymentMethod } };
     }
     default:
       return state;
@@ -136,9 +40,16 @@ function reducer(state, action) {
 
 function StoreProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [userState, userDispatch] = useReducer(userReducer, userInitialState);
+  const [cartState, cartDispatch] = useReducer(cartReducer, cartInitialState);
+
   const value = {
+    userState,
+    userDispatch,
     state,
     dispatch,
+    cartState,
+    cartDispatch,
   };
 
   return <Store.Provider value={value}>{children}</Store.Provider>;

@@ -48,6 +48,10 @@ import {
   PointOfSale,
   ShoppingCart,
 } from '@mui/icons-material';
+import {
+  SAVE_PAYMENT_METHOD,
+  SAVE_SHIPPING_ADDRESS,
+} from '../constants/actionTypes';
 
 export default function Checkout() {
   const { state, dispatch } = React.useContext(Store);
@@ -137,7 +141,7 @@ export default function Checkout() {
       address,
       phoneNumber,
     };
-    dispatch({ type: 'SAVE_SHIPPING_ADDRESS', payload: data });
+    dispatch({ type: SAVE_SHIPPING_ADDRESS, payload: data });
     handleNext();
     // router.push('/payment');
   };
@@ -152,7 +156,7 @@ export default function Checkout() {
         variant: 'error',
       });
     } else {
-      dispatch({ type: 'SAVE_PAYMENT_METHOD', payload: paymentMethod });
+      dispatch({ type: SAVE_PAYMENT_METHOD, payload: paymentMethod });
       // router.push('placeorder');
     }
 

@@ -6,31 +6,21 @@ import {
   Divider,
   Fade,
   IconButton,
-  Stack,
   Typography,
 } from '@mui/material';
-import React, { useContext, useState } from 'react';
-import NextLink from 'next/link';
-import { getDiscountPercent, formatPriceToVND } from '../../utils/helpers';
 import {
   Favorite,
   FavoriteBorderOutlined,
-  FavoriteOutlined,
-  Redeem,
-  ShoppingCart,
   ShoppingCartOutlined,
-  Star,
 } from '@mui/icons-material';
+import React, { useContext, useState } from 'react';
+import NextLink from 'next/link';
+import { getDiscountPercent, formatPriceToVND } from '../../utils/helpers';
 import { useStyles } from './styles';
 import NextImage from 'next/image';
 import { Store } from '../../utils/Store';
-import SquareIconButton from '../SquareIconButton';
 
-export default function ProductItem(props) {
-  // const idx = product.images.findIndex((image) => checkImageExistence(image));
-  const { product } = props;
-  // const { saved } = props;
-  const { saveItemHandler, addToCartHandler } = props;
+const ProductCard = ({ product, saveItemHandler, addToCartHandler }) => {
   const classes = useStyles();
 
   const processor = product.processorAndMemory.processorName
@@ -77,7 +67,6 @@ export default function ProductItem(props) {
             onClick={() => saveItemHandler(product._id)}
             sx={{
               borderRadius: 2,
-              // bgcolor: 'grey.200',
               '&:hover': {
                 bgcolor: 'grey.400',
               },
@@ -101,11 +90,9 @@ export default function ProductItem(props) {
             <Box
               position="absolute"
               top={0}
-              // left={0}
               right={0}
               sx={{
                 padding: 1,
-                // bgcolor: 'gray',
                 ...(isHovering && {
                   display: 'normal',
                   zIndex: 20,
@@ -206,4 +193,6 @@ export default function ProductItem(props) {
       </CardContent>
     </Card>
   );
-}
+};
+
+export default ProductCard;

@@ -8,13 +8,10 @@ import {
   TextField,
   Link,
   Typography,
-  Avatar,
   Checkbox,
   FormGroup,
   FormControlLabel,
-  Stack,
   Box,
-  ListItemText,
   CircularProgress,
   Modal,
   Fade,
@@ -27,15 +24,20 @@ import {
 import { useSnackbar } from 'notistack';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import Layout from '../layouts/Layout';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import { getError } from '../utils/errors';
 import { Store } from '../utils/Store';
 import { useStyles } from '../utils/styles';
 import NextImage from 'next/image';
-import NextLink from 'next/link';
 import { DesktopDatePicker } from '@mui/lab';
+import {
+  FULFILLED,
+  PENDING,
+  REJECTED,
+  SIGNIN,
+  SIGNUP,
+} from '../constants/actionTypes';
+import { signIn, signUp } from '../actions/user';
 
 export default function LoginModal(props) {
   const { open, closeLoginModalHandler } = props;
@@ -51,89 +53,90 @@ export default function LoginModal(props) {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const router = useRouter();
 
-  const { state, dispatch } = useContext(Store);
-  const { user } = state;
-  const [loading, setLoading] = useState(false);
-  const [birth, setBirth] = useState(new Date());
-  const [gender, setGender] = useState('None');
-  const [page, setPage] = useState('Login');
+  const {
+    userState: { loading },
+    userDispatch,
+  } = useContext(Store);
 
-  const submitLoginHandler = async ({ email, password }) => {
-    closeSnackbar();
-    setLoading(true);
+  const [isSigningIn, setIsSigningIn] = useState(true);
 
-    try {
-      const { data } = await axios.post('/api/users/login', {
-        email,
-        password,
-      });
-
-      const msg = 'Login successfully';
-      enqueueSnackbar(msg, { variant: 'success' });
-      dispatch({ type: 'USER_LOGIN', payload: data });
-      setLoading(false);
-      router.push(redirect || '/');
-    } catch (err) {
-      const errMsg = getError(err);
-      enqueueSnackbar(errMsg, { variant: 'error' });
-      setLoading(false);
-    }
-    closeLoginModalHandler();
-  };
-
-  const submitSignUpHandler = async ({
-    name,
-    phoneNumber,
-    address,
+  const submitHandler = async ({
     email,
     password,
     confirmPassword,
+    name,
+    birth,
+    gender,
+    phoneNumber,
+    address,
   }) => {
     closeSnackbar();
+    userDispatch({ type: PENDING });
 
-    if (confirmPassword !== password) {
-      const errMsg = 'Password not match';
-      enqueueSnackbar(errMsg, { variant: 'error' });
-      return;
+    if (isSigningIn) {
+      try {
+        const user = await signIn({ email, password });
+        userDispatch({ type: SIGNIN, payload: user });
+        userDispatch({ type: FULFILLED });
+
+        enqueueSnackbar('Successfully sign in', { variant: 'success' });
+        router.push(redirect || '/');
+      } catch (error) {
+        enqueueSnackbar(getError(error), { variant: 'error' });
+        userDispatch({ type: REJECTED, payload: getError(error) });
+      }
+    } else {
+      if (password !== confirmPassword) {
+        userDispatch({
+          type: REJECTED,
+          payload: 'Confirm password is different from the password.',
+        });
+
+        enqueueSnackbar('Confirm password is different from the password.', {
+          variant: 'error',
+        });
+
+        return;
+      }
+
+      try {
+        console.log({
+          name,
+          phoneNumber,
+          address,
+          birth,
+          gender,
+          email,
+          password,
+          confirmPassword,
+        });
+
+        const user = await signUp({
+          name,
+          birth,
+          gender,
+          address,
+          phoneNumber,
+          email,
+          password,
+        });
+        console.log(user);
+        userDispatch({ type: SIGNUP, payload: user });
+        userDispatch({ type: FULFILLED });
+
+        enqueueSnackbar('Successfully sign in', { variant: 'success' });
+        router.push(redirect || '/');
+      } catch (error) {
+        enqueueSnackbar(getError(error), { variant: 'error' });
+        userDispatch({ type: REJECTED, payload: getError(error) });
+      }
     }
 
-    setLoading(true);
-    try {
-      const { data } = await axios.post('/api/users/register', {
-        name,
-        birth,
-        gender,
-        phoneNumber,
-        address,
-        email,
-        password,
-      });
-
-      const msg = 'Register successfully! Now login your new account!';
-      enqueueSnackbar(msg, { variant: 'success' });
-
-      dispatch({ type: 'USER_LOGIN', payload: data });
-      setLoading(false);
-
-      // router.push(redirect || '/');
-      // setPage('Login');
-      closeLoginModalHandler();
-    } catch (err) {
-      setLoading(false);
-
-      const errMsg = err.response.data
-        ? err.response.data.message
-        : err.message;
-      enqueueSnackbar(errMsg, { variant: 'error' });
-    }
+    closeLoginModalHandler();
   };
 
-  const openSignUpModalHandler = () => {
-    setPage('Register');
-  };
-
-  const openLoginModalHandler = () => {
-    setPage('Login');
+  const toggleFormActionHandler = () => {
+    setIsSigningIn(!isSigningIn);
   };
 
   return (
@@ -148,122 +151,21 @@ export default function LoginModal(props) {
     >
       <Fade in={open}>
         <Box className={classes.modal}>
-          {/* Logo section */}
           {/* Main section */}
           <Card className={classes.loginCard}>
             <CardContent className={classes.loginHeader}>
               <NextImage src={'/logos/logo2.png'} width={250} height={150} />
             </CardContent>
-            {page === 'Login' ? (
-              <CardContent className={classes.loginContent}>
-                {/* <Typography className={classes.loginText}>Sign In</Typography> */}
-                <CardHeader
-                  title={<Typography variant="h4">Sign In</Typography>}
-                  subheader="Join in the crew"
-                />
-                <form onSubmit={handleSubmit(submitLoginHandler)}>
-                  <List>
-                    <ListItem>
-                      <Controller
-                        name="email"
-                        control={control}
-                        defaultValue={''}
-                        rules={{
-                          required: true,
-                          pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-                        }}
-                        render={({ field }) => (
-                          <TextField
-                            autoFocus
-                            variant="outlined"
-                            id="email"
-                            fullWidth
-                            label="Email *"
-                            inputProps={{ type: 'email' }}
-                            error={Boolean(errors.email)}
-                            helperText={
-                              errors.email
-                                ? errors.email.type === 'pattern'
-                                  ? 'Email is invalid'
-                                  : 'Email is required'
-                                : ''
-                            }
-                            {...field}
-                          />
-                        )}
-                      ></Controller>
-                    </ListItem>
-                    <ListItem>
-                      <Controller
-                        name="password"
-                        control={control}
-                        defaultValue={''}
-                        rules={{
-                          required: true,
-                          minLength: 6,
-                        }}
-                        render={({ field }) => (
-                          <TextField
-                            variant="outlined"
-                            id="password"
-                            fullWidth
-                            label="Password *"
-                            inputProps={{ type: 'password' }}
-                            error={Boolean(errors.password)}
-                            helperText={
-                              errors.password
-                                ? errors.password.type === 'minLength'
-                                  ? 'Password is invalid'
-                                  : 'Password is required'
-                                : ''
-                            }
-                            {...field}
-                          />
-                        )}
-                      ></Controller>
-                    </ListItem>
-                    <ListItem>
-                      <FormGroup>
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="Remember me"
-                        />
-                      </FormGroup>
-                    </ListItem>
-                    <ListItem>
-                      <Button type="submit" variant="contained" fullWidth>
-                        {loading ? (
-                          <CircularProgress color="inherit" size={24} />
-                        ) : (
-                          'Login'
-                        )}
-                      </Button>
-                    </ListItem>
-                  </List>
-                </form>
-                <Box sx={{ display: 'flex' }}>
-                  <Link component="button" variant="body2">
-                    Forget Password?
-                  </Link>
-                  <div className={classes.grow} />
-                  <Link
-                    component="button"
-                    variant="body2"
-                    onClick={openSignUpModalHandler}
-                  >
-                    Sign Up
-                  </Link>
-                </Box>
-              </CardContent>
-            ) : (
-              <CardContent className={classes.loginContent}>
-                <CardHeader
-                  title={<Typography variant="h4">Sign Up</Typography>}
-                  subheader="Join in the crew"
-                />
-
-                <form onSubmit={handleSubmit(submitSignUpHandler)}>
-                  <List>
+            <CardContent className={classes.loginContent}>
+              {/* <Typography className={classes.loginText}>Sign In</Typography> */}
+              <CardHeader
+                title={<Typography variant="h4">Sign In</Typography>}
+                subheader="Join in the crew"
+              />
+              <form onSubmit={handleSubmit(submitHandler)}>
+                <List>
+                  {/* Name */}
+                  {!isSigningIn && (
                     <ListItem>
                       <Controller
                         name="name"
@@ -294,31 +196,65 @@ export default function LoginModal(props) {
                         )}
                       ></Controller>
                     </ListItem>
+                  )}
+
+                  {/* birth and gender */}
+                  {!isSigningIn && (
                     <ListItem>
-                      <DesktopDatePicker
-                        label="Birthday"
+                      <Controller
+                        name="birth"
+                        control={control}
+                        defaultValue={new Date()}
+                        rules={{
+                          required: true,
+                          minLength: 1,
+                        }}
+                        render={({ field }) => (
+                          <DesktopDatePicker
+                            label="Birthday"
+                            {...field}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        )}
+                      />
+                      {/* <DesktopDatePicker
+                        label="birth"
                         value={birth}
                         onChange={(date) => setBirth(date)}
                         renderInput={(params) => <TextField {...params} />}
-                      />
+                      /> */}
                       <div className={classes.grow}></div>
-                      <FormControl sx={{ width: 180 }}>
-                        <InputLabel id="birth-selector">Gender</InputLabel>
-                        <Select
-                          labelId="birth-selector"
-                          id="birth"
-                          value={gender}
-                          label="Gender"
-                          onChange={(e) => setGender(e.target.value)}
-                        >
-                          <MenuItem value="Male">Male</MenuItem>
-                          <MenuItem value="Female">Female</MenuItem>
-                          <MenuItem value="Binary">Binary</MenuItem>
-                          <MenuItem value="Secret">Prefer not to tell</MenuItem>
-                          <MenuItem value="None">None</MenuItem>
-                        </Select>
-                      </FormControl>
+                      <Controller
+                        name="gender"
+                        control={control}
+                        defaultValue={'Male'}
+                        render={({ field }) => (
+                          <FormControl sx={{ width: 180 }}>
+                            <InputLabel id="birth-selector">Gender</InputLabel>
+                            <Select
+                              labelId="birth-selector"
+                              id="birth"
+                              // value={gender}
+                              label="Gender"
+                              // onChange={(e) => setGender(e.target.value)}
+                              {...field}
+                            >
+                              <MenuItem value="Male">Male</MenuItem>
+                              <MenuItem value="Female">Female</MenuItem>
+                              <MenuItem value="Binary">Binary</MenuItem>
+                              <MenuItem value="Prefer not to tell">
+                                Prefer not to tell
+                              </MenuItem>
+                              <MenuItem value="None">None</MenuItem>
+                            </Select>
+                          </FormControl>
+                        )}
+                      />
                     </ListItem>
+                  )}
+
+                  {/* Phone number */}
+                  {!isSigningIn && (
                     <ListItem>
                       <Controller
                         name="phoneNumber"
@@ -348,6 +284,10 @@ export default function LoginModal(props) {
                         )}
                       ></Controller>
                     </ListItem>
+                  )}
+
+                  {/* Address */}
+                  {!isSigningIn && (
                     <ListItem>
                       <Controller
                         name="address"
@@ -377,64 +317,75 @@ export default function LoginModal(props) {
                         )}
                       ></Controller>
                     </ListItem>
-                    <ListItem>
-                      <Controller
-                        name="email"
-                        control={control}
-                        defaultValue={''}
-                        rules={{
-                          required: true,
-                          pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-                        }}
-                        render={({ field }) => (
-                          <TextField
-                            variant="outlined"
-                            id="email"
-                            fullWidth
-                            label="Email *"
-                            inputProps={{ type: 'email' }}
-                            error={Boolean(errors.email)}
-                            helperText={
-                              errors.email
-                                ? errors.email.type === 'pattern'
-                                  ? 'Email is invalid'
-                                  : 'Email is required'
-                                : ''
-                            }
-                            {...field}
-                          />
-                        )}
-                      ></Controller>
-                    </ListItem>
-                    <ListItem>
-                      <Controller
-                        name="password"
-                        control={control}
-                        defaultValue={''}
-                        rules={{
-                          required: true,
-                          minLength: 6,
-                        }}
-                        render={({ field }) => (
-                          <TextField
-                            variant="outlined"
-                            id="password"
-                            fullWidth
-                            label="Password *"
-                            inputProps={{ type: 'password' }}
-                            error={Boolean(errors.password)}
-                            helperText={
-                              errors.password
-                                ? errors.password.type === 'minLength'
-                                  ? 'Password is invalid'
-                                  : 'Password is required'
-                                : ''
-                            }
-                            {...field}
-                          />
-                        )}
-                      ></Controller>
-                    </ListItem>
+                  )}
+
+                  {/* Email */}
+                  <ListItem>
+                    <Controller
+                      name="email"
+                      control={control}
+                      defaultValue={''}
+                      rules={{
+                        required: true,
+                        pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                      }}
+                      render={({ field }) => (
+                        <TextField
+                          autoComplete="username"
+                          autoFocus
+                          variant="outlined"
+                          id="email"
+                          fullWidth
+                          label="Email *"
+                          inputProps={{ type: 'email' }}
+                          error={Boolean(errors.email)}
+                          helperText={
+                            errors.email
+                              ? errors.email.type === 'pattern'
+                                ? 'Email is invalid'
+                                : 'Email is required'
+                              : ''
+                          }
+                          {...field}
+                        />
+                      )}
+                    ></Controller>
+                  </ListItem>
+
+                  {/* Password */}
+                  <ListItem>
+                    <Controller
+                      name="password"
+                      control={control}
+                      defaultValue={''}
+                      rules={{
+                        required: true,
+                        minLength: 6,
+                      }}
+                      render={({ field }) => (
+                        <TextField
+                          autoComplete="new-password"
+                          variant="outlined"
+                          id="password"
+                          fullWidth
+                          label="Password *"
+                          inputProps={{ type: 'password' }}
+                          error={Boolean(errors.password)}
+                          helperText={
+                            errors.password
+                              ? errors.password.type === 'minLength'
+                                ? 'Password is invalid'
+                                : 'Password is required'
+                              : ''
+                          }
+                          {...field}
+                        />
+                      )}
+                    ></Controller>
+                  </ListItem>
+
+                  {/* Confirm password */}
+                  {!isSigningIn && (
                     <ListItem>
                       <Controller
                         name="confirmPassword"
@@ -446,6 +397,7 @@ export default function LoginModal(props) {
                         }}
                         render={({ field }) => (
                           <TextField
+                            autoComplete="new-password"
                             variant="outlined"
                             id="confirmPassword"
                             fullWidth
@@ -464,31 +416,44 @@ export default function LoginModal(props) {
                         )}
                       ></Controller>
                     </ListItem>
-                    <ListItem>
-                      <Button
-                        type="submit"
-                        variant={loading ? 'text' : 'contained'}
-                        fullWidth
-                        color="primary"
-                        disabled={loading}
-                      >
-                        {loading ? <CircularProgress /> : `Register`}
-                      </Button>
-                    </ListItem>
-                  </List>
-                </form>
-                <Typography>
-                  {'Already have an account?'}
-                  <Link
-                    component="button"
-                    variant="body2"
-                    onClick={openLoginModalHandler}
-                  >
-                    Login
-                  </Link>
-                </Typography>
-              </CardContent>
-            )}
+                  )}
+
+                  {/* Remember me */}
+                  <ListItem>
+                    <FormGroup>
+                      <FormControlLabel
+                        control={<Checkbox />}
+                        label="Remember me"
+                      />
+                    </FormGroup>
+                  </ListItem>
+
+                  {/* Button */}
+                  <ListItem>
+                    <Button type="submit" variant="contained" fullWidth>
+                      {loading ? (
+                        <CircularProgress color="inherit" size={24} />
+                      ) : isSigningIn ? (
+                        'SIGN IN'
+                      ) : (
+                        'SIGN UP'
+                      )}
+                    </Button>
+                  </ListItem>
+                </List>
+              </form>
+              <Box sx={{ display: 'flex' }}>
+                <Link
+                  component="button"
+                  variant="body2"
+                  onClick={toggleFormActionHandler}
+                >
+                  {isSigningIn
+                    ? 'Not have an account yet? Sign up'
+                    : 'Already have an account? Sign in'}
+                </Link>
+              </Box>
+            </CardContent>
           </Card>
         </Box>
       </Fade>

@@ -26,6 +26,7 @@ import NextImage from 'next/image';
 import { useStyles } from '../../utils/styles';
 import NextLink from 'next/link';
 import { Devices, Home, Laptop, NavigateNext } from '@mui/icons-material';
+
 export default function ProductScreen(props) {
   const classes = useStyles();
   const { dispatch } = useContext(Store);

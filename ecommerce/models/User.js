@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
     phoneNumber: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    isAdmin: { type: Boolean, required: true, default: false },
+    isAdmin: { type: Boolean, default: false },
   },
   {
     timestamps: true,

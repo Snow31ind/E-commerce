@@ -7,7 +7,8 @@ import { signToken } from '../../../utils/auth';
 const handler = nc();
 
 handler.post(async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, confirmPassword } = req.body;
+
   await db.connect();
 
   const existUser = await User.findOne({ email: email });
@@ -21,10 +22,10 @@ handler.post(async (req, res) => {
   const newUser = new User({
     ...req.body,
     password: bcrypt.hashSync(password),
-    isAdmin: false,
   });
 
   const user = await newUser.save();
+  console.log('x');
 
   await db.disconnect();
 

@@ -1,0 +1,9 @@
+export const BRAND = 'Brand';
+export const CPU = 'CPU';
+export const RAM = 'RAM';
+export const GPU = 'GPU';
+export const SCREEN_SIZE = 'Screen Size';
+export const WEIGHT = 'Weight';
+export const PAGE = 'Page';
+export const PRICE = 'Price';
+export const SORT = 'Sort';

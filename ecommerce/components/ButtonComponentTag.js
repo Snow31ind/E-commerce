@@ -30,14 +30,18 @@ const StyledTypography = styled(Typography, {
   }),
 }));
 
-export default function ButtonComponentTag(props) {
-  const { tag, clicked, toggleTagFilterHandler, category } = props;
+export default function ButtonComponentTag({
+  tag,
+  clicked,
+  toggleFilterTagHandler,
+  category,
+}) {
   return (
     <StyledButton
       variant="outlined"
       // color={clicked ? 'secondary' : 'warning'}
       clicked={clicked}
-      onClick={toggleTagFilterHandler}
+      onClick={toggleFilterTagHandler}
       sx={{
         mr: 1,
         mb: 1,

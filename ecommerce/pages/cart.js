@@ -28,12 +28,19 @@ import { useRouter } from 'next/router';
 import CartItem from '../components/CartItem/CartItem';
 import { useStyles } from '../utils/styles';
 import { formatPriceToVND } from '../utils/helpers';
+import {
+  ADD_TO_CART,
+  DECREASE_ITEM_QUANTITY_TO_CART,
+  REMOVE_FROM_CART,
+} from '../constants/actionTypes';
+import { fetchItemById } from '../actions/products';
 
 export default function Cart() {
-  const { state, dispatch } = useContext(Store);
   const {
-    cart: { cartItemIds },
-  } = state;
+    cartState: { items, loading },
+    cartDispatch,
+  } = useContext(Store);
+
   const router = useRouter();
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
@@ -42,45 +49,34 @@ export default function Cart() {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const { data } = await axios.get('/api/products');
-
       var list = [];
 
-      cartItemIds.forEach((cartItemId) => {
-        const item = data.products.find((item) => item._id === cartItemId);
-        const existItem = list.find((item) => item._id === cartItemId);
+      for (var item of items) {
+        const product = await fetchItemById(item.id);
+        list.push({ ...product, quantity: item.quantity });
+      }
 
-        if (existItem) {
-          list = [
-            ...list.filter((item) => item._id !== cartItemId),
-            { ...item, quantity: existItem.quantity + 1 },
-          ];
-        } else {
-          list = [...list, { ...item, quantity: 1 }];
-        }
-
-        setCart(list);
-      });
+      setCart(list);
     };
 
     fetchItems();
-  }, [cartItemIds]);
+  }, []);
 
-  const removeFromCartHanler = (item) => {
+  const removeFromCartHandler = (item) => {
     closeSnackbar();
 
-    dispatch({ type: 'REMOVE_FROM_CART', payload: item._id });
+    dispatch({ type: REMOVE_FROM_CART, payload: item._id });
 
     const msg = `${capitalize(item.category)} ${item.name} removed from cart`;
     enqueueSnackbar(msg, { variant: 'success' });
   };
 
   const decreaseItemQuantityHandler = (item) => {
-    dispatch({ type: 'DECREASE_ITEM_QUANTITY_TO_CART', payload: item._id });
+    dispatch({ type: DECREASE_ITEM_QUANTITY_TO_CART, payload: item._id });
   };
 
   const increaseItemQuantityHandler = (item) => {
-    dispatch({ type: 'ADD_TO_CART', payload: item._id });
+    dispatch({ type: ADD_TO_CART, payload: item._id });
   };
 
   const subTotal = cart.reduce(
@@ -97,6 +93,10 @@ export default function Cart() {
   const discount = 0;
 
   const total = subTotal + shipping + taxes - discount;
+
+  if (loading) {
+    return <Box>Loading</Box>;
+  }
 
   return (
     <Layout title="Shopping cart">
@@ -116,7 +116,7 @@ export default function Cart() {
                         increaseItemQuantityHandler={
                           increaseItemQuantityHandler
                         }
-                        removeFromCartHanler={removeFromCartHanler}
+                        removeFromCartHandler={removeFromCartHandler}
                       />
                     </Grid>
                   </ListItem>

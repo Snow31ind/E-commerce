@@ -1,14 +1,13 @@
 import {
   Autocomplete,
   Box,
-  Chip,
   Collapse,
   Grid,
   List,
   ListItem,
   ListItemButton,
   ListItemText,
-  Pagination,
+  Pagination as MuiPagination,
   TextField,
   Typography,
   FormControl,
@@ -18,10 +17,6 @@ import {
   Divider,
   ListItemIcon,
   PaginationItem,
-  Paper,
-  Select,
-  InputLabel,
-  MenuItem,
 } from '@mui/material';
 import Layout from '../layouts/Layout';
 import { arrayOfRange, capitalize } from '../utils/helpers';
@@ -30,24 +25,17 @@ import Product from '../models/Product';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Store } from '../utils/Store';
 import { useSnackbar } from 'notistack';
-import ProductItem from '../components/ProductItem/ProductItem';
-import {
-  Add,
-  ArrowLeft,
-  ArrowRight,
-  FilterList,
-  Remove,
-  Sort,
-} from '@mui/icons-material';
+import ProductCard from '../components/ProductCard/ProductCard';
 import { useStyles } from '../utils/styles';
 import ButtonComponentTag from '../components/ButtonComponentTag';
 import { Controller, useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import StyledSlider from '../components/StyledSlider';
-import NextImage from 'next/image';
-import hero from '../public/heros/hero1.jpg';
 import dynamic from 'next/dynamic';
 import FilterChip from '../components/FilterChip/FilterChip';
+import SelectByFilter from '../components/SelectByFilter/SelectByFilter';
+import { ADD_TO_CART, ADD_TO_FAV } from '../constants/actionTypes';
+import Pagination from '../components/Pagination/Pagination';
 
 const PAGE_SIZE = 14;
 const BREAK_ITEM_INDEX = 11;
@@ -120,14 +108,38 @@ function Home(props) {
   const { products, pages, countProducts } = props;
   const { brandPath, ramPath, cpuPath, gpuPath, screenSizePath, weightPath } =
     props;
-  const {
-    categorizedBrands,
-    categorizedCPUs,
-    categorizedRAMs,
-    categorizedGPUs,
-    categorizedScreens,
-    categorizedWeights,
-  } = props;
+  // const {
+  //   categorizedBrands,
+  //   categorizedCPUs,
+  //   categorizedRAMs,
+  //   categorizedGPUs,
+  //   categorizedScreens,
+  //   categorizedWeights,
+  // } = props;
+
+  const categorizedBrands = [
+    ...new Set(products.map((product) => product.brand)),
+  ];
+  const categorizedCPUs = [
+    ...new Set(
+      products.map((product) => product.processorAndMemory.processorName)
+    ),
+  ];
+  const categorizedRAMs = [
+    ...new Set(products.map((product) => product.processorAndMemory.ram)),
+  ];
+  const categorizedGPUs = [
+    ...new Set(
+      products.map((product) => product.processorAndMemory.graphicProcessor)
+    ),
+  ];
+  const categorizedScreens = [
+    ...new Set(products.map((product) => product.displayAndAudio.screenSize)),
+  ];
+  const categorizedWeights = [
+    ...new Set(products.map((product) => product.dimensions.weight)),
+  ];
+
   const { isAtHomePage, scrollToFilterView } = props;
   const { favs } = state;
 
@@ -185,79 +197,84 @@ function Home(props) {
     },
   ]);
 
-  const filterSearch = ({ queryKey, queryValue }) => {
+  const filterSearch = ({ key, value }) => {
     const path = router.pathname;
     const query = router.query;
 
-    if (queryKey === BRAND) {
-      if (queryValue) {
-        query.brand = queryValue;
+    if (key === BRAND) {
+      if (value) {
+        query.brand = value;
       } else {
         delete query.brand;
       }
     }
 
-    if (queryKey === CPU) {
-      if (queryValue) {
-        query.cpu = queryValue;
+    if (key === CPU) {
+      if (value) {
+        query.cpu = value;
       } else {
         delete query.cpu;
       }
     }
 
-    if (queryKey === RAM) {
-      if (queryValue) {
-        query.ram = queryValue;
+    if (key === RAM) {
+      if (value) {
+        query.ram = value;
       } else {
         delete query.ram;
       }
     }
 
-    if (queryKey === GPU) {
-      if (queryValue) {
-        query.gpu = queryValue;
+    if (key === GPU) {
+      if (value) {
+        query.gpu = value;
       } else {
         delete query.gpu;
       }
     }
 
-    if (queryKey === SCREEN_SIZE) {
-      if (queryValue) {
-        query.screenSize = queryValue;
+    if (key === SCREEN_SIZE) {
+      if (value) {
+        query.screenSize = value;
       } else {
         delete query.screenSize;
       }
     }
 
-    if (queryKey === WEIGHT) {
-      if (queryValue) {
-        query.weight = queryValue;
+    if (key === WEIGHT) {
+      if (value) {
+        query.weight = value;
       } else {
         delete query.weight;
       }
     }
 
-    if (queryKey === PAGE) {
-      if (queryValue) {
-        query.page = queryValue;
-      } else {
-        delete query.page;
-      }
-    }
-
-    if (queryKey === PRICE) {
-      if (queryValue) {
-        query.price = queryValue;
+    if (key === PRICE) {
+      if (value) {
+        query.price = value;
       } else {
         delete query.price;
       }
     }
 
-    if (queryKey === SORT) {
-      if (queryValue) {
-        query.sort = queryValue;
+    if (key === SORT) {
+      if (value) {
+        query.sort = value;
       } else {
         delete query.sort;
+      }
+    }
+
+    // If querying by key page, remove other query keys
+    if (key === PAGE) {
+      if (value) {
+        query.page = value;
+      } else {
+        query.page = 1;
+      }
+    } else {
+      if (query.page) {
+        query.page = 1;
       }
     }
 
@@ -269,40 +286,34 @@ function Home(props) {
     filterRef.current.scrollIntoView({ behavior: 'auto' });
   };
 
-  const pageChangeHandler = (e, page) => {
-    const queryKey = PAGE;
-    const queryValue = parseInt(page) > 1 ? page : '';
+  const priceChangeHandler = (e, newValue) => {
+    setPriceBoundary(newValue);
+    const query = {
+      key: PRICE,
+      value: value.some((e, i) => e !== PRICE_BOUNDARY[i])
+        ? value.join('-')
+        : '',
+    };
 
-    filterSearch({ queryKey, queryValue });
-    // filterSearch({ page });
-  };
-
-  const priceChangeHandler = (e, value) => {
-    setPriceBoundary(value);
-    const queryKey = PRICE;
-    const queryValue = value.some((e, i) => e !== PRICE_BOUNDARY[i])
-      ? value.join('-')
-      : '';
-
-    filterSearch({ queryKey, queryValue });
+    filterSearch(query);
   };
 
   const sortChangeHandler = (e) => {
-    const queryKey = SORT;
-    const queryValue = e.target.value !== 'featured' ? e.target.value : '';
+    const key = SORT;
+    const value = e.target.value !== 'featured' ? e.target.value : '';
 
-    filterSearch({ queryKey, queryValue });
+    filterSearch({ key, value });
   };
 
   const addToCartHandler = (product) => {
-    dispatch({ type: 'ADD_TO_CART', payload: product._id });
+    dispatch({ type: ADD_TO_CART, payload: product._id });
 
     const msg = `${capitalize(product.category)} ${product.name} added to cart`;
     enqueueSnackbar(msg, { variant: 'success' });
     closeSnackbar();
   };
 
-  const toggleFilterByHandler = (filterBy) => {
+  const toggleFilterHandler = (filterBy) => {
     const idx = filterByList.findIndex(
       (filterByItem) => filterByItem.category === filterBy.category
     );
@@ -319,7 +330,7 @@ function Home(props) {
     );
   };
 
-  const toggleTagFilterHandler = (filterByCategory, tag) => {
+  const toggleFilterTagHandler = (filterByCategory, tag) => {
     const filterBy = filterByList.find(
       (filterByItem) => filterByItem.category === filterByCategory
     );
@@ -342,19 +353,19 @@ function Home(props) {
         .concat(filterByList.slice(filterByIdx + 1, filterByList.length))
     );
 
-    const queryKey = filterByCategory;
-    var queryValue = null;
+    const key = filterByCategory;
+    var value = null;
 
     if (filterBy.filteredList.includes(tag)) {
-      queryValue =
+      value =
         filterBy.filteredList.length > 1
           ? filterBy.filteredList.filter((item) => item !== tag).join(',')
           : '';
     } else {
-      queryValue = filterBy.filteredList.concat(tag).join(',');
+      value = filterBy.filteredList.concat(tag).join(',');
     }
 
-    filterSearch({ queryKey, queryValue });
+    filterSearch({ key, value });
   };
 
   const tags = filterByList.reduce((acc, next) => {
@@ -370,7 +381,7 @@ function Home(props) {
     if (favs.includes(itemId)) {
       dispatch({ type: 'REMOVE_FROM_FAV', payload: itemId });
     } else {
-      dispatch({ type: 'ADD_TO_FAV', payload: itemId });
+      dispatch({ type: ADD_TO_FAV, payload: itemId });
       const msg = 'Item saved';
       enqueueSnackbar(msg, { variant: 'success' });
     }
@@ -407,114 +418,19 @@ function Home(props) {
         >
           <Grid container spacing={5}>
             {/* Filter section */}
-            <Grid item container xs={12} md={3} lg={3} xl={3}>
-              <Grid item>
-                <Box sx={{ position: 'sticky', top: 10 }}>
-                  <List
-                    sx={{
-                      '& .MuiListItemButton-root:hover': {
-                        color: 'primary.main',
-                        bgcolor: 'grey.400',
-                      },
-                      '& .Mui-selected': {
-                        bgcolor: 'secondary.light',
-                      },
-                      '& .Mui-selected:hover': {
-                        bgcolor: '#D9D9D9',
-                      },
-                      '& 	.MuiListItemText-primary': {
-                        fontWeight: 'bold',
-                      },
-                    }}
-                  >
-                    <ListItem>
-                      <ListItemIcon>
-                        <FilterList />
-                      </ListItemIcon>
-                      <ListItemText primary="Filtering" />
-                    </ListItem>
-                    <ListItem>
-                      <Box
-                        sx={{ display: 'flex', flexFlow: 'column', flex: 1 }}
-                      >
-                        <List>
-                          <ListItemText primary="Price Boundary" />
-
-                          <ListItem>
-                            <StyledSlider
-                              min={MINIMUM_PRICE_BOUNDARY}
-                              max={MAXIMUM_PRICE_BOUNDARY}
-                              step={PRICE_STEP}
-                              value={priceBoundary}
-                              // defaultValue={priceBoundary}
-                              valueLabelDisplay="auto"
-                              onChange={priceChangeHandler}
-                              marks={arrayOfRange(
-                                MINIMUM_PRICE_BOUNDARY,
-                                MAXIMUM_PRICE_BOUNDARY,
-                                PRICE_STEP,
-                                true
-                              ).map((e) => ({
-                                value: e,
-                                label: (e / Math.pow(10, 6))
-                                  .toString()
-                                  .concat('M'),
-                              }))}
-                            />
-                          </ListItem>
-                        </List>
-                      </Box>
-                    </ListItem>
-                    <Divider />
-                    {filterByList.map((filterBy, index) => (
-                      <div key={filterBy.category}>
-                        <ListItemButton
-                          selected={filterBy.filteredList.length > 0}
-                          onClick={() => toggleFilterByHandler(filterBy)}
-                        >
-                          <ListItemText
-                            primary={`${filterBy.category} ${
-                              filterBy.filteredList.length > 0
-                                ? `(${filterBy.filteredList.length})`
-                                : ''
-                            } `}
-                          />
-                          {filterBy.isFiltered ? <Remove /> : <Add />}
-                        </ListItemButton>
-                        <Collapse in={filterBy.isFiltered} timeout="auto">
-                          <Box
-                            sx={{
-                              display: 'flex',
-                              flexFlow: 'wrap',
-                              pt: 2,
-                              pb: 2,
-                            }}
-                          >
-                            {filterBy.categorizedList.map((tag) => (
-                              <ButtonComponentTag
-                                category={filterBy.category}
-                                key={tag}
-                                tag={tag}
-                                clicked={filterBy.filteredList.includes(tag)}
-                                toggleTagFilterHandler={() =>
-                                  toggleTagFilterHandler(filterBy.category, tag)
-                                }
-                              />
-                            ))}
-                          </Box>
-                        </Collapse>
-                        {index < filterByList.length - 1 && <Divider />}
-                      </div>
-                    ))}
-                  </List>
-                </Box>
-              </Grid>
+            <Grid item xs={12} md={3} lg={3} xl={3}>
+              <SelectByFilter
+                categories={filterByList}
+                toggleFilterHandler={toggleFilterHandler}
+                toggleFilterTagHandler={toggleFilterTagHandler}
+                filterSearch={filterSearch}
+              />
             </Grid>
             {/* Product section */}
             <Grid item container xs={12} md={9} lg={9} xl={9} spacing={3}>
               <List sx={{ flex: 1 }}>
                 {/* Sort section */}
-                <ListItem>
+                {/* <ListItem>
                   <Grid item md={12} xl={12}>
                     <Box sx={{ flex: 1 }}>
                       {query && query != 'all' && (
@@ -552,8 +468,8 @@ function Home(props) {
                                       key={index}
                                       category={option.category}
                                       tag={option.tag}
-                                      toggleTagFilterHandler={
-                                        toggleTagFilterHandler
+                                      toggleFilterTagHandler={
+                                        toggleFilterTagHandler
                                       }
                                       {...getTagProps({ index })}
                                     />
@@ -607,7 +523,8 @@ function Home(props) {
                       </Box>
                     </Box>
                   </Grid>
-                </ListItem>
+                </ListItem> */}
+
                 {/* Product display section */}
                 <ListItem>
                   <Grid item container xs={12} md={12} xl={12} spacing={3}>
@@ -622,7 +539,7 @@ function Home(props) {
                         // xl={6}
                         key={product.name}
                       >
-                        <ProductItem
+                        <ProductCard
                           // saved={favs.includes(product._id)}
                           product={product}
                           addToCartHandler={addToCartHandler}
@@ -633,37 +550,23 @@ function Home(props) {
                   </Grid>
                 </ListItem>
 
+                {/* Pagnition seciton */}
                 <ListItem>
-                  {/* Pagnition seciton */}
                   <Grid
                     item
                     md={12}
                     xl={12}
                     sx={{
-                      // bgcolor: 'gray',
                       justifyContent: 'center',
                       display: 'flex',
                       alignItems: 'center ',
                     }}
                   >
                     <Pagination
-                      showFirstButton
-                      showLastButton
-                      shape="rounded"
-                      boundaryCount={1}
-                      renderItem={(item) => (
-                        <PaginationItem
-                          components={{
-                            previous: ArrowLeft,
-                            next: ArrowRight,
-                          }}
-                          {...item}
-                        />
-                      )}
-                      count={pages}
-                      defaultPage={parseInt(query.page || '1')}
-                      onChange={pageChangeHandler}
-                    ></Pagination>
+                      pagesCount={pages}
+                      page={query.page}
+                      filterSearch={filterSearch}
+                    />
                   </Grid>
                 </ListItem>
               </List>
@@ -671,8 +574,6 @@ function Home(props) {
           </Grid>
         </Box>
       </Box>
-
-      {/* Display section */}
     </Layout>
   );
 }
@@ -827,22 +728,6 @@ export async function getServerSideProps({ query }) {
     ...weightFilter,
   });
 
-  const categorizedBrands = await Product.find({}).distinct('brand');
-  const categorizedCPUs = await Product.find({}).distinct(
-    'processorAndMemory.processorName'
-  );
-  const categorizedRAMs = await Product.find({}).distinct(
-    'processorAndMemory.ram'
-  );
-  const categorizedGPUs = await Product.find({}).distinct(
-    'processorAndMemory.graphicProcessor'
-  );
-  const categorizedScreens = await Product.find({}).distinct(
-    'displayAndAudio.screenSize'
-  );
-  const categorizedWeights = await Product.find({}).distinct(
-    'dimensions.weight'
-  );
   await db.disconnect();
 
   return {
@@ -856,12 +741,6 @@ export async function getServerSideProps({ query }) {
       screenSizePath: screenSize,
       weightPath: weight,
       products: products.map(db.convertMongoDocToObject),
-      categorizedBrands,
-      categorizedCPUs,
-      categorizedRAMs,
-      categorizedGPUs,
-      categorizedScreens,
-      categorizedWeights,
       countProducts,
       pages: Math.ceil(countProducts / PAGE_SIZE),
     },

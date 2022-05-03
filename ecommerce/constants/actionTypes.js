@@ -1,0 +1,21 @@
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const SIGNIN = 'SIGNIN';
+export const SIGNOUT = 'SIGNOUT';
+export const SIGNUP = 'SIGNUP';
+export const ADD_TO_FAV = 'ADD_TO_FAV';
+export const REMOVE_FROM_FAV = 'REMOVE_FROM_FAV';
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+export const CLEAR_CART = 'CLEAR_CART';
+export const DECREASE_ITEM_QUANTITY_TO_CART = 'DECREASE_ITEM_QUANTITY_TO_CART';
+export const INCREASE_ITEM_QUANTITY_TO_CART = 'INCREASE_ITEM_QUANTITY_TO_CART';
+export const UPDATE_ITEM_QUANTITY = 'UPDATE_ITEM_QUANTITY';
+export const ADD_NEW_ITEM = ' ADD_NEW_ITEM';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+export const SAVE_SHIPPING_ADDRESS = 'SAVE_SHIPPING_ADDRESS';
+export const SAVE_PAYMENT_METHOD = 'SAVE_PAYMENT_METHOD';
+
+export const PENDING = 'PENDING';
+export const FULFILLED = 'FULFILLED';
+export const REJECTED = 'REJECTED';
