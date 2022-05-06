@@ -27,7 +27,7 @@ import { useStyles } from '../../utils/styles';
 import NextLink from 'next/link';
 import { Devices, Home, Laptop, NavigateNext } from '@mui/icons-material';
 
-export default function ProductScreen(props) {
+export default function ProductScreen({ product }) {
   const classes = useStyles();
   const { dispatch } = useContext(Store);
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
@@ -40,7 +40,6 @@ export default function ProductScreen(props) {
     closeSnackbar();
   };
 
-  const { product } = props;
   // const image = product.images[0];
   // const { name, price, oldPrice, countInStock, numReviews } = product;
 
@@ -247,7 +246,7 @@ export default function ProductScreen(props) {
               </CardContent>
               <CardActions>
                 <Button
-                  onClick={addToCartHandler}
+                  onClick={() => addToCartHandler(product._id)}
                   variant="contained"
                   fullWidth
                   color="secondary"

@@ -56,19 +56,23 @@ function reducer(state, action) {
 function AdminDashboard() {
   const classes = useStyles();
   const router = useRouter();
-  const { state } = useContext(Store);
-  const { user } = state;
+  const {
+    userState: { user },
+  } = useContext(Store);
+
   const [{ summary, loading, error }, dispatch] = useReducer(reducer, {
     summary: { salesData: [] },
     loading: true,
     error: '',
   });
+
   const chartRef = useRef();
 
   useEffect(() => {
     if (!user) {
       router.push('/login');
     }
+
     const fetchData = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
@@ -86,6 +90,7 @@ function AdminDashboard() {
   if (loading) {
     return <Layout title="Admin Dashboard"></Layout>;
   }
+
   const sections = [
     {
       label: 'Sales',
@@ -128,12 +133,6 @@ function AdminDashboard() {
         data: summary.salesData.map((x) => x.totalSales),
       },
     ],
-  };
-
-  const clickGraphHandler = (e) => {
-    // console.log(getDatasetAtEvent(chartRef.current, e));
-    // console.log(getElementAtEvent(chartRef.current, e));
-    console.log(getElementsAtEvent(chartRef.current, e));
   };
 
   return (

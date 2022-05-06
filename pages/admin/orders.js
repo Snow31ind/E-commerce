@@ -162,10 +162,12 @@ const columns = [
 ];
 
 function AdminOrders() {
-  const { state } = useContext(Store);
+  const {
+    userState: { user },
+  } = useContext(Store);
   const router = useRouter();
   const classes = useStyles();
-  const { user } = state;
+
   const [pageSize, setPageSize] = useState(10);
 
   const [{ loading, error, orders }, dispatch] = useReducer(reducer, {

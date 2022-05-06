@@ -46,8 +46,10 @@ function reducer(state, action) {
 
 export default function OrderHistory() {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-  const { state } = useContext(Store);
-  const { user } = state;
+  const {
+    userState: { user },
+  } = useContext(Store);
+
   const router = useRouter();
   const classes = useStyles();
 

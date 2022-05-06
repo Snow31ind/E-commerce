@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -49,14 +49,12 @@ import {
   ShoppingCart,
 } from '@mui/icons-material';
 import {
+  CLEAR_CART,
   SAVE_PAYMENT_METHOD,
   SAVE_SHIPPING_ADDRESS,
 } from '../constants/actionTypes';
 
 export default function Checkout() {
-  const { state, dispatch } = React.useContext(Store);
-  const classes = useStyles();
-
   const {
     handleSubmit,
     control,
@@ -65,21 +63,23 @@ export default function Checkout() {
   } = useForm();
 
   const {
-    cart: { shippingAddress, cartItemIds },
-    user,
-  } = state;
-  const router = useRouter();
+    cartState: { shippingAddress, cart },
+    cartDispatch,
+    userState: { user },
+  } = useContext(Store);
+  const classes = useStyles();
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const router = useRouter();
 
   const [paymentMethod, setPaymentMethod] = useState('');
   const [activeStep, setActiveStep] = React.useState(1);
-  const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [openLoginModal, setOpenLoginModal] = useState(false);
 
   useEffect(() => {
-    // if (!user) {
-    //   router.push('/login?redirect=/checkout');
-    // }
+    if (!user) {
+      router.push('/login?redirect=/checkout');
+    }
 
     if (user) {
       if (shippingAddress) {
@@ -96,44 +96,27 @@ export default function Checkout() {
     }
   }, []);
 
-  useEffect(() => {
-    // if (activeStep === 2) {
-    // if (!paymentMethod) {
-    // router.push('/payment');
-    // }
-
-    const fetchItems = async () => {
-      const { data } = await axios.get('/api/products');
-
-      var list = [];
-
-      cartItemIds.forEach((cartItemId) => {
-        const item = data.products.find((item) => item._id === cartItemId);
-        const existItem = list.find((item) => item._id === cartItemId);
-
-        if (existItem) {
-          list = [
-            ...list.filter((item) => item._id !== cartItemId),
-            { ...item, quantity: existItem.quantity + 1 },
-          ];
-        } else {
-          list = [...list, { ...item, quantity: 1 }];
-        }
-
-        setCart(list);
-      });
-    };
-
-    fetchItems();
-    // }
-  }, []);
-
   const roundToTwo = (num) => Math.round(num * 100 + Number.EPSILON) / 100;
-  const itemsPrice = cart.reduce((a, c) => a + c.quantity * c.price, 0);
 
-  const shippingPrice = itemsPrice > 15000000 ? 0 : 100000;
-  const taxPrice = roundToTwo(itemsPrice * 0.1);
-  const totalPrice = roundToTwo(itemsPrice + shippingPrice + taxPrice);
+  const openLoginModalHandler = () => {
+    setOpenLoginModal(true);
+  };
+
+  const closeLoginModalHandler = () => {
+    setOpenLoginModal(false);
+  };
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
   const submitShippingAddressHandler = ({ name, address, phoneNumber }) => {
     const data = {
@@ -141,9 +124,8 @@ export default function Checkout() {
       address,
       phoneNumber,
     };
-    dispatch({ type: SAVE_SHIPPING_ADDRESS, payload: data });
+    cartDispatch({ type: SAVE_SHIPPING_ADDRESS, payload: data });
     handleNext();
-    // router.push('/payment');
   };
 
   const submitPaymentMethodHandler = (e) => {
@@ -156,24 +138,11 @@ export default function Checkout() {
         variant: 'error',
       });
     } else {
-      dispatch({ type: SAVE_PAYMENT_METHOD, payload: paymentMethod });
+      cartDispatch({ type: SAVE_PAYMENT_METHOD, payload: paymentMethod });
       // router.push('placeorder');
     }
 
     handleNext();
-  };
-
-  const handleNext = () => {
-    // steps[activeStep].action();
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
   };
 
   const placeOrderHandler = async () => {
@@ -207,7 +176,7 @@ export default function Checkout() {
         }
       );
 
-      dispatch({ type: 'CART_CLEAR' });
+      cartDispatch({ type: CLEAR_CART });
       setLoading(false);
 
       router.push(`/order/${data._id}`);
@@ -220,15 +189,11 @@ export default function Checkout() {
     }
   };
 
-  const [openLoginModal, setOpenLoginModal] = useState(false);
+  const itemsPrice = cart.reduce((a, c) => a + c.quantity * c.price, 0);
 
-  const openLoginModalHandler = () => {
-    setOpenLoginModal(true);
-  };
-
-  const closeLoginModalHandler = () => {
-    setOpenLoginModal(false);
-  };
+  const shippingPrice = itemsPrice > 15000000 ? 0 : 100000;
+  const taxPrice = roundToTwo(itemsPrice * 0.1);
+  const totalPrice = roundToTwo(itemsPrice + shippingPrice + taxPrice);
 
   const steps = [
     {
@@ -253,6 +218,7 @@ export default function Checkout() {
       page: (
         <form onSubmit={handleSubmit(submitShippingAddressHandler)}>
           <List>
+            {/* User name */}
             <ListItem>
               <Controller
                 name="name"
@@ -282,6 +248,8 @@ export default function Checkout() {
                 )}
               ></Controller>
             </ListItem>
+
+            {/* User address */}
             <ListItem>
               <Controller
                 name="address"
@@ -311,6 +279,8 @@ export default function Checkout() {
                 )}
               ></Controller>
             </ListItem>
+
+            {/* User phone number */}
             <ListItem>
               <Controller
                 name="phoneNumber"
@@ -340,6 +310,8 @@ export default function Checkout() {
                 )}
               ></Controller>
             </ListItem>
+
+            {/* Submit button */}
             <ListItem>
               <Button
                 fullWidth
@@ -418,7 +390,7 @@ export default function Checkout() {
                 and learn how to enhance your ads using features like ad extensions.
                 If you run into any problems with your ads, find out how to tell if
                 they're running and how to resolve approval issues.`,
-      page: cart ? (
+      page: shippingAddress ? (
         <Box>
           <Card className={classes.section}>
             <List>

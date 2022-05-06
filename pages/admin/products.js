@@ -58,10 +58,12 @@ function reducer(state, action) {
 }
 
 function AdminProducts() {
-  const { state } = useContext(Store);
+  const {
+    userState: { user },
+  } = useContext(Store);
+
   const router = useRouter();
   const classes = useStyles();
-  const { user } = state;
 
   const [
     { loading, error, products, loadingCreate, successDelete, loadingDelete },

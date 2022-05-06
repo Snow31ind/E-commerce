@@ -2,6 +2,10 @@ import Cookies from 'js-cookie';
 import {
   ADD_NEW_ITEM,
   CLEAR_CART,
+  FETCH_CART,
+  FULFILLED,
+  PENDING,
+  REJECTED,
   REMOVE_ITEM,
   SAVE_PAYMENT_METHOD,
   SAVE_SHIPPING_ADDRESS,
@@ -12,6 +16,7 @@ import { ITEMS, PAYMENT_METHOD, SHIPPING_ADDRESS } from '../constants/cookies';
 const initialState = {
   loading: false,
   error: '',
+  cart: [],
   items: Cookies.get(ITEMS) ? JSON.parse(Cookies.get(ITEMS)) : [],
   shippingAddress: Cookies.get(SHIPPING_ADDRESS)
     ? JSON.parse(Cookies.get(SHIPPING_ADDRESS))
@@ -21,24 +26,42 @@ const initialState = {
     : '',
 };
 
-const reducer = (state, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case PENDING: {
+      return { ...state, loading: true };
+    }
+
+    case FULFILLED: {
+      return { ...state, loading: false };
+    }
+
+    case REJECTED: {
+      return { ...state, error: action.payload, loading: false };
+    }
+
     case ADD_NEW_ITEM: {
-      const id = action.payload;
-      const newItems = [{ id, quantity: 1 }, ...state.items];
+      const product = action.payload;
+      // Add {id, quantity} if new item into the field items
+      const items = [{ _id: product._id, quantity: 1 }, ...state.items];
 
-      Cookies.set(ITEMS, JSON.stringify(newItems));
+      // Add product to cart
+      const cart = [{ ...product, quantity: 1 }, ...state.cart];
 
-      return { ...state, items: newItems };
+      Cookies.set(ITEMS, JSON.stringify(items));
+
+      return { ...state, items, cart };
     }
 
     case REMOVE_ITEM: {
-      const id = action.payload;
-      const newItems = state.items.filter((item) => item.id !== id);
+      const _id = action.payload;
+      const items = state.items.filter((item) => item._id !== _id);
 
-      Cookies.set(ITEMS, JSON.stringify(newItems));
+      Cookies.set(ITEMS, JSON.stringify(items));
 
-      return { ...state, items: newItems };
+      const cart = state.cart.filter((item) => item._id !== _id);
+
+      return { ...state, items, cart };
     }
 
     case CLEAR_CART: {
@@ -47,14 +70,23 @@ const reducer = (state, action) => {
     }
 
     case UPDATE_ITEM_QUANTITY: {
-      const { id, quantity } = action.payload;
-      const newItems = state.items.filter((item) =>
-        item.id !== id ? item : { ...item, quantity: item.quantity + quantity }
+      const { _id, quantity } = action.payload;
+
+      const items = state.items.map((item) =>
+        item._id !== _id
+          ? item
+          : { ...item, quantity: item.quantity + quantity }
       );
 
-      Cookies.set(ITEMS, JSON.stringify(newItems));
+      Cookies.set(ITEMS, JSON.stringify(items));
 
-      return { ...state, items: newItems };
+      const cart = state.cart.map((item) =>
+        item._id !== _id
+          ? item
+          : { ...item, quantity: item.quantity + quantity }
+      );
+
+      return { ...state, items, cart };
     }
 
     case SAVE_SHIPPING_ADDRESS: {
@@ -71,6 +103,12 @@ const reducer = (state, action) => {
       Cookies.set(PAYMENT_METHOD, JSON.stringify(paymentMethod));
 
       return { ...state, paymentMethod };
+    }
+
+    case FETCH_CART: {
+      const cart = action.payload;
+
+      return { ...state, cart };
     }
   }
 };

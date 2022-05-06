@@ -19,3 +19,5 @@ export const SAVE_PAYMENT_METHOD = 'SAVE_PAYMENT_METHOD';
 export const PENDING = 'PENDING';
 export const FULFILLED = 'FULFILLED';
 export const REJECTED = 'REJECTED';
+
+export const FETCH_CART = 'FETCH_CART';

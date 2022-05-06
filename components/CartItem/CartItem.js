@@ -25,15 +25,14 @@ const SquareIconButton = styled(IconButton)(({ theme }) => ({
   padding: 0,
 }));
 
-export default function CartItem(props) {
+export default function CartItem({
+  product,
+  decreaseItemQuantityHandler,
+  increaseItemQuantityHandler,
+  removeFromCartHandler,
+}) {
   const classes = useStyles();
 
-  const { product } = props;
-  const {
-    decreaseItemQuantityHandler,
-    increaseItemQuantityHandler,
-    removeFromCartHanler,
-  } = props;
   const image = product.images[0];
 
   const { name, price, oldPrice, countInStock, numReviews, quantity } = product;
@@ -121,7 +120,7 @@ export default function CartItem(props) {
               flexDirection: 'column',
             }}
           >
-            <SquareIconButton onClick={() => removeFromCartHanler(product)}>
+            <SquareIconButton onClick={() => removeFromCartHandler(product)}>
               <CancelPresentation color="error" />
             </SquareIconButton>
 

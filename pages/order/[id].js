@@ -55,7 +55,7 @@ function reducer(state, action) {
 export default function OrderScreen({ orderId }) {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const {
-    state: { user },
+    userState: { user },
   } = useContext(Store);
   const router = useRouter();
   const classes = useStyles();

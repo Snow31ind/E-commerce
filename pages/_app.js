@@ -4,6 +4,9 @@ import '../styles/globals.css';
 import { StoreProvider } from '../utils/Store';
 import DateAdapter from '@mui/lab/AdapterDateFns';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import { createTheme, ThemeProvider } from '@mui/material';
+
+const theme = createTheme({});
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,7 +19,9 @@ function MyApp({ Component, pageProps }) {
       <LocalizationProvider dateAdapter={DateAdapter}>
         <StoreProvider>
           <PayPalScriptProvider>
-            <Component {...pageProps} />
+            <ThemeProvider theme={theme}>
+              <Component {...pageProps} />
+            </ThemeProvider>
           </PayPalScriptProvider>
         </StoreProvider>
       </LocalizationProvider>

@@ -31,52 +31,64 @@ import { formatPriceToVND } from '../utils/helpers';
 import {
   ADD_TO_CART,
   DECREASE_ITEM_QUANTITY_TO_CART,
+  FETCH_CART,
+  FULFILLED,
+  PENDING,
   REMOVE_FROM_CART,
+  REMOVE_ITEM,
+  UPDATE_ITEM_QUANTITY,
 } from '../constants/actionTypes';
-import { fetchItemById } from '../actions/products';
+import { fetchItemById } from '../actions/cart';
 
 export default function Cart() {
   const {
-    cartState: { items, loading },
+    cartState: { items, loading, cart },
     cartDispatch,
   } = useContext(Store);
 
   const router = useRouter();
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
-  const [cart, setCart] = useState([]);
   const classes = useStyles();
 
   useEffect(() => {
-    const fetchItems = async () => {
-      var list = [];
+    const fetchCart = async () => {
+      cartDispatch({ type: PENDING });
+      var cart = [];
 
       for (var item of items) {
-        const product = await fetchItemById(item.id);
-        list.push({ ...product, quantity: item.quantity });
+        const purchasedProduct = await fetchItemById(item._id);
+        cart = [...cart, { ...purchasedProduct, quantity: item.quantity }];
       }
 
-      setCart(list);
+      cartDispatch({ type: FETCH_CART, payload: cart });
+      cartDispatch({ type: FULFILLED });
     };
 
-    fetchItems();
+    fetchCart();
   }, []);
 
   const removeFromCartHandler = (item) => {
     closeSnackbar();
 
-    dispatch({ type: REMOVE_FROM_CART, payload: item._id });
+    cartDispatch({ type: REMOVE_ITEM, payload: item._id });
 
     const msg = `${capitalize(item.category)} ${item.name} removed from cart`;
     enqueueSnackbar(msg, { variant: 'success' });
   };
 
-  const decreaseItemQuantityHandler = (item) => {
-    dispatch({ type: DECREASE_ITEM_QUANTITY_TO_CART, payload: item._id });
+  const increaseItemQuantityHandler = (item) => {
+    cartDispatch({
+      type: UPDATE_ITEM_QUANTITY,
+      payload: { _id: item._id, quantity: 1 },
+    });
   };
 
-  const increaseItemQuantityHandler = (item) => {
-    dispatch({ type: ADD_TO_CART, payload: item._id });
+  const decreaseItemQuantityHandler = (item) => {
+    cartDispatch({
+      type: UPDATE_ITEM_QUANTITY,
+      payload: { _id: item._id, quantity: -1 },
+    });
   };
 
   const subTotal = cart.reduce(
@@ -101,7 +113,7 @@ export default function Cart() {
   return (
     <Layout title="Shopping cart">
       <Box>
-        {cartItemIds.length > 0 ? (
+        {cart.length ? (
           <Grid container spacing={2}>
             <Grid item container xl={8} md={8} xs={12} spacing={2}>
               <List sx={{ flex: 1, maxHeight: 600, overflow: 'auto' }}>

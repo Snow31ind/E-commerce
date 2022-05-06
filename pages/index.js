@@ -34,8 +34,14 @@ import StyledSlider from '../components/StyledSlider';
 import dynamic from 'next/dynamic';
 import FilterChip from '../components/FilterChip/FilterChip';
 import SelectByFilter from '../components/SelectByFilter/SelectByFilter';
-import { ADD_TO_CART, ADD_TO_FAV } from '../constants/actionTypes';
+import {
+  ADD_NEW_ITEM,
+  ADD_TO_CART,
+  ADD_TO_FAV,
+  UPDATE_ITEM_QUANTITY,
+} from '../constants/actionTypes';
 import Pagination from '../components/Pagination/Pagination';
+import { ProductionQuantityLimits } from '@mui/icons-material';
 
 const PAGE_SIZE = 14;
 const BREAK_ITEM_INDEX = 11;
@@ -99,23 +105,28 @@ const settings = {
   ],
 };
 
-function Home(props) {
+function Home({
+  products,
+  pages,
+  countProducts,
+  brandPath,
+  ramPath,
+  cpuPath,
+  gpuPath,
+  screenSizePath,
+  weightPath,
+  isAtHomePage,
+  scrollToFilterView,
+}) {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const classes = useStyles();
   const router = useRouter();
-  const { state, dispatch } = useContext(Store);
-
-  const { products, pages, countProducts } = props;
-  const { brandPath, ramPath, cpuPath, gpuPath, screenSizePath, weightPath } =
-    props;
-  // const {
-  //   categorizedBrands,
-  //   categorizedCPUs,
-  //   categorizedRAMs,
-  //   categorizedGPUs,
-  //   categorizedScreens,
-  //   categorizedWeights,
-  // } = props;
+  const {
+    state: { favs },
+    dispatch,
+    cartState: { cart },
+    cartDispatch,
+  } = useContext(Store);
 
   const categorizedBrands = [
     ...new Set(products.map((product) => product.brand)),
@@ -140,9 +151,6 @@ function Home(props) {
     ...new Set(products.map((product) => product.dimensions.weight)),
   ];
 
-  const { isAtHomePage, scrollToFilterView } = props;
-  const { favs } = state;
-
   const { query = 'all', sort = 'featured' } = router.query;
 
   const {
@@ -150,11 +158,6 @@ function Home(props) {
     control,
     formState: { errors },
   } = useForm();
-
-  const [priceBoundary, setPriceBoundary] = useState([
-    MINIMUM_PRICE_BOUNDARY,
-    MAXIMUM_PRICE_BOUNDARY,
-  ]);
 
   const filterRef = useRef();
 
@@ -306,9 +309,19 @@ function Home(props) {
   };
 
   const addToCartHandler = (product) => {
-    dispatch({ type: ADD_TO_CART, payload: product._id });
+    // If item does not exist in cart
+    if (cart.find((item) => item._id === product._id)) {
+      console.log('Increase quantity of item');
+      cartDispatch({
+        type: UPDATE_ITEM_QUANTITY,
+        payload: { _id: product._id, quantity: 1 },
+      });
+    } else {
+      console.log('New item');
+      cartDispatch({ type: ADD_NEW_ITEM, payload: product });
+    }
 
-    const msg = `${capitalize(product.category)} ${product.name} added to cart`;
+    const msg = `Added to cart`;
     enqueueSnackbar(msg, { variant: 'success' });
     closeSnackbar();
   };
@@ -531,16 +544,13 @@ function Home(props) {
                     {products.map((product, index) => (
                       <Grid
                         item
-                        // sm={12}
                         xs={12}
                         md={6}
                         lg={index % BREAK_ITEM_INDEX > 1 ? 4 : 6}
                         xl={index % BREAK_ITEM_INDEX > 2 ? 3 : 4}
-                        // xl={6}
                         key={product.name}
                       >
                         <ProductCard
-                          // saved={favs.includes(product._id)}
                           product={product}
                           addToCartHandler={addToCartHandler}
                           saveItemHandler={saveItemHandler}
@@ -579,11 +589,11 @@ function Home(props) {
 }
 
 export async function getServerSideProps({ query }) {
-  // const isAtHomePage = query && Object.keys(query).length === 0 ? true : false;
+  const isAtHomePage = query && Object.keys(query).length === 0 ? true : false;
+  console.log('isAtHomePage:', isAtHomePage);
   const scrollToFilterView =
     query && Object.keys(query).length > 0 ? true : false;
   console.log(scrollToFilterView);
-  const isAtHomePage = true;
   console.log(`Query in router = ${query}`);
   const page = query.page || 1;
   const price = query.price || '';
