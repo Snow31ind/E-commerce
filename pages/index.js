@@ -60,17 +60,6 @@ const PAGE = 'Page';
 const PRICE = 'Price';
 const SORT = 'Sort';
 
-const brandImages = [
-  '/brands/acer.png',
-  '/brands/asus.png',
-  '/brands/dell.png',
-  '/brands/hp.png',
-  '/brands/lenovo.png',
-  '/brands/msi.png',
-  '/brands/realme.png',
-  '/brands/redmibook.png',
-];
-
 const orderFilters = [
   {
     value: 'featured',
@@ -117,6 +106,13 @@ function Home({
   weightPath,
   isAtHomePage,
   scrollToFilterView,
+
+  uniqueBrands,
+  uniqueCPUs,
+  uniqueGPUs,
+  uniqueRAMs,
+  uniqueScreenSizes,
+  uniqueWeights,
 }) {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const classes = useStyles();
@@ -127,29 +123,6 @@ function Home({
     cartState: { cart },
     cartDispatch,
   } = useContext(Store);
-
-  const categorizedBrands = [
-    ...new Set(products.map((product) => product.brand)),
-  ];
-  const categorizedCPUs = [
-    ...new Set(
-      products.map((product) => product.processorAndMemory.processorName)
-    ),
-  ];
-  const categorizedRAMs = [
-    ...new Set(products.map((product) => product.processorAndMemory.ram)),
-  ];
-  const categorizedGPUs = [
-    ...new Set(
-      products.map((product) => product.processorAndMemory.graphicProcessor)
-    ),
-  ];
-  const categorizedScreens = [
-    ...new Set(products.map((product) => product.displayAndAudio.screenSize)),
-  ];
-  const categorizedWeights = [
-    ...new Set(products.map((product) => product.dimensions.weight)),
-  ];
 
   const { query = 'all', sort = 'featured' } = router.query;
 
@@ -166,37 +139,37 @@ function Home({
       category: BRAND,
       isFiltered: false,
       filteredList: brandPath || [],
-      categorizedList: categorizedBrands,
+      categorizedList: uniqueBrands,
     },
     {
       category: CPU,
       isFiltered: false,
       filteredList: cpuPath || [],
-      categorizedList: categorizedCPUs,
+      categorizedList: uniqueCPUs,
     },
     {
       category: RAM,
       isFiltered: false,
       filteredList: ramPath || [],
-      categorizedList: categorizedRAMs,
+      categorizedList: uniqueRAMs,
     },
     {
       category: GPU,
       isFiltered: false,
       filteredList: gpuPath || [],
-      categorizedList: categorizedGPUs,
+      categorizedList: uniqueGPUs,
     },
     {
       category: SCREEN_SIZE,
       isFiltered: false,
       filteredList: screenSizePath || [],
-      categorizedList: categorizedScreens,
+      categorizedList: uniqueScreenSizes,
     },
     {
       category: WEIGHT,
       isFiltered: false,
       filteredList: weightPath || [],
-      categorizedList: categorizedWeights,
+      categorizedList: uniqueWeights,
     },
   ]);
 
@@ -593,150 +566,168 @@ export async function getServerSideProps({ query }) {
   console.log('isAtHomePage:', isAtHomePage);
   const scrollToFilterView =
     query && Object.keys(query).length > 0 ? true : false;
-  console.log(scrollToFilterView);
-  console.log(`Query in router = ${query}`);
-  const page = query.page || 1;
-  const price = query.price || '';
-  const brand = query.brand ? query.brand.split(',') : '';
-  const ram = query.ram ? query.ram.split(',').map((e) => parseInt(e)) : '';
-  const cpu = query.cpu ? query.cpu.split(',') : '';
-  const gpu = query.gpu ? query.gpu.split(',') : '';
-  const screenSize = query.screenSize ? query.screenSize.split(',') : '';
-  const weight = query.weight
-    ? query.weight.split(',').map((e) => parseFloat(e))
-    : '';
-  const searchQuery = query.query || '';
-  const sort = query.sort || '';
 
-  const order =
-    sort === 'featured'
-      ? { featured: -1 }
-      : sort === 'lowest'
-      ? { price: 1 }
-      : sort === 'highest'
-      ? { price: -1 }
-      : sort === 'newest'
-      ? { createdAt: -1 }
-      : { _id: -1 };
-
-  const queryFilter =
-    query && query != 'all'
-      ? {
-          name: {
-            $regex: searchQuery,
-            $options: 'i',
-          },
-        }
-      : {};
-
-  const priceBoundary = price.split('-');
-  const priceFilter =
-    price &&
-    price != 'all' &&
-    (Number(priceBoundary[0]) > MINIMUM_PRICE_BOUNDARY ||
-      Number(priceBoundary[1]) < MAXIMUM_PRICE_BOUNDARY)
-      ? {
-          price: {
-            $gte: Number(priceBoundary[0]),
-            $lte: Number(priceBoundary[1]),
-          },
-        }
-      : priceBoundary[0] === priceBoundary[1] &&
-        priceBoundary[0] === MINIMUM_PRICE_BOUNDARY
-      ? {
-          price: {
-            $Lte: Number(priceBoundary[0]),
-          },
-        }
-      : priceBoundary[0] === priceBoundary[1] &&
-        priceBoundary[1] === MAXIMUM_PRICE_BOUNDARY
-      ? {
-          price: {
-            $gte: Number(priceBoundary[1]),
-          },
-        }
-      : {};
-
-  const brandFilter =
-    brand && brand != 'all'
-      ? {
-          brand: {
-            $in: brand,
-          },
-        }
-      : {};
-
-  const ramFilter =
-    ram && ram != 'all'
-      ? {
-          'processorAndMemory.ram': {
-            $in: ram,
-          },
-        }
-      : {};
-
-  const cpuFilter =
-    cpu && cpu != 'all'
-      ? {
-          'processorAndMemory.processorName': {
-            $in: cpu,
-          },
-        }
-      : {};
-
-  const gpuFilter =
-    gpu && gpu != 'all'
-      ? {
-          'processorAndMemory.graphicProcessor': {
-            $in: gpu,
-          },
-        }
-      : {};
-
-  const screenSizeFilter =
-    screenSize && screenSize != 'all'
-      ? {
-          'displayAndAudio.screenSize': {
-            $in: screenSize,
-          },
-        }
-      : {};
-
-  const weightFilter =
-    weight && weight != 'all'
-      ? {
-          'dimensions.weight': {
-            $in: weight,
-          },
-        }
-      : {};
+  var products = [];
+  var ram = '';
+  var brand = '';
+  var cpu = '';
+  var gpu = '';
+  var screenSize = '';
+  var weight = '';
 
   await db.connect();
-  const products = await Product.find({
-    ...queryFilter,
-    ...priceFilter,
-    ...brandFilter,
-    ...ramFilter,
-    ...cpuFilter,
-    ...gpuFilter,
-    ...screenSizeFilter,
-    ...weightFilter,
-  })
-    .sort(order)
-    .skip(PAGE_SIZE * (page - 1))
-    .limit(PAGE_SIZE)
-    .lean();
 
-  const countProducts = await Product.countDocuments({
-    ...queryFilter,
-    ...priceFilter,
-    ...brandFilter,
-    ...ramFilter,
-    ...cpuFilter,
-    ...gpuFilter,
-    ...screenSizeFilter,
-    ...weightFilter,
-  });
+  // There is a query
+  if (query && Object.keys(query).length === 0) {
+    const page = query.page || 1;
+    const price = query.price || '';
+    brand = query.brand ? query.brand.split(',') : '';
+    ram = query.ram ? query.ram.split(',').map((e) => parseInt(e)) : '';
+    cpu = query.cpu ? query.cpu.split(',') : '';
+    gpu = query.gpu ? query.gpu.split(',') : '';
+    screenSize = query.screenSize ? query.screenSize.split(',') : '';
+    weight = query.weight
+      ? query.weight.split(',').map((e) => parseFloat(e))
+      : '';
+    const searchQuery = query.query || '';
+    const sort = query.sort || '';
+
+    const order =
+      sort === 'featured'
+        ? { featured: -1 }
+        : sort === 'lowest'
+        ? { price: 1 }
+        : sort === 'highest'
+        ? { price: -1 }
+        : sort === 'newest'
+        ? { createdAt: -1 }
+        : { _id: -1 };
+
+    const queryFilter =
+      query && query != 'all'
+        ? {
+            name: {
+              $regex: searchQuery,
+              $options: 'i',
+            },
+          }
+        : {};
+
+    const priceBoundary = price.split('-');
+    const priceFilter =
+      price &&
+      price != 'all' &&
+      (Number(priceBoundary[0]) > MINIMUM_PRICE_BOUNDARY ||
+        Number(priceBoundary[1]) < MAXIMUM_PRICE_BOUNDARY)
+        ? {
+            price: {
+              $gte: Number(priceBoundary[0]),
+              $lte: Number(priceBoundary[1]),
+            },
+          }
+        : priceBoundary[0] === priceBoundary[1] &&
+          priceBoundary[0] === MINIMUM_PRICE_BOUNDARY
+        ? {
+            price: {
+              $Lte: Number(priceBoundary[0]),
+            },
+          }
+        : priceBoundary[0] === priceBoundary[1] &&
+          priceBoundary[1] === MAXIMUM_PRICE_BOUNDARY
+        ? {
+            price: {
+              $gte: Number(priceBoundary[1]),
+            },
+          }
+        : {};
+
+    const brandFilter =
+      brand && brand != 'all'
+        ? {
+            brand: {
+              $in: brand,
+            },
+          }
+        : {};
+
+    const ramFilter =
+      ram && ram != 'all'
+        ? {
+            'processorAndMemory.ram': {
+              $in: ram,
+            },
+          }
+        : {};
+
+    const cpuFilter =
+      cpu && cpu != 'all'
+        ? {
+            'processorAndMemory.processorName': {
+              $in: cpu,
+            },
+          }
+        : {};
+
+    const gpuFilter =
+      gpu && gpu != 'all'
+        ? {
+            'processorAndMemory.graphicProcessor': {
+              $in: gpu,
+            },
+          }
+        : {};
+
+    const screenSizeFilter =
+      screenSize && screenSize != 'all'
+        ? {
+            'displayAndAudio.screenSize': {
+              $in: screenSize,
+            },
+          }
+        : {};
+
+    const weightFilter =
+      weight && weight != 'all'
+        ? {
+            'dimensions.weight': {
+              $in: weight,
+            },
+          }
+        : {};
+
+    products = await Product.find({
+      ...queryFilter,
+      ...priceFilter,
+      ...brandFilter,
+      ...ramFilter,
+      ...cpuFilter,
+      ...gpuFilter,
+      ...screenSizeFilter,
+      ...weightFilter,
+    })
+      .sort(order)
+      .skip(PAGE_SIZE * (page - 1))
+      .limit(PAGE_SIZE)
+      .lean();
+  } else {
+    // Ther is no query
+    products = await Product.find({}).skip(0).limit(PAGE_SIZE).lean();
+  }
+
+  const countProducts = await Product.countDocuments({});
+
+  const uniqueBrands = await Product.find().distinct('brand');
+  const uniqueCPUs = await Product.find().distinct(
+    'processorAndMemory.processorName'
+  );
+  const uniqueRAMs = await Product.find().distinct('processorAndMemory.ram');
+  const uniqueGPUs = await Product.find().distinct(
+    'processorAndMemory.graphicProcessor'
+  );
+  const uniqueScreenSizes = await Product.find().distinct(
+    'displayAndAudio.screenSize'
+  );
+  const uniqueWeights = await Product.find().distinct('dimensions.weight');
 
   await db.disconnect();
 
@@ -744,12 +735,21 @@ export async function getServerSideProps({ query }) {
     props: {
       scrollToFilterView,
       isAtHomePage,
+
+      uniqueBrands,
+      uniqueCPUs,
+      uniqueGPUs,
+      uniqueRAMs,
+      uniqueScreenSizes,
+      uniqueWeights,
+
       brandPath: brand,
       ramPath: ram,
       cpuPath: cpu,
       gpuPath: gpu,
       screenSizePath: screenSize,
       weightPath: weight,
+
       products: products.map(db.convertMongoDocToObject),
       countProducts,
       pages: Math.ceil(countProducts / PAGE_SIZE),

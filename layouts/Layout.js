@@ -82,14 +82,17 @@ export default function Layout({
         {description && <meta name="description" content={description}></meta>}
       </Head>
 
-      <Navbar />
+      <Navbar isAtHomePage={isAtHomePage} />
 
       {!isAtHomePage && <DrawerHeader />}
       <Box
-        className={!isAtHomePage && classes.main}
         sx={{
           minHeight: '100vh',
-          ...props,
+          ...(!isAtHomePage && {
+            pl: 10,
+            pr: 10,
+            pt: 5,
+          }),
         }}
       >
         {children}

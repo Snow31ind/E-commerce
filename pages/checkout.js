@@ -77,10 +77,6 @@ export default function Checkout() {
   const [openLoginModal, setOpenLoginModal] = useState(false);
 
   useEffect(() => {
-    if (!user) {
-      router.push('/login?redirect=/checkout');
-    }
-
     if (user) {
       if (shippingAddress) {
         setValue('name', shippingAddress.name);

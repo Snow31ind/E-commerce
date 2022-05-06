@@ -26,16 +26,33 @@ import NextImage from 'next/image';
 import { useStyles } from '../../utils/styles';
 import NextLink from 'next/link';
 import { Devices, Home, Laptop, NavigateNext } from '@mui/icons-material';
+import {
+  ADD_NEW_ITEM,
+  UPDATE_ITEM_QUANTITY,
+} from '../../constants/actionTypes';
 
 export default function ProductScreen({ product }) {
   const classes = useStyles();
-  const { dispatch } = useContext(Store);
+  const {
+    cartState: { cart },
+    cartDispatch,
+  } = useContext(Store);
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
-  const addToCartHandler = async () => {
-    dispatch({ type: 'ADD_TO_CART', payload: product._id });
+  const addToCartHandler = () => {
+    // If item does not exist in cart
+    if (cart.find((item) => item._id === product._id)) {
+      console.log('Increase quantity of item');
+      cartDispatch({
+        type: UPDATE_ITEM_QUANTITY,
+        payload: { _id: product._id, quantity: 1 },
+      });
+    } else {
+      console.log('New item');
+      cartDispatch({ type: ADD_NEW_ITEM, payload: product });
+    }
 
-    const msg = `${capitalize(product.category)} ${product.name} added to cart`;
+    const msg = `Added to cart`;
     enqueueSnackbar(msg, { variant: 'success' });
     closeSnackbar();
   };
