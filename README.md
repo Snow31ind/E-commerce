@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TechNerds - web-based application 
 
-## Getting Started
+## Table of Contents
+* [Introduction](#introduction)
+* [Project aim](#project-aim)
+* [Technologies](#technologies)
+* [Features](#features)
+* [Web visualization](#web-visualization)
+* [Demo video](#demo-video)
+* [Setup](#setup)
 
-First, run the development server:
+## Introduction
+An E-commerce web-based application implemented using framework NextJS, Material UI, MongoDB, and other helpful utilities.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Project aim
+* Provide an ecommerce gateway for shops that sell electronic devices, particularly laptops.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies
+* Front-end: Next JS, Material UI (MUI)
+* Back-end: Next JS
+* NoSQL Database: MongoDB
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Features
+* Responsive UI.
+* Integration of Paypal payment.
+* Admin dashboard.
+* Cookies stored on browser.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Web visualization
+1. Homepage:
+![Hero banner](https://user-images.githubusercontent.com/90770150/167164880-54ecd293-1521-47b0-950a-a04fc1046053.png))
+![Products & filter](https://user-images.githubusercontent.com/90770150/167165120-0d528f12-6564-4f83-b9f7-4a6666ee8543.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. Admin dashboard:
+![Dashboard](https://user-images.githubusercontent.com/90770150/167165233-083cd495-2bb0-4758-bed8-761c45e42271.png)
 
-## Learn More
+3. And more
+* Available in the following demo video!
 
-To learn more about Next.js, take a look at the following resources:
+## Demo video
+[Video](https://drive.google.com/file/d/1l5P9tsBH6lM4LXGCBzIX6XziRJ7U1XSE/view?usp=sharing)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Setup
+1. Run `npm install` on the project's root terminal
+- Install necessary packages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Local environment variables configurations
+* Create a file `.env`
+* Add all following environment variables.
 
-## Deploy on Vercel
+| Variable | Value |
+| --- | --- |
+| MONGODB_URI | `your MONGODB_URI` (provided on your MongoDB cluster) |
+| JWT_SECRET | `your JWT_SECRET` (a unique string to you!) |
+| PAYPAL_CLIENT_ID | `your PAYPAL_CLIENT_ID` (A unique ID for Paypal integration provided by Paypal) |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Run `npm run dev`
+- Run the app in the development mode.
+- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
