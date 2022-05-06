@@ -405,12 +405,12 @@ function Home({
           <Grid container spacing={5}>
             {/* Filter section */}
             <Grid item xs={12} md={3} lg={3} xl={3}>
-              <SelectByFilter
+              {/* <SelectByFilter
                 categories={filterByList}
                 toggleFilterHandler={toggleFilterHandler}
                 toggleFilterTagHandler={toggleFilterTagHandler}
                 filterSearch={filterSearch}
-              />
+              /> */}
             </Grid>
             {/* Product section */}
             <Grid item container xs={12} md={9} lg={9} xl={9} spacing={3}>
@@ -716,18 +716,18 @@ export async function getServerSideProps({ query }) {
 
   const countProducts = await Product.countDocuments({});
 
-  const uniqueBrands = await Product.find().distinct('brand');
-  const uniqueCPUs = await Product.find().distinct(
-    'processorAndMemory.processorName'
-  );
-  const uniqueRAMs = await Product.find().distinct('processorAndMemory.ram');
-  const uniqueGPUs = await Product.find().distinct(
-    'processorAndMemory.graphicProcessor'
-  );
-  const uniqueScreenSizes = await Product.find().distinct(
-    'displayAndAudio.screenSize'
-  );
-  const uniqueWeights = await Product.find().distinct('dimensions.weight');
+  // const uniqueBrands = await Product.find().distinct('brand');
+  // const uniqueCPUs = await Product.find().distinct(
+  //   'processorAndMemory.processorName'
+  // );
+  // const uniqueRAMs = await Product.find().distinct('processorAndMemory.ram');
+  // const uniqueGPUs = await Product.find().distinct(
+  //   'processorAndMemory.graphicProcessor'
+  // );
+  // const uniqueScreenSizes = await Product.find().distinct(
+  //   'displayAndAudio.screenSize'
+  // );
+  // const uniqueWeights = await Product.find().distinct('dimensions.weight');
 
   await db.disconnect();
 
@@ -736,12 +736,13 @@ export async function getServerSideProps({ query }) {
       scrollToFilterView,
       isAtHomePage,
 
-      uniqueBrands,
-      uniqueCPUs,
-      uniqueGPUs,
-      uniqueRAMs,
-      uniqueScreenSizes,
-      uniqueWeights,
+      // uniqueBrands,
+      // uniqueCPUs,
+      // uniqueGPUs,
+      // uniqueRAMs,
+      // uniqueScreenSizes,
+      // uniqueWeights,
+      countProducts,
 
       brandPath: brand,
       ramPath: ram,
@@ -751,7 +752,6 @@ export async function getServerSideProps({ query }) {
       weightPath: weight,
 
       products: products.map(db.convertMongoDocToObject),
-      countProducts,
       pages: Math.ceil(countProducts / PAGE_SIZE),
     },
   };
