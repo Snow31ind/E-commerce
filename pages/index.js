@@ -80,20 +80,6 @@ const orderFilters = [
   },
 ];
 
-const settings = {
-  itemsToScroll: 1,
-  initialActiveIndex: 0,
-  focusOnSelect: true,
-  // enableAutoPlay: 1000,
-  // outerSpacing: 200,
-  itemPadding: [0, 5],
-  breakPoints: [
-    { width: 1, itemsToShow: 4 },
-    { width: 600, itemsToShow: 5 },
-    { width: 960, itemsToShow: 6 },
-  ],
-};
-
 function Home({
   products,
   pages,
@@ -139,37 +125,37 @@ function Home({
       category: BRAND,
       isFiltered: false,
       filteredList: brandPath || [],
-      categorizedList: uniqueBrands,
+      categorizedList: uniqueBrands || [],
     },
     {
       category: CPU,
       isFiltered: false,
       filteredList: cpuPath || [],
-      categorizedList: uniqueCPUs,
+      categorizedList: uniqueCPUs || [],
     },
     {
       category: RAM,
       isFiltered: false,
       filteredList: ramPath || [],
-      categorizedList: uniqueRAMs,
+      categorizedList: uniqueRAMs || [],
     },
     {
       category: GPU,
       isFiltered: false,
       filteredList: gpuPath || [],
-      categorizedList: uniqueGPUs,
+      categorizedList: uniqueGPUs || [],
     },
     {
       category: SCREEN_SIZE,
       isFiltered: false,
       filteredList: screenSizePath || [],
-      categorizedList: uniqueScreenSizes,
+      categorizedList: uniqueScreenSizes || [],
     },
     {
       category: WEIGHT,
       isFiltered: false,
       filteredList: weightPath || [],
-      categorizedList: uniqueWeights,
+      categorizedList: uniqueWeights || [],
     },
   ]);
 
@@ -693,18 +679,18 @@ export async function getServerSideProps({ query }) {
 
   const countProducts = await Product.countDocuments({});
 
-  const uniqueBrands = await Product.find({}).distinct('brand');
-  const uniqueCPUs = await Product.find({}).distinct(
-    'processorAndMemory.processorName'
-  );
-  const uniqueRAMs = await Product.find({}).distinct('processorAndMemory.ram');
-  const uniqueGPUs = await Product.find({}).distinct(
-    'processorAndMemory.graphicProcessor'
-  );
-  const uniqueScreenSizes = await Product.find({}).distinct(
-    'displayAndAudio.screenSize'
-  );
-  const uniqueWeights = await Product.find({}).distinct('dimensions.weight');
+  // const uniqueBrands = await Product.find({}).distinct('brand');
+  // const uniqueCPUs = await Product.find({}).distinct(
+  //   'processorAndMemory.processorName'
+  // );
+  // const uniqueRAMs = await Product.find({}).distinct('processorAndMemory.ram');
+  // const uniqueGPUs = await Product.find({}).distinct(
+  //   'processorAndMemory.graphicProcessor'
+  // );
+  // const uniqueScreenSizes = await Product.find({}).distinct(
+  //   'displayAndAudio.screenSize'
+  // );
+  // const uniqueWeights = await Product.find({}).distinct('dimensions.weight');
 
   const products = await Product.find({})
     .sort(order)
@@ -719,13 +705,13 @@ export async function getServerSideProps({ query }) {
       scrollToFilterView,
       isAtHomePage,
 
-      uniqueBrands,
-      uniqueCPUs,
-      uniqueGPUs,
-      uniqueRAMs,
-      uniqueScreenSizes,
-      uniqueWeights,
-      countProducts,
+      // uniqueBrands,
+      // uniqueCPUs,
+      // uniqueGPUs,
+      // uniqueRAMs,
+      // uniqueScreenSizes,
+      // uniqueWeights,
+      // countProducts,
 
       brandPath: brand,
       ramPath: ram,
