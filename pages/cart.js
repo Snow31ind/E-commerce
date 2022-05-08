@@ -39,6 +39,8 @@ import {
   UPDATE_ITEM_QUANTITY,
 } from '../constants/actionTypes';
 import { fetchItemById } from '../actions/cart';
+import LoadingCartItem from '../components/LoadingCartItem';
+import LoadingCartPayment from '../components/LoadingCartPayment';
 
 export default function Cart() {
   const {
@@ -107,7 +109,31 @@ export default function Cart() {
   const total = subTotal + shipping + taxes - discount;
 
   if (loading) {
-    return <Box>Loading</Box>;
+    return (
+      <Layout title="Shopping cart">
+        <Box>
+          <Grid container spacing={2}>
+            <Grid item container xl={8} md={8} xs={12} spacing={2}>
+              <List sx={{ flex: 1, maxHeight: 600, overflow: 'auto' }}>
+                {[1, 2, 3, 4].map((e) => (
+                  <LoadingCartItem key={e} />
+                ))}
+              </List>
+            </Grid>
+
+            <Grid item container xl={4} md={4} xs={12} spacing={2}>
+              <List sx={{ flex: 1 }}>
+                <ListItem>
+                  <Grid item xl={12}>
+                    <LoadingCartPayment />
+                  </Grid>
+                </ListItem>
+              </List>
+            </Grid>
+          </Grid>
+        </Box>
+      </Layout>
+    );
   }
 
   return (

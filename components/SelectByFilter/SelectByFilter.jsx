@@ -38,7 +38,7 @@ const SelectByFilter = ({
         : '',
     };
 
-    // filterSearch(query);
+    filterSearch(query);
   };
 
   return (
